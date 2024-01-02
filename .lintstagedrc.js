@@ -2,7 +2,7 @@ module.exports = {
   "*.{ts, html}": [
      "eslint --fix"
    ],
-  "*.{json,css,scss,less,md,ts,html}": [
+  "*.{json,ts,html}": [
      "prettier --write"
   ]
 }
