@@ -3,10 +3,10 @@ import {Component, Input} from '@angular/core';
 import {ButtonSize, ButtonVariant} from './types';
 
 @Component({
-  standalone: true,
   selector: 'app-button',
+  standalone: true,
   imports: [NgClass],
-  templateUrl: 'button.html',
+  templateUrl: 'button.component.html',
   styleUrl: 'button.scss',
 })
 export class ButtonComponent {
