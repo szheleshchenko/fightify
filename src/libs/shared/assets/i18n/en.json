@@ -1,7 +1,18 @@
 {
   "SHARED": {
-    "COMMON": {
-      "TEXT_HELLO_WORLD": "Hello world"
+    "NAVIGATION": {
+      "TEXT_HOME": "Home",
+      "TEXT_NEWS": "News",
+      "TEXT_LOGIN": "Login",
+      "TEXT_REGISTER": "Register",
+      "TEXT_EVENTS": "Events",
+      "TEXT_UPCOMING": "Upcoming",
+      "TEXT_RESULTS": "Results",
+      "TEXT_SCHEDULE": "Schedule",
+      "TEXT_FIGHTERS": "Fighters",
+      "TEXT_RANKINGS": "Rankings",
+      "TEXT_LEADERBOARD": "Leaderboard",
+      "TEXT_FORUM": "Forum"
     }
   }
 }
