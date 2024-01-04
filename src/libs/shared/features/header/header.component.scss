@@ -1,0 +1,49 @@
+@import 'variables';
+
+$header-height: 62px;
+
+.header {height: $header-height; background-color: $background-alternative-color;
+  label {cursor: pointer;}
+  &-logo {position: absolute;
+    span {position: relative; font-size: $font-size-heading-3; font-weight: 700; line-height: $header-height;}
+  }
+  &-toggler {display: none; line-height: $header-height;
+    &-checkbox {
+      &:checked ~ .header-container .header-navigation {transform: translate(0);}
+    }
+  }
+  &-navigation {position: relative; display: flex; align-items: center; margin-left: 150px;
+    &-close {display: none;}
+    &-list {margin: 0; padding: 0; text-align: left; list-style: none; z-index: 1;}
+    &-item {display: inline-block; text-align: center;
+      &-link {position: relative; padding: 0 27px; font-size: $font-size-caption-2;
+        font-weight: 700; line-height: $header-height; color: $text-basic-color; text-transform: uppercase;
+
+        &::before {content: ""; display: block; position: absolute; top: 50%; left: 22px; right: 22px; margin-top: 2px;
+          width: auto; height: 8px; background-color: transparent; transition: background-color .3s ease; z-index: -1;
+          transform: skew(-20deg);
+        }
+        &-active, &:hover {
+          &::before {background-color: $emerald;}
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-small-desktop) {
+    &-logo {left: 50%; transform: translateX(-50%);}
+    &-toggler {display: inline-block;}
+    &-navigation {display: block; width: 270px; left: 0; transform: translateX(-270px); height: 100vh; position: fixed; top: 0;
+      margin: 0; z-index: 103; overflow: auto; transition: all .4s ease-in-out; background-color: $purple-dark;
+
+      &-close {display: inline-block;}
+      &-item {display: block; text-align: left;
+        &-link {display: block; padding: 16px 30px; font-size: $font-size-caption-2; line-height: 1.5em; border-right: 0 solid;
+          color: $text-alternative-color; border-bottom: 1px solid hsla(0, 0%, 100%, .07);
+
+          &::before {width: 4px; height: auto; top: 0; bottom: 0; left: 0; transform: none; margin: 0;}
+        }
+      }
+    }
+  }
+}

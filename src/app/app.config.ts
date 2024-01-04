@@ -1,4 +1,4 @@
-import {provideHttpClient} from '@angular/common/http';
+import {provideHttpClient, withFetch} from '@angular/common/http';
 import {ApplicationConfig, isDevMode} from '@angular/core';
 import {provideClientHydration} from '@angular/platform-browser';
 import {provideRouter} from '@angular/router';
@@ -10,11 +10,11 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideClientHydration(),
-    provideHttpClient(),
+    provideHttpClient(withFetch()),
     provideTransloco({
       config: {
         availableLangs: ['en', 'ru'],
-        defaultLang: 'en',
+        defaultLang: 'ru',
         prodMode: !isDevMode(),
       },
       loader: I18nLoader,
