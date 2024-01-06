@@ -1,10 +1,11 @@
 import {Component} from '@angular/core';
 import {HomeOverviewComponent} from '@libs/shared/features/home-overview';
+import {PageComponent} from '@libs/shared/features/page';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HomeOverviewComponent],
+  imports: [PageComponent, HomeOverviewComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
