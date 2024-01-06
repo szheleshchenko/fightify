@@ -1,10 +1,19 @@
 import {Component} from '@angular/core';
+import {Breadcrumb, PageComponent} from '@libs/shared/features/page';
+import {TranslocoDirective} from '@ngneat/transloco';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [],
+  imports: [PageComponent, TranslocoDirective],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
-export class LoginPageComponent {}
+export class LoginPageComponent {
+  public breadcrumbs: Array<Breadcrumb> = [
+    {
+      translationKey: 'SHARED.NAVIGATION.TEXT_LOGIN',
+      path: '/login',
+    },
+  ];
+}
