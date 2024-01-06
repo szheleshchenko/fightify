@@ -1,0 +1,7 @@
+@import 'variables';
+
+.card {margin-bottom: 16px; background-color: $background-alternative-color; border: 1px solid $grey;
+  &-header {padding: 24px;
+    &-title {margin: 0; font-size: $font-size-paragraph-2; color: $text-basic-color;}
+  }
+}
