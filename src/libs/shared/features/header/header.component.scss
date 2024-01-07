@@ -14,7 +14,7 @@ $header-height: 62px;
   }
   &-navigation {position: relative; display: flex; align-items: center; margin-left: 150px;
     &-close {display: none;}
-    &-list {margin: 0; padding: 0; text-align: left; list-style: none; z-index: 1;}
+    &-list {text-align: left; z-index: 1;}
     &-item {display: inline-block; text-align: center;
       &-link {position: relative; padding: 0 27px; font-size: $font-size-caption-2;
         font-weight: 700; line-height: $header-height; color: $text-basic-color; text-transform: uppercase;
