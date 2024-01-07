@@ -1,0 +1,51 @@
+<app-content-card>
+  <div class="news-card">
+    <figure class="news-card-image">
+      <a [routerLink]="['news', news.title]">
+        <img [src]="news.image" [alt]="news.title" />
+      </a>
+    </figure>
+    <div class="news-card-content">
+      <div class="news-card-meta">
+        <ul class="news-card-list">
+          <li class="news-card-list-item">
+            <app-category-label [text]="news.category" />
+          </li>
+          <li class="news-card-list-item">
+            <div class="news-card-avatar">
+              <!-- TODO: Replace hardcoded value -->
+              <img
+                src="https://alchemists.dan-fisher.dev/hockey/assets/images/samples/avatar-6.jpg"
+                alt="author"
+              />
+            </div>
+          </li>
+          <li class="news-card-list-item">
+            <span class="news-card-author">Francine J.</span>
+          </li>
+          <li class="news-card-list-item">
+            <span class="news-card-time">15 hours ago</span>
+          </li>
+        </ul>
+      </div>
+      <h3 class="news-card-title">
+        <a [routerLink]="['news', news.title]">{{ news.title }}</a>
+      </h3>
+      <div class="news-card-description">{{ news.description }}</div>
+    </div>
+    <ul class="news-card-details news-card-list">
+      <li class="news-card-list-item">
+        <span class="material-symbols-outlined news-card-icon"> visibility </span>
+        <a>500</a>
+      </li>
+      <li class="news-card-list-item">
+        <span class="material-symbols-outlined news-card-icon"> favorite </span>
+        <a>400</a>
+      </li>
+      <li class="news-card-list-item">
+        <span class="material-symbols-outlined news-card-icon"> chat_bubble </span>
+        <a>250</a>
+      </li>
+    </ul>
+  </div>
+</app-content-card>
