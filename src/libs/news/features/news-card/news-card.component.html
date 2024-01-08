@@ -7,26 +7,7 @@
     </figure>
     <div class="news-card-content">
       <div class="news-card-meta">
-        <ul class="news-card-list">
-          <li class="news-card-list-item">
-            <app-category-label [text]="news.category" />
-          </li>
-          <li class="news-card-list-item">
-            <div class="news-card-avatar">
-              <!-- TODO: Replace hardcoded value -->
-              <img
-                src="https://alchemists.dan-fisher.dev/hockey/assets/images/samples/avatar-6.jpg"
-                alt="author"
-              />
-            </div>
-          </li>
-          <li class="news-card-list-item">
-            <span class="news-card-author">Francine J.</span>
-          </li>
-          <li class="news-card-list-item">
-            <span class="news-card-time">15 hours ago</span>
-          </li>
-        </ul>
+        <app-news-details [news]="news" />
       </div>
       <h3 class="news-card-title">
         <a [routerLink]="['news', news.title]">{{ news.title }}</a>

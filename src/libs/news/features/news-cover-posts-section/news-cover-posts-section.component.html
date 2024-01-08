@@ -1,0 +1,31 @@
+<div class="posts">
+  <div class="row posts-primary">
+    <div class="col col-50">
+      <app-news-cover-post [news]="news[0]" variant="center" />
+    </div>
+    <div class="col col-50">
+      <div class="row posts-primary">
+        <div class="col col-50">
+          <app-news-cover-post [news]="news[1]" />
+        </div>
+        <div class="col col-50">
+          <app-news-cover-post [news]="news[2]" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row posts-secondary">
+    <div class="col col-25">
+      <app-news-cover-post [news]="news[0]" />
+    </div>
+    <div class="col col-25">
+      <app-news-cover-post [news]="news[1]" />
+    </div>
+    <div class="col col-25">
+      <app-news-cover-post [news]="news[2]" />
+    </div>
+    <div class="col col-25">
+      <app-news-cover-post [news]="news[0]" />
+    </div>
+  </div>
+</div>

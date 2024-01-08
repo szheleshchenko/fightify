@@ -1,0 +1,9 @@
+<a [routerLink]="news.title" class="post post-{{ variant }}">
+  <figure class="post-image">
+    <img [src]="news.image" [alt]="news.title" />
+  </figure>
+  <div class="post-content">
+    <app-news-details [news]="news" appearance="light" />
+    <h3 class="post-title">{{ news.title }}</h3>
+  </div>
+</a>
