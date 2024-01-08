@@ -19,9 +19,4 @@
       &:not(:last-child) {border-right: 1px solid $grey;}
     }
   }
-  &-avatar {position: relative; display: inline-block; width: 29px; height: 23px; margin-right: 8px; vertical-align: middle;
-    clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
-  }
-  &-author, &-time {font-size: $font-size-caption-2; color: $text-hint-color;}
-  &-author {margin-right: 8px; font-weight: 700;}
 }
