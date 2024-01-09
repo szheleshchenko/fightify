@@ -1,0 +1,14 @@
+@import 'variables';
+
+.fighter {text-align: center;
+  &-image {position: relative; width: 100px; height: 85px; margin-bottom: 16px;}
+  &-meta {margin-bottom: 18px;
+    &-name {font-size: $font-size-caption-2; font-weight: 700;}
+    &-country {font-size: $font-size-label-2; color: $text-hint-color;}
+  }
+  &-fights {display: flex; justify-content: center;
+    &-win, &-loss {width: 12px; height: 12px; margin: 0 2px; font-size: $font-size-label-3; line-height: 12px; color: $text-alternative-color;}
+    &-win {background-color: $orange;}
+    &-loss {background-color: $text-control-color;}
+  }
+}
