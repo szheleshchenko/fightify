@@ -4,12 +4,21 @@
     <span class="card-header-time">Sunday, January 14</span>
   </div>
   <div class="card-details">
-    <app-event-fighter-details />
+    <app-event-fighter-details [isWinner]="isUpcoming ? false : true" />
     <div class="card-details-meta">
       <div class="card-details-meta-divider">vs</div>
       <time class="card-details-meta-time">03:00 GMT+6</time>
+      <a routerLink="/events/11-ankalaev-vs-walker" class="card-details-meta-link">
+        @if (isUpcoming) {
+          See details
+        } @else {
+          See results
+        }
+      </a>
     </div>
     <app-event-fighter-details />
   </div>
-  <app-event-countdown />
+  @if (isUpcoming) {
+    <app-event-countdown />
+  }
 </div>
