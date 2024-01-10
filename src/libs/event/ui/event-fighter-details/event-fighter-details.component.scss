@@ -11,4 +11,7 @@
     &-win {background-color: $orange;}
     &-loss {background-color: $text-control-color;}
   }
+  &-winner {position: absolute; left: 0; bottom: 0; width: 100%; font-size: $font-size-label; font-weight: 700; color: $text-alternative-color;
+    text-align: center; text-transform: uppercase; background-color: $orange;
+  }
 }

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-event-fighter-details',
@@ -7,4 +7,6 @@ import {Component} from '@angular/core';
   templateUrl: './event-fighter-details.component.html',
   styleUrl: './event-fighter-details.component.scss',
 })
-export class EventFighterDetailsComponent {}
+export class EventFighterDetailsComponent {
+  @Input() isWinner?: boolean;
+}
