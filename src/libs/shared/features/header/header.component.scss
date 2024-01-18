@@ -5,7 +5,7 @@ $header-height: 62px;
 .header {height: calc($header-height + 92px); background-color: $background-alternative-color;
   &-top {height: 92px; background-color: $purple;}
   label {cursor: pointer;}
-  &-logo {position: absolute; width: 107px; height: 138px; top: 8px;
+  &-logo {position: absolute; width: 140px; height: 138px; top: 8px;
     span {position: relative; font-size: $font-size-heading-3; font-weight: 700; line-height: $header-height;}
   }
   &-toggler {display: none; line-height: $header-height;
