@@ -1,14 +1,15 @@
 <header *transloco="let t" class="header">
+  <div class="header-top"></div>
   <input id="toggle" type="checkbox" class="header-toggler-checkbox" hidden />
   <div class="container header-container">
     <div class="header-logo">
-      <span>Fightify</span>
+      <img src="/assets/logo-2.png" width="107" height="138" alt="Logo" />
     </div>
     <label for="toggle" class="material-symbols-outlined header-toggler">menu</label>
     <nav class="header-navigation">
-      <label for="toggle" class="material-symbols-outlined header-navigation-close"
-        >arrow_back</label
-      >
+      <label for="toggle" class="material-symbols-outlined header-navigation-close">
+        arrow_back
+      </label>
       <ul class="header-navigation-list">
         @for (link of links; track link.path) {
           <li class="header-navigation-item">
