@@ -2,9 +2,11 @@
 
 $header-height: 62px;
 
-.header {height: $header-height; background-color: $background-alternative-color;
+.header {height: calc($header-height + 92px + 88px); background-color: $background-alternative-color;
+  &-upcoming-events {height: 88px;}
+  &-top {height: 92px; background-color: $purple;}
   label {cursor: pointer;}
-  &-logo {position: absolute;
+  &-logo {position: absolute; width: 138px; height: 138px; bottom: 6px;
     span {position: relative; font-size: $font-size-heading-3; font-weight: 700; line-height: $header-height;}
   }
   &-toggler {display: none; line-height: $header-height;
@@ -12,6 +14,7 @@ $header-height: 62px;
       &:checked ~ .header-container .header-navigation {transform: translate(0);}
     }
   }
+  &-container {position: relative;}
   &-navigation {position: relative; display: flex; align-items: center; margin-left: 150px;
     &-close {display: none;}
     &-list {text-align: left; z-index: 1;}
@@ -19,12 +22,12 @@ $header-height: 62px;
       &-link {position: relative; padding: 0 27px; font-size: $font-size-caption-2;
         font-weight: 700; line-height: $header-height; color: $text-basic-color; text-transform: uppercase;
 
-        &::before {content: ""; display: block; position: absolute; top: 50%; left: 22px; right: 22px; margin-top: 2px;
+        &::before {content: ''; display: block; position: absolute; top: 50%; left: 22px; right: 22px; margin-top: 2px;
           width: auto; height: 8px; background-color: transparent; transition: background-color .3s ease; z-index: -1;
           transform: skew(-20deg);
         }
         &-active, &:hover {
-          &::before {background-color: $emerald;}
+          &::before {background-color: $gold;}
         }
       }
     }

@@ -8,10 +8,10 @@
   }
   &-fights {display: flex; justify-content: center;
     &-win, &-loss {width: 12px; height: 12px; margin: 0 2px; font-size: $font-size-label-3; line-height: 12px; color: $text-alternative-color;}
-    &-win {background-color: $orange;}
+    &-win {background-color: $gold;}
     &-loss {background-color: $text-control-color;}
   }
   &-winner {position: absolute; left: 0; bottom: 0; width: 100%; font-size: $font-size-label; font-weight: 700; color: $text-alternative-color;
-    text-align: center; text-transform: uppercase; background-color: $orange;
+    text-align: center; text-transform: uppercase; background-color: $gold;
   }
 }
