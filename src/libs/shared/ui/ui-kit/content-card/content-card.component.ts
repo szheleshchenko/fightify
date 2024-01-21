@@ -8,5 +8,5 @@ import {Component, Input} from '@angular/core';
   styleUrl: './content-card.component.scss',
 })
 export class ContentCardComponent {
-  @Input() title!: string;
+  @Input() heading?: string;
 }
