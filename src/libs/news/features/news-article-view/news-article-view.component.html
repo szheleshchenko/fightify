@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col col-66">
+    <app-content-card>
+      <div class="news">
+        <header>
+          <app-news-details [news]="news" />
+          <h1 class="news-title">
+            Alchemists Connor Starkson will go to the Blue Cross charity event on August 24th
+          </h1>
+          <ul class="news-meta">
+            <li class="news-meta-item">
+              <span class="material-symbols-outlined news-meta-icon">visibility</span>
+              500
+            </li>
+            <li class="news-meta-item">
+              <span class="material-symbols-outlined news-meta-icon">favorite</span>
+              500
+            </li>
+            <li class="news-meta-item">
+              <span class="material-symbols-outlined news-meta-icon">chat_bubble</span>
+              500
+            </li>
+          </ul>
+          <div class="news-image">
+            <img
+              src="https://mmajunkie.usatoday.com/wp-content/uploads/sites/91/2024/01/dricus-du-plessis-ufc-297-media-day.jpg"
+              [alt]="news.title"
+            />
+          </div>
+        </header>
+        <div class="news-content">
+          CALIFORNIA -- Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+          doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et
+          quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
+          voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui
+          ratione voluptatem sequi nesciunt.<br />
+          CALIFORNIA -- Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+          doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et
+          quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
+          voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui
+          ratione voluptatem sequi nesciunt.
+        </div>
+      </div>
+    </app-content-card>
+  </div>
+  <div class="col col-33">
+    <app-content-card heading="Author" />
+    <app-content-card heading="Popular news" />
+  </div>
+</div>

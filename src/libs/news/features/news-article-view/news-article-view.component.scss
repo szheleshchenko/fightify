@@ -1,0 +1,11 @@
+@import 'variables';
+
+.news {padding: 40px 30px;
+  &-title {margin: 16px 0;}
+  &-meta {
+    &-item {display: inline-block; margin-right: 16px; font-size: $font-size-caption-2; font-weight: 700;}
+    &-icon {margin-right: 4px; vertical-align: middle; font-size: 13px; color: $text-hint-color;}
+  }
+  &-image {position: relative; height: 400px; margin-top: 16px; margin-bottom: 35px;}
+  &-content {font-size: $font-size-caption; line-height: 28px; color: $text-hint-color;}
+}
