@@ -1,6 +1,15 @@
 <header *transloco="let t" class="header">
   <div class="header-upcoming-events"></div>
-  <div class="header-top"></div>
+  <div class="header-top">
+    <div class="header-top-accessory">
+      <div class="header-top-accessory-layer">
+        <div class="header-top-accessory-inner"></div>
+      </div>
+    </div>
+    <div class="container header-top-navigation">
+      <app-text-field [label]="t('SHARED.HEADER.TEXT_ENTER_YOUR_SEARCH_HERE')" />
+    </div>
+  </div>
   <input id="toggle" type="checkbox" class="header-toggler-checkbox" hidden />
   <div class="container header-container">
     <div class="header-logo">

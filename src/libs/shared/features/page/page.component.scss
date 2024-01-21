@@ -3,9 +3,9 @@
 .page {
   &-heading {position: relative; background-color: $grey-light; overflow: hidden;
     &::before {content: ''; position: absolute; display: block; min-width: 35px; width: calc(50% - 585px + 35px); height: 100%;
-      background-color: $purple;
+      background-color: $black;
     }
-    &-container {display: inline-block; padding: 16px 0; padding-right: 80px; background-color: $purple; transform: skew(-20deg);
+    &-container {display: inline-block; padding: 16px 0; padding-right: 80px; background-color: $black; transform: skew(-20deg);
       box-sizing: border-box;
     }
     &-breadcrumbs {text-align: right;

@@ -10,7 +10,7 @@
     border: 1px solid $grey;
     
     &::placeholder {color: transparent;}
-    &:focus {border-color: $purple;}
+    &:focus {border-color: $black;}
     &:focus, &:not(:placeholder-shown) {
       & ~ .text-field-label {transform: scale(0.75) translate(0.15em, -0.6em);}
     }

@@ -7,7 +7,7 @@ import {ButtonSize, ButtonVariant} from './types';
   standalone: true,
   imports: [NgClass],
   templateUrl: 'button.component.html',
-  styleUrl: 'button.scss',
+  styleUrl: 'button.component.scss',
 })
 export class ButtonComponent {
   @Input() variant: ButtonVariant = 'primary';
