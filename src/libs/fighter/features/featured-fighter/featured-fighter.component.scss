@@ -2,14 +2,14 @@
 
 .fighter {height: 150px; overflow: hidden;
   &-image {position: relative; height: 150px;
-    &::before {content: ''; position: absolute; width: 100%; height: 100%; background-color: $purple; left: -40px;
+    &::before {content: ''; position: absolute; width: 100%; height: 100%; background-color: $black; left: -40px;
       transform: skew(-20deg);
     }
     img {object-position: top center;}
   }
   &-meta {padding: 24px 0; padding-right: 24px;}
   &-name {display: block; font-size: $font-size-paragraph-2; font-weight: 700;}
-  &-last-name {margin-bottom: 16px; font-size: $font-size-heading-3; font-weight: 700; color: $purple;}
+  &-last-name {margin-bottom: 16px; font-size: $font-size-heading-3; font-weight: 700; color: $black;}
   &-details {display: flex; flex-direction: column; gap: 6px;
     &-item {font-size: $font-size-caption-2; font-weight: 700;}
     &-label {font-weight: 400; color: $text-hint-color;}

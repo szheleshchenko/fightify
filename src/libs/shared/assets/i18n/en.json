@@ -13,6 +13,9 @@
       "TEXT_RANKINGS": "Rankings",
       "TEXT_LEADERBOARD": "Leaderboard",
       "TEXT_FORUM": "Forum"
+    },
+    "HEADER": {
+      "TEXT_ENTER_YOUR_SEARCH_HERE": "Enter your search here"
     }
   }
 }

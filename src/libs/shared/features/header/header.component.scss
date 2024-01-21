@@ -1,10 +1,26 @@
 @import 'variables';
 
 $header-height: 62px;
+$header-top-height: 92px;
+$upcoming-events-height: 88px;
 
-.header {height: calc($header-height + 92px + 88px); background-color: $background-alternative-color;
-  &-upcoming-events {height: 88px;}
-  &-top {height: 92px; background-color: $purple;}
+.header {height: calc($header-height + $header-top-height + $upcoming-events-height); background-color: $background-alternative-color;
+  &-upcoming-events {height: $upcoming-events-height;}
+  &-top {position: relative; height: $header-top-height; background-color: $black;
+    &-accessory {position: absolute; width: 50%; height: 100%; background-image: url('/assets/cage.webp');
+      clip-path: polygon(0 0, 100% 0, calc(100% - 33px) 100%, 0 100%); background-position: 100% 50%;
+      background-repeat: no-repeat; background-size: cover;
+
+      &-layer, &-inner {position: absolute; top: 0; right: 0; bottom: 0; left: 0;}
+      &-inner {background-color: $gold; z-index: 2; mix-blend-mode: multiply;}
+      &-layer {
+        &::before, &::after {content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0;}
+        &::before {background-color: #000; mix-blend-mode: color; z-index: 1;}
+        &::after {background-color: $black; mix-blend-mode: lighten; z-index: 3;}
+      }
+    }
+    &-navigation {display: flex; align-items: center; justify-content: flex-end; height: $header-top-height;}
+  }
   label {cursor: pointer;}
   &-logo {position: absolute; width: 138px; height: 138px; bottom: 6px;
     span {position: relative; font-size: $font-size-heading-3; font-weight: 700; line-height: $header-height;}
@@ -37,7 +53,7 @@ $header-height: 62px;
     &-logo {left: 50%; transform: translateX(-50%);}
     &-toggler {display: inline-block;}
     &-navigation {display: block; width: 270px; left: 0; transform: translateX(-270px); height: 100vh; position: fixed; top: 0;
-      margin: 0; z-index: 103; overflow: auto; transition: all .4s ease-in-out; background-color: $purple-dark;
+      margin: 0; z-index: 103; overflow: auto; transition: all .4s ease-in-out; background-color: $black;
 
       &-close {display: inline-block;}
       &-item {display: block; text-align: left;

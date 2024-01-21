@@ -1,12 +1,13 @@
 import {Component, Input} from '@angular/core';
 import {RouterLink, RouterLinkActive} from '@angular/router';
+import {TextFieldComponent} from '@libs/shared/ui/ui-kit';
 import {TranslocoDirective} from '@ngneat/transloco';
 import {HeaderLink} from './types';
 
 @Component({
   standalone: true,
   selector: 'app-header',
-  imports: [RouterLink, RouterLinkActive, TranslocoDirective],
+  imports: [RouterLink, RouterLinkActive, TranslocoDirective, TextFieldComponent],
   templateUrl: 'header.component.html',
   styleUrl: 'header.component.scss',
 })
