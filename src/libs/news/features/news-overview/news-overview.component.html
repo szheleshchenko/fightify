@@ -1,5 +1,17 @@
 <div class="row">
-  <div class="col col-66">News</div>
+  <div class="col col-66">
+    @if (news$ | async; as news) {
+      @if (news.isLoading) {
+        <p>Loading</p>
+      }
+      @if (news.isSuccess) {
+        <p>{{ news.data.title }}</p>
+      }
+      @if (news.isError) {
+        <p>Error</p>
+      }
+    }
+  </div>
   <div class="col col-33">
     <app-content-card heading="Last event"> </app-content-card>
     <app-content-card heading="Popular news"> </app-content-card>
