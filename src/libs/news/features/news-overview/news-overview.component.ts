@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, inject} from '@angular/core';
+import {NewsService} from '@libs/shared/data-access/api/news/news.service';
 import {ContentCardComponent} from '@libs/shared/ui/ui-kit/content-card';
 
 @Component({
@@ -8,4 +9,6 @@ import {ContentCardComponent} from '@libs/shared/ui/ui-kit/content-card';
   templateUrl: './news-overview.component.html',
   styleUrl: './news-overview.component.scss',
 })
-export class NewsOverviewComponent {}
+export class NewsOverviewComponent {
+  news = inject(NewsService).search();
+}
