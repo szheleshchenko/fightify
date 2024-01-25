@@ -1,13 +1,13 @@
 import {Injectable, inject} from '@angular/core';
 import {ApiService} from '@libs/shared/data-access/api-client';
-import {injectQuery} from '@ngneat/query';
+import {UseQuery} from '@ngneat/query';
 import {plainToInstance} from 'class-transformer';
 import {map} from 'rxjs';
 import {News} from './models';
 
 @Injectable({providedIn: 'root'})
 export class NewsService {
-  private query = injectQuery();
+  private query = inject(UseQuery);
   private httpClient = inject(ApiService);
 
   public search() {
