@@ -1,20 +1,28 @@
 <div class="row">
   <div class="col col-66">
-    @if (news$ | async; as news) {
-      @if (news.isLoading) {
+    @if (news$ | async; as result) {
+      @if (result.isLoading) {
         <p>Loading</p>
       }
-      @if (news.isSuccess) {
-        <p>{{ news.data.title }}</p>
+      @if (result.isSuccess) {
+        <div class="row">
+          @for (news of result.data.data; track news.title) {
+            <div class="col col-50">
+              <app-news-card [news]="news" />
+            </div>
+          }
+        </div>
       }
-      @if (news.isError) {
+      @if (result.isError) {
         <p>Error</p>
       }
     }
   </div>
   <div class="col col-33">
-    <app-content-card heading="Last event"> </app-content-card>
-    <app-content-card heading="Popular news"> </app-content-card>
-    <app-content-card heading="Featured video"> </app-content-card>
+    <div class="row">
+      <app-content-card heading="Last event" class="col col-100" />
+      <app-content-card heading="Popular news" class="col col-100" />
+      <app-content-card heading="Featured video" class="col col-100" />
+    </div>
   </div>
 </div>

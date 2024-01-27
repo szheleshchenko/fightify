@@ -1,23 +1,27 @@
 <div class="row">
   <div class="col col-33">
-    <app-content-card heading="Upcoming event">
-      <app-event-card [event]="events[0]" />
-    </app-content-card>
-    <app-content-card heading="Last events">
-      <app-event-card [event]="events[1]" />
-      <app-event-card [event]="events[1]" />
-    </app-content-card>
+    <div class="row">
+      <app-content-card heading="Upcoming event" class="col col-100">
+        <app-event-card [event]="events[0]" />
+      </app-content-card>
+      <app-content-card heading="Last events" class="col col-100">
+        <app-event-card [event]="events[1]" />
+        <app-event-card [event]="events[1]" />
+      </app-content-card>
+    </div>
   </div>
   <div class="col col-33">
     <app-home-news-section />
   </div>
   <div class="col col-33">
-    <app-content-card heading="Last bets" />
-    <app-content-card heading="Fighter of the week">
-      <app-featured-fighter />
-    </app-content-card>
-    <app-content-card heading="Featured video">
-      <app-video-card />
-    </app-content-card>
+    <div class="row">
+      <app-content-card heading="Last bets" class="col col-100" />
+      <app-content-card heading="Fighter of the week" class="col col-100">
+        <app-featured-fighter />
+      </app-content-card>
+      <app-content-card heading="Featured video" class="col col-100">
+        <app-video-card />
+      </app-content-card>
+    </div>
   </div>
 </div>
