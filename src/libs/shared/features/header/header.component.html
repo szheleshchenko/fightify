@@ -1,5 +1,13 @@
 <header *transloco="let t" class="header">
   <div class="header-upcoming-events"></div>
+  <input
+    [formControl]="inputControl"
+    id="toggle"
+    type="checkbox"
+    class="header-toggler-checkbox"
+    hidden
+  />
+  <label for="toggle" class="header-overlay"></label>
   <div class="header-top">
     <div class="header-top-accessory">
       <div class="header-top-accessory-layer">
@@ -10,13 +18,15 @@
       <app-text-field [label]="t('SHARED.HEADER.TEXT_ENTER_YOUR_SEARCH_HERE')" />
     </div>
   </div>
-  <input id="toggle" type="checkbox" class="header-toggler-checkbox" hidden />
   <div class="container header-container">
     <div class="header-logo">
       <img src="/assets/logo-5.png" alt="Logo" />
     </div>
     <label for="toggle" class="material-symbols-outlined header-toggler">menu</label>
     <nav class="header-navigation">
+      <div class="header-logo-mobile">
+        <img src="/assets/logo-5.png" alt="Logo" />
+      </div>
       <label for="toggle" class="material-symbols-outlined header-navigation-close">
         arrow_back
       </label>

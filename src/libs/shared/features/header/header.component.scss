@@ -6,6 +6,9 @@ $upcoming-events-height: 88px;
 
 .header {height: calc($header-height + $header-top-height + $upcoming-events-height); background-color: $background-alternative-color;
   &-upcoming-events {height: $upcoming-events-height;}
+  &-overlay {position: fixed; top: 0; right: 0; bottom: 0; left: 0; transition: visibility 0s, opacity .4s linear;
+    visibility: hidden; opacity: 0; z-index: 102;
+  }
   &-top {position: relative; height: $header-top-height; background-color: $black;
     &-accessory {position: absolute; width: 50%; height: 100%; background-image: url('/assets/cage.webp');
       clip-path: polygon(0 0, 100% 0, calc(100% - 33px) 100%, 0 100%); background-position: 100% 50%;
@@ -23,16 +26,21 @@ $upcoming-events-height: 88px;
   }
   label {cursor: pointer;}
   &-logo {position: absolute; width: 138px; height: 138px; bottom: 6px;
-    span {position: relative; font-size: $font-size-heading-3; font-weight: 700; line-height: $header-height;}
+    &-mobile {position: relative; width: 114px; height: 114px; margin: 6px auto 16px;}
   }
   &-toggler {display: none; line-height: $header-height;
     &-checkbox {
-      &:checked ~ .header-container .header-navigation {transform: translate(0);}
+      &:checked ~ {
+        .header-container .header-navigation {transform: translate(0);}
+        .header-overlay {visibility: visible; opacity: 1; background-color: rgba(0, 0, 0, .8);}
+      }
     }
   }
   &-container {position: relative;}
   &-navigation {position: relative; display: flex; align-items: center; margin-left: 150px;
-    &-close {display: none;}
+    &-close {display: none; position: absolute; right: 0; top: 0; width: 44px; height: 44px; line-height: 44px; text-align: center;
+      color: $background-alternative-color;
+    }
     &-list {text-align: left; z-index: 1;}
     &-item {display: inline-block; text-align: center;
       &-link {position: relative; padding: 0 27px; font-size: $font-size-caption-2;
@@ -56,6 +64,7 @@ $upcoming-events-height: 88px;
       margin: 0; z-index: 103; overflow: auto; transition: all .4s ease-in-out; background-color: $black;
 
       &-close {display: inline-block;}
+      &-list {border-top: 1px solid hsla(0, 0%, 100%, .07);}
       &-item {display: block; text-align: left;
         &-link {display: block; padding: 16px 30px; font-size: $font-size-caption-2; line-height: 1.5em; border-right: 0 solid;
           color: $text-alternative-color; border-bottom: 1px solid hsla(0, 0%, 100%, .07);
