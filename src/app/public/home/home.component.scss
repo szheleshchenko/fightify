@@ -1,0 +1,7 @@
+@import 'variables';
+
+.home {
+  @media screen and (max-width: $breakpoint-small-desktop) {
+    &-news {display: none;}
+  }
+}
