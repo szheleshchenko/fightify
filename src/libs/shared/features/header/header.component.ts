@@ -28,9 +28,15 @@ export class HeaderComponent implements OnInit {
   public inputControl = new FormControl<boolean>(false);
 
   public ngOnInit(): void {
-    this.inputControl.valueChanges.subscribe(() =>
-      this.document.body.classList.toggle('header-open'),
-    );
+    this.inputControl.valueChanges.subscribe((value) => {
+      const className = 'header-open';
+
+      if (value) {
+        this.document.body.classList.add(className);
+      } else {
+        this.document.body.classList.remove(className);
+      }
+    });
 
     this.router.events
       .pipe(filter((event) => event instanceof NavigationStart))
