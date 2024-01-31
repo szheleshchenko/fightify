@@ -59,7 +59,7 @@ $upcoming-events-height: 88px;
   }
 
   @media screen and (max-width: $breakpoint-small-desktop) {height: calc($header-mobile-height + $upcoming-events-height);
-    &-logo {top: 6px; left: 50%; transform: translateX(-50%); width: 114px; height: 114px;
+    &-logo {top: 6px; left: 50%; transform: translateX(-50%); width: 114px; height: 114px; z-index: 10;
       &-mobile {display: block;}
     }
     &-container {height: $header-mobile-height; background-color: $black;}

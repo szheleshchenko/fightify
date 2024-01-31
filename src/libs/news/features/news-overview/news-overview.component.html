@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col col-66">
+  <div class="col col-66 col-mobile-100">
     @if (news$ | async; as result) {
       @if (result.isLoading) {
         <p>Loading</p>
@@ -7,7 +7,7 @@
       @if (result.isSuccess) {
         <div class="row">
           @for (news of result.data.data; track news.title) {
-            <div class="col col-50">
+            <div class="col col-50 col-mobile-100">
               <app-news-card [news]="news" />
             </div>
           }
@@ -18,7 +18,7 @@
       }
     }
   </div>
-  <div class="col col-33">
+  <div class="col col-33 col-mobile-100">
     <div class="row">
       <app-content-card heading="Last event" class="col col-100" />
       <app-content-card heading="Popular news" class="col col-100" />
