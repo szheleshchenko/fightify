@@ -1,7 +1,8 @@
 import {AsyncPipe} from '@angular/common';
-import {Component, inject} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {NewsCardComponent} from '@libs/news/features/news-card';
-import {NewsService} from '@libs/shared/data-access/api/news/news.service';
+import {PaginationResponse} from '@libs/shared/data-access/api-client';
+import {News} from '@libs/shared/data-access/api/news';
 import {ContentCardComponent} from '@libs/shared/ui/ui-kit/content-card';
 
 @Component({
@@ -12,5 +13,5 @@ import {ContentCardComponent} from '@libs/shared/ui/ui-kit/content-card';
   styleUrl: './news-overview.component.scss',
 })
 export class NewsOverviewComponent {
-  news$ = inject(NewsService).search().result$;
+  @Input() news?: PaginationResponse<News>;
 }

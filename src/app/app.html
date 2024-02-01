@@ -1,4 +1,7 @@
 <div class="wrapper">
+  @defer (when isBrowser) {
+  <app-progress-bar />
+  }
   <app-header [links]="headerLinks" />
   <router-outlet />
   <app-footer />

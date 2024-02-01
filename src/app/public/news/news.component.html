@@ -1,3 +1,5 @@
 <app-page *transloco="let t" [title]="t('SHARED.NAVIGATION.TEXT_NEWS')" [breadcrumbs]="breadcrumbs">
-  <app-news-overview />
+  @if (news$ | async; as news) {
+    <app-news-overview [news]="news" />
+  }
 </app-page>

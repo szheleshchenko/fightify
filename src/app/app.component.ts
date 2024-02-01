@@ -1,16 +1,20 @@
-import {Component} from '@angular/core';
+import {isPlatformBrowser} from '@angular/common';
+import {Component, PLATFORM_ID, inject} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
 import {FooterComponent} from '@libs/shared/features/footer';
 import {HeaderComponent, HeaderLink} from '@libs/shared/features/header';
+import {ProgressBarComponent} from '@libs/shared/features/progress-bar';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, ProgressBarComponent],
   templateUrl: 'app.html',
   styleUrls: ['app.scss'],
 })
 export class AppComponent {
+  public isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
+
   public headerLinks: Array<HeaderLink> = [
     {
       translationKey: this.getHeaderLinkTranslationKey('TEXT_HOME'),
