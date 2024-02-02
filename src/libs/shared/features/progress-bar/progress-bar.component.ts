@@ -1,5 +1,5 @@
 import {isPlatformBrowser} from '@angular/common';
-import {Component, PLATFORM_ID, ViewChild, inject} from '@angular/core';
+import {Component, OnInit, PLATFORM_ID, ViewChild, inject} from '@angular/core';
 import {
   NavigationCancel,
   NavigationEnd,
@@ -18,15 +18,14 @@ const PROGRESS_BAR_DELAY = 30;
   standalone: true,
   imports: [NgProgressComponent],
   templateUrl: './progress-bar.component.html',
-  styleUrl: './progress-bar.component.scss',
 })
-export class ProgressBarComponent {
+export class ProgressBarComponent implements OnInit {
   @ViewChild(NgProgressComponent, {static: true}) progressBar!: NgProgressComponent;
 
   private readonly router = inject(Router);
   private isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
-  private setupPageNavigationDimming() {
+  public ngOnInit() {
     if (!this.isBrowser) {
       return;
     }
@@ -40,14 +39,11 @@ export class ProgressBarComponent {
         ),
         switchMap((timeoutId) => {
           return this.router.events.pipe(
-            filter((e) => {
-              return (
-                e instanceof NavigationEnd ||
-                e instanceof NavigationCancel ||
-                e instanceof NavigationSkipped ||
-                e instanceof NavigationError
-              );
-            }),
+            filter((e) =>
+              [NavigationEnd, NavigationCancel, NavigationSkipped, NavigationError].some(
+                (event) => e instanceof event,
+              ),
+            ),
             take(1),
             map(() => timeoutId),
           );
