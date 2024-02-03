@@ -2,6 +2,7 @@ import {DOCUMENT} from '@angular/common';
 import {Component, Input, OnInit, inject} from '@angular/core';
 import {FormControl, ReactiveFormsModule} from '@angular/forms';
 import {NavigationStart, Router, RouterLink, RouterLinkActive} from '@angular/router';
+import {ProfileNavigationComponent} from '@libs/shared/features/profile-navigation';
 import {TextFieldComponent} from '@libs/shared/ui/ui-kit';
 import {TranslocoDirective} from '@ngneat/transloco';
 import {filter} from 'rxjs';
@@ -16,6 +17,7 @@ import {HeaderLink} from './types';
     TranslocoDirective,
     TextFieldComponent,
     ReactiveFormsModule,
+    ProfileNavigationComponent,
   ],
   templateUrl: 'header.component.html',
   styleUrl: 'header.component.scss',
