@@ -1,0 +1,8 @@
+@import 'variables';
+
+.dropdown {position: relative;
+  &-checkbox:checked {
+    .dropdown-content {display: block;}
+  }
+  &-content {display: none;}
+}

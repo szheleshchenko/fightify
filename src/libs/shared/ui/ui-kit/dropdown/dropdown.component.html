@@ -1,0 +1,13 @@
+<ng-template #listItem> 321312 </ng-template>
+<div class="dropdown">
+  <div class="dropdown-trigger">
+    <ng-content select="[trigger]" />
+  </div>
+  <ul class="dropdown-content">
+    <ng-content select="[accessoryTop]" />
+    @for (option of options; track option.title) {
+      <li><ng-container *ngTemplateOutlet="item || listItem" /></li>
+    }
+    <ng-content select="[accessoryBottom]" />
+  </ul>
+</div>
