@@ -1,4 +1,8 @@
-<ng-template #listItem> 321312 </ng-template>
+<ng-template #listItem let-option>
+  <app-dropdown-option>
+    {{ option.title }}
+  </app-dropdown-option>
+</ng-template>
 <div class="dropdown">
   <div class="dropdown-trigger">
     <ng-content select="[trigger]" />
@@ -6,7 +10,7 @@
   <ul class="dropdown-content">
     <ng-content select="[accessoryTop]" />
     @for (option of options; track option.title) {
-      <li><ng-container *ngTemplateOutlet="item || listItem" /></li>
+      <li><ng-container *ngTemplateOutlet="item || listItem; context: {$implicit: option}" /></li>
     }
     <ng-content select="[accessoryBottom]" />
   </ul>

@@ -1,8 +1,12 @@
 @import 'variables';
 
-.dropdown {position: relative;
-  &-checkbox:checked {
-    .dropdown-content {display: block;}
+.dropdown {position: relative; z-index: 1000;
+  &-trigger {
+    &:hover {
+      ~ .dropdown-content {display: block;}
+    }
   }
-  &-content {display: none;}
+  &-content {position: absolute; top: 100%; min-width: 100%; display: none;
+    &:hover {display: block;}
+  }
 }
