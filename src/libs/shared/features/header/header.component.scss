@@ -56,7 +56,7 @@ $upcoming-events-height: 88px;
         }
       }
     }
-    &-secondary {margin-left: auto;}
+    &-secondary {height: $header-height; margin-left: auto;}
   }
 
   @media screen and (max-width: $breakpoint-small-desktop) {height: calc($header-mobile-height + $upcoming-events-height);

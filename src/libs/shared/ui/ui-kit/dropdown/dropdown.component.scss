@@ -1,8 +1,15 @@
 @import 'variables';
 
-.dropdown {position: relative;
-  &-checkbox:checked {
-    .dropdown-content {display: block;}
+.dropdown {position: relative; z-index: 1000;
+  &-trigger {
+    &:hover {
+      ~ .dropdown-content {visibility: visible; opacity: 1; transform: translateX(30px) rotateX(0deg);}
+    }
   }
-  &-content {display: none;}
+  &-content {position: absolute; top: 100%; min-width: 240px; transform-origin: 0 0; transition: transform .3s, opacity .3s;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .08); visibility: hidden; left: auto; right: 0; opacity: 0;
+    transform: translateX(30px) rotateX(-75deg); transform-style: preserve-3d;
+
+    &:hover {visibility: visible; opacity: 1; transform: translateX(30px) rotateX(0deg);}
+  }
 }

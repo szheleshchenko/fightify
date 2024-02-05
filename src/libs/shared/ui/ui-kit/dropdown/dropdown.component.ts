@@ -1,11 +1,11 @@
 import {NgTemplateOutlet} from '@angular/common';
 import {Component, ElementRef, Input, TemplateRef} from '@angular/core';
-import {DropdownOption} from '../dropdown-option/models';
+import {DropdownOption, DropdownOptionComponent} from '@libs/shared/ui/ui-kit/dropdown-option';
 
 @Component({
   selector: 'app-dropdown',
   standalone: true,
-  imports: [NgTemplateOutlet],
+  imports: [NgTemplateOutlet, DropdownOptionComponent],
   templateUrl: './dropdown.component.html',
   styleUrl: './dropdown.component.scss',
 })

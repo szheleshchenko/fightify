@@ -1,5 +1,7 @@
 <ng-container>
-  <app-dropdown>
-    <div class="222">231231</div>
+  <app-dropdown [options]="links">
+    <a routerLink="/account" class="profile" trigger>
+      <app-avatar src="/assets/logo-5.png" name="Admin" />
+    </a>
   </app-dropdown>
 </ng-container>
