@@ -10,7 +10,9 @@
   <ul class="dropdown-content">
     <ng-content select="[accessoryTop]" />
     @for (option of options; track option.title) {
-      <li><ng-container *ngTemplateOutlet="item || listItem; context: {$implicit: option}" /></li>
+      <li>
+        <ng-container *ngTemplateOutlet="item || listItem; context: {$implicit: option}" />
+      </li>
     }
     <ng-content select="[accessoryBottom]" />
   </ul>

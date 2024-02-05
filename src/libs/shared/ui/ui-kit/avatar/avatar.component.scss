@@ -1,0 +1,5 @@
+@import 'variables';
+
+.avatar {position: relative; border-radius: 50%; aspect-ratio: 1;
+  &-medium {width: 28px;}
+}
