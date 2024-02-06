@@ -1,5 +1,4 @@
-export interface DropdownOption<T = string> {
-  title: string;
-  value?: T;
+export interface DropdownOption {
+  translationKey: string;
   link?: string;
 }
