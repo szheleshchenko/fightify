@@ -10,6 +10,10 @@ export const routes: Routes = [
         path: 'account',
         loadChildren: () => import('./account/account.routes').then((module) => module.routes),
       },
+      {
+        path: 'logout',
+        loadChildren: () => import('./logout/logout.routes').then((module) => module.routes),
+      },
     ],
   },
 ];

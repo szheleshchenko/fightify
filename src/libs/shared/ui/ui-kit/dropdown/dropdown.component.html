@@ -1,6 +1,8 @@
 <ng-template #listItem let-option>
-  <app-dropdown-option>
-    {{ option.title }}
+  <app-dropdown-option *transloco="let t">
+    <a [routerLink]="option.link" class="dropdown-link">
+      {{ t(option.translationKey) }}
+    </a>
   </app-dropdown-option>
 </ng-template>
 <div class="dropdown">
@@ -9,7 +11,7 @@
   </div>
   <ul class="dropdown-content">
     <ng-content select="[accessoryTop]" />
-    @for (option of options; track option.title) {
+    @for (option of options; track option.translationKey) {
       <li>
         <ng-container *ngTemplateOutlet="item || listItem; context: {$implicit: option}" />
       </li>

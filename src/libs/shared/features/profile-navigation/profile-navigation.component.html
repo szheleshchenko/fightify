@@ -1,7 +1,13 @@
-<ng-container>
-  <app-dropdown [options]="links">
-    <a routerLink="/account" class="profile" trigger>
-      <app-avatar src="/assets/logo-5.png" name="Admin" />
+<app-dropdown *transloco="let t" [options]="links">
+  <a routerLink="/account" class="profile" trigger>
+    <app-avatar src="/assets/logo-5.png" name="Admin" />
+    <span class="material-symbols-outlined profile-icon"> expand_more </span>
+  </a>
+  <app-dropdown-option accessoryTop>
+    <a routerLink="/account" class="profile-accessory">
+      <span class="profile-greeting">{{ t(getTranslationKey('TEXT_HELLO')) }}</span>
+      <app-avatar src="/assets/logo-5.png" name="Admin" size="small" class="profile-avatar" />
+      <span class="profile-name">Subcomandante</span>
     </a>
-  </app-dropdown>
-</ng-container>
+  </app-dropdown-option>
+</app-dropdown>

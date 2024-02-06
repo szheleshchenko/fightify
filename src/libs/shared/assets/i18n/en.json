@@ -16,6 +16,13 @@
     },
     "HEADER": {
       "TEXT_ENTER_YOUR_SEARCH_HERE": "Enter your search here"
+    },
+    "PROFILE_NAVIGATION": {
+      "TEXT_ACCOUNT_SETTINGS": "Account settings",
+      "TEXT_BETS_HISTORY": "Bets history",
+      "TEXT_COMMENTS_HISTORY": "Comments history",
+      "TEXT_LOGOUT": "Logout",
+      "TEXT_HELLO": "Hello!"
     }
   }
 }
