@@ -1,16 +1,17 @@
 import {Component} from '@angular/core';
 import {NewsDetailsComponent} from '@libs/news/ui/news-details';
+import {NewsStatisticsComponent} from '@libs/news/ui/news-statistics';
 import {News} from '@libs/shared/data-access/api/news';
 import {ContentCardComponent} from '@libs/shared/ui/ui-kit/content-card';
 
 @Component({
-  selector: 'app-news-article-view',
+  selector: 'app-news-article',
   standalone: true,
-  imports: [ContentCardComponent, NewsDetailsComponent],
-  templateUrl: './news-article-view.component.html',
-  styleUrl: './news-article-view.component.scss',
+  imports: [ContentCardComponent, NewsDetailsComponent, NewsStatisticsComponent],
+  templateUrl: './news-article.component.html',
+  styleUrl: './news-article.component.scss',
 })
-export class NewsArticleViewComponent {
+export class NewsArticleComponent {
   public news: News = {
     category: 'new fight',
     title: 'Francis Ngannou vs. Anthony Joshua booked for Saudi Arabia showdown',
