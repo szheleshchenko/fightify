@@ -1,11 +1,11 @@
 import {Component} from '@angular/core';
-import {NewsArticleViewComponent} from '@libs/news/features/news-article-view';
+import {NewsArticleComponent} from '@libs/news/features/news-article';
 import {PageComponent} from '@libs/shared/features/page';
 
 @Component({
-  selector: 'app-news-article',
+  selector: 'app-news-article-page',
   standalone: true,
-  imports: [PageComponent, NewsArticleViewComponent],
+  imports: [PageComponent, NewsArticleComponent],
   templateUrl: './news-article.component.html',
   styleUrl: './news-article.component.scss',
 })
