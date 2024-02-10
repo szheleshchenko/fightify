@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {AvatarSize} from './types';
+import {AvatarShape, AvatarSize} from './types';
 
 @Component({
   selector: 'app-avatar',
@@ -11,5 +11,6 @@ import {AvatarSize} from './types';
 export class AvatarComponent {
   @Input() src!: string;
   @Input() name?: string;
-  @Input() size: AvatarSize = 'medium';
+  @Input() size?: AvatarSize = 'medium';
+  @Input() shape?: AvatarShape = 'round';
 }
