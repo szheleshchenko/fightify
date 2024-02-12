@@ -1,9 +1,11 @@
 <ng-template #listItem let-option>
-  <app-dropdown-option *transloco="let t">
-    <a [routerLink]="option.link" class="dropdown-link">
-      {{ t(option.translationKey) }}
-    </a>
-  </app-dropdown-option>
+  <a [routerLink]="option.link">
+    <app-dropdown-option *transloco="let t">
+      <span class="dropdown-link">
+        {{ t(option.translationKey) }}
+      </span>
+    </app-dropdown-option>
+  </a>
 </ng-template>
 <div class="dropdown">
   <div class="dropdown-trigger">
