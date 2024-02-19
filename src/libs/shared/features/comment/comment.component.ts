@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {AvatarComponent} from '@libs/shared/ui/ui-kit/avatar';
 
 @Component({
@@ -8,4 +8,6 @@ import {AvatarComponent} from '@libs/shared/ui/ui-kit/avatar';
   templateUrl: './comment.component.html',
   styleUrl: './comment.component.scss',
 })
-export class CommentComponent {}
+export class CommentComponent {
+  @Input() hasBorder: boolean = true;
+}
