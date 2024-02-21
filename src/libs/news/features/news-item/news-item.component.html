@@ -1,13 +1,10 @@
 <div class="news">
   <div class="news-image">
-    <img
-      src="https://alchemists.dan-fisher.dev/hockey/assets/images/hockey/samples/post-img-4-110x135.jpg"
-      alt="News image"
-    />
+    <img [src]="news.image" alt="News image" />
   </div>
-  <div>
+  <div class="news-content">
     <div class="news-details">
-      <app-news-details />
+      <app-news-details [news]="news" />
     </div>
     <h6 class="news-title">
       Alchemists Connor Starkson will go to the Blue Cross charity event on August 24th
