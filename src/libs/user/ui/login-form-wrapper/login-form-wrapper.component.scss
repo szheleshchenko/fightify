@@ -1,0 +1,9 @@
+@import 'variables';
+
+.wrapper {max-width: 478px; margin: 0 auto; background: $background-alternative-color;
+  &-header {display: flex; align-items: center; justify-content: center; min-height: 140px;
+    background-color: $background-basic-color;
+  }
+  &-heading, &-subheading {color: $text-alternative-color;}
+  &-content {padding: 24px;}
+}
