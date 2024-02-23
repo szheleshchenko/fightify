@@ -1,6 +1,16 @@
 <div class="text-field">
-  <input [placeholder]="placeholder" class="text-field-input" />
+  <input
+    [value]="value"
+    [placeholder]="placeholder"
+    (input)="changed($event)"
+    class="text-field-input"
+  />
   @if (label) {
-    <span class="text-field-label">{{ label }}</span>
+    <span class="text-field-label">
+      {{ label }}
+      @if (isRequired) {
+        <span class="text-field-required">*</span>
+      }
+    </span>
   }
 </div>

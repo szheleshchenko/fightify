@@ -1,0 +1,8 @@
+<app-login-form-wrapper heading="Login" subheading="We're Happy To See You Again">
+  <form [formGroup]="form" (ngSubmit)="submitted()" class="form">
+    <app-text-field formControlName="email" [isRequired]="true" label="Email" />
+    <app-text-field formControlName="password" [isRequired]="true" label="Password" />
+    <span>Forgot password? <a routerLink="/forgot-password">Click here</a></span>
+    <app-button size="large" class="form-button">Login now!</app-button>
+  </form>
+</app-login-form-wrapper>

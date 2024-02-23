@@ -1,0 +1,11 @@
+@import 'variables';
+
+.wrapper {max-width: 478px; margin: 0 auto; background: $background-alternative-color;
+  &-header {display: flex; align-items: center; justify-content: center; min-height: 140px;
+    background-color: $background-basic-color; text-align: center;
+  }
+  &-heading, &-subheading {text-transform: uppercase; color: $text-alternative-color;}
+  &-heading {margin: 0 0 12px 0; font-size: $font-size-heading-3; line-height: 36px;}
+  &-subheading {margin: 0; font-size: $font-size-label; line-height: 12px;}
+  &-content {padding: 24px;}
+}

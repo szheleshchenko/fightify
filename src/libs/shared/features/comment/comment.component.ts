@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {AvatarComponent} from '@libs/shared/ui/ui-kit/avatar';
+import {AvatarComponent} from '@libs/shared/ui/ui-kit';
 
 @Component({
   selector: 'app-comment',
