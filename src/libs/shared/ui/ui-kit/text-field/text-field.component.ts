@@ -1,5 +1,6 @@
 import {Component, Input, forwardRef} from '@angular/core';
-import {DefaultValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {NG_VALUE_ACCESSOR} from '@angular/forms';
+import {BaseFormControlDirective} from '@libs/shared/utils/form';
 
 @Component({
   selector: 'app-text-field',
@@ -15,19 +16,11 @@ import {DefaultValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
     },
   ],
 })
-export class TextFieldComponent extends DefaultValueAccessor {
+export class TextFieldComponent extends BaseFormControlDirective<string> {
   @Input() label?: string;
-  @Input() placeholder?: string;
   @Input() isRequired?: boolean;
 
-  public value?: string;
-
-  public override writeValue(value?: string): void {
-    this.value = value;
-  }
-
   public changed(event: Event): void {
-    this.onChange((event.target as HTMLInputElement).value);
-    this.onTouched();
+    this.valueChanged((event.target as HTMLInputElement).value);
   }
 }

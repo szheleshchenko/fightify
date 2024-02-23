@@ -9,7 +9,7 @@ export type LoginFormFieldValues = {
 export class LoginForm extends FormGroup<InferFormSchema<LoginFormFieldValues>> {
   constructor() {
     super({
-      email: new FormControl<string>('', [Validators.required]),
+      email: new FormControl<string>('', [Validators.required, Validators.email]),
       password: new FormControl<string>('', [Validators.required]),
     });
   }

@@ -21,7 +21,7 @@ import {LoginForm} from './forms';
 export class LoginFormComponent {
   public form = new LoginForm();
 
-  constructor() {
-    this.form.valueChanges.subscribe((values) => (this.form.errors, values));
+  public submitted(): void {
+    return;
   }
 }
