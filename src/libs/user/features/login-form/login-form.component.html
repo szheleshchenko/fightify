@@ -1,2 +1,8 @@
-<app-login-form-wrapper heading="Login" subheading="WE'RE HAPPY TO SEE YOU AGAIN">
+<app-login-form-wrapper heading="Login" subheading="We're Happy To See You Again">
+  <form [formGroup]="form" class="form">
+    <app-text-field formControlName="email" label="Email" [isRequired]="true" />
+    <app-text-field formControlName="password" label="Password" [isRequired]="true" />
+    <span>Forgot password? <a routerLink="/forgot-password">Click here</a></span>
+    <app-button size="large" class="form-button">Login now!</app-button>
+  </form>
 </app-login-form-wrapper>
