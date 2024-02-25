@@ -1,0 +1,8 @@
+<app-login-form-wrapper heading="Register" subheading="Register To Enjoy All The Benefits">
+  <form [formGroup]="form" (ngSubmit)="submitted()" class="form">
+    <app-text-field formControlName="email" />
+    <app-text-field formControlName="password" />
+    <app-text-field formControlName="confirmPassword" />
+    <app-button class="form-button">Create account</app-button>
+  </form>
+</app-login-form-wrapper>

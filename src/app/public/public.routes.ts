@@ -45,6 +45,11 @@ export const routes: Routes = [
         loadChildren: () => import('./register/register.routes').then((module) => module.routes),
       },
       {
+        path: 'forgot-password',
+        loadChildren: () =>
+          import('./forgot-password/forgot-password.routes').then((module) => module.routes),
+      },
+      {
         path: 'rankings',
         loadChildren: () => import('./rankings/rankings.routes').then((module) => module.routes),
       },
