@@ -33,3 +33,12 @@ img {position: absolute; width: 100%; height: 100%; left: 0; top: 0; object-fit:
     }
   }
 }
+
+.dropdown-item {position: relative; padding: 12px 24px; background-color: $text-alternative-color; cursor: pointer; overflow: hidden;
+  white-space: nowrap; font-size: $font-size-label; font-weight: 700; color: $text-hint-color; text-transform: uppercase;
+  transition: color 0.2s ease; border-bottom: 1px solid $grey;
+
+  &:hover {background-color: $background-alternative-color; color: $text-basic-color;
+    &::before {content: ''; position: absolute; width: 4px; height: 100%; top: 0; left: 0; background-color: $gold;}
+  }
+}

@@ -1,13 +1,13 @@
 import {NgTemplateOutlet} from '@angular/common';
 import {Component, ElementRef, Input, TemplateRef} from '@angular/core';
 import {RouterLink} from '@angular/router';
-import {DropdownOption, DropdownOptionComponent} from '@libs/shared/ui/ui-kit';
 import {TranslocoDirective} from '@ngneat/transloco';
+import {DropdownOption} from './models';
 
 @Component({
   selector: 'app-dropdown',
   standalone: true,
-  imports: [NgTemplateOutlet, DropdownOptionComponent, TranslocoDirective, RouterLink],
+  imports: [NgTemplateOutlet, TranslocoDirective, RouterLink],
   templateUrl: './dropdown.component.html',
   styleUrl: './dropdown.component.scss',
 })

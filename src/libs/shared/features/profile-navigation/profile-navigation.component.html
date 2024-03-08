@@ -4,12 +4,12 @@
     <span class="material-symbols-outlined profile-icon"> expand_more </span>
   </a>
   <a routerLink="/account" accessoryTop>
-    <app-dropdown-option>
+    <div class="dropdown-item">
       <div class="profile-accessory">
         <span class="profile-greeting">{{ t(getTranslationKey('TEXT_HELLO')) }}</span>
         <app-avatar src="/assets/logo-5.png" name="Admin" size="small" class="profile-avatar" />
         <span class="profile-name">Subcomandante</span>
       </div>
-    </app-dropdown-option>
+    </div>
   </a>
 </app-dropdown>
