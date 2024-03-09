@@ -1,23 +1,12 @@
 import {Component} from '@angular/core';
 import {RouterLink} from '@angular/router';
-import {
-  AvatarComponent,
-  DropdownComponent,
-  DropdownOption,
-  DropdownOptionComponent,
-} from '@libs/shared/ui/ui-kit';
+import {AvatarComponent, DropdownComponent, DropdownOption} from '@libs/shared/ui/ui-kit';
 import {TranslocoDirective} from '@ngneat/transloco';
 
 @Component({
   selector: 'app-profile-navigation',
   standalone: true,
-  imports: [
-    DropdownComponent,
-    DropdownOptionComponent,
-    AvatarComponent,
-    RouterLink,
-    TranslocoDirective,
-  ],
+  imports: [DropdownComponent, AvatarComponent, RouterLink, TranslocoDirective],
   templateUrl: './profile-navigation.component.html',
   styleUrl: './profile-navigation.component.scss',
 })
