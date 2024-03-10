@@ -1,0 +1,13 @@
+@import 'variables';
+
+.select {position: relative;
+  &-trigger {position: relative; display: block; padding: 12px 36px 2px 24px; cursor: pointer;}
+  &-trigger, &-options {background-color: $background-alternative-color; border: 1px solid $grey;}
+  &-label {position: absolute; left: 24px; top: 8px; font-size: $font-size-label-3; color: $text-control-color;}
+  &-value, &-option {font-size: $font-size-caption-2; font-weight: bold; line-height: 28px;}
+  &-options {position: absolute; display: none; width: 100%; padding: 12px 0; border-top: none; z-index: 100; box-sizing: border-box;}
+  &-option {padding: 6px 24px; color: $text-control-color; cursor: pointer;
+    &-selected, &:hover {color: $text-basic-color;}
+  }
+  &-checkbox:checked ~ &-options {display: block;}
+}
