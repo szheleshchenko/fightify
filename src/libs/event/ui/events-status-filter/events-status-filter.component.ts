@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {FormControl, ReactiveFormsModule} from '@angular/forms';
 import {EventStatus} from '@libs/shared/data-access/api/event';
-import {SelectComponent, SelectOption} from '@libs/shared/ui/ui-kit/select';
+import {SelectComponent, SelectOption} from '@libs/shared/ui/ui-kit';
 
 @Component({
   selector: 'app-events-status-filter',
