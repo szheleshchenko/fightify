@@ -1,3 +1,6 @@
 @import 'variables';
 
-.filters {padding: 20px 0; background-color: $background-alternative-color;}
+.filters {padding: 20px 0; background-color: $background-alternative-color;
+  .row {flex: 1;}
+  &-container {display: flex; gap: 16px;}
+}

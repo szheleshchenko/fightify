@@ -1,0 +1,15 @@
+@import 'variables';
+
+.row {display: flex; flex-wrap: wrap; margin: 0 -8px; margin-bottom: -16px;
+  .col {padding: 0 8px; box-sizing: border-box; margin-bottom: 16px;
+    &-25 {width: 25%;}
+    &-33 {width: 33.33%;}
+    &-50 {width: 50%;}
+    &-66 {width: 66.66%;}
+    &-100 {width: 100%;}
+
+    @media screen and (max-width: $breakpoint-small-desktop) {
+      &-mobile-100 {width: 100%;}
+    }
+  }
+}
