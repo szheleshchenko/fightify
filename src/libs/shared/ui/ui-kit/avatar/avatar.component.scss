@@ -1,6 +1,7 @@
 @import 'variables';
 
 .avatar {position: relative; aspect-ratio: 1; overflow: hidden;
+  &-large {width: 120px;}
   &-big {width: 60px;}
   &-medium {width: 28px;}
   &-small {width: 18px;}
