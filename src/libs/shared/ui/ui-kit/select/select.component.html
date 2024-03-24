@@ -1,6 +1,6 @@
 <div class="select" #select>
-  <input id="trigger" type="checkbox" class="select-checkbox" hidden #input />
-  <label for="trigger" class="select-trigger" tabindex="0" (keyup.enter)="input.click()">
+  <input [id]="label" type="checkbox" class="select-checkbox" hidden #input />
+  <label [for]="label" class="select-trigger" tabindex="0" (keyup.enter)="input.click()">
     <span class="select-label">{{ label }}</span>
     <div class="select-value">{{ value?.title }}</div>
   </label>
