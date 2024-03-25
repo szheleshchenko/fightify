@@ -1,11 +1,12 @@
 import {Component} from '@angular/core';
+import {FightersFilterComponent} from '@libs/fighter/features/fighters-filter';
 import {Breadcrumb, PageComponent} from '@libs/shared/features/page';
 import {ForgotPasswordFormComponent} from '@libs/user/features/forgot-password-form';
 
 @Component({
   selector: 'app-forgot-password',
   standalone: true,
-  imports: [PageComponent, ForgotPasswordFormComponent],
+  imports: [PageComponent, ForgotPasswordFormComponent, FightersFilterComponent],
   templateUrl: './forgot-password.component.html',
   styleUrl: './forgot-password.component.scss',
 })
