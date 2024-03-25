@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {EventsContentFilterComponent} from '@libs/event/ui/events-content-filter';
-import {EventsOrderFilterComponent} from '@libs/event/ui/events-order-filter';
 import {EventsStatusFilterComponent} from '@libs/event/ui/events-status-filter';
+import {OrderFilterComponent} from '@libs/shared/ui/order-filter';
 import {ButtonComponent} from '@libs/shared/ui/ui-kit';
 
 @Component({
@@ -10,7 +10,7 @@ import {ButtonComponent} from '@libs/shared/ui/ui-kit';
   imports: [
     EventsStatusFilterComponent,
     EventsContentFilterComponent,
-    EventsOrderFilterComponent,
+    OrderFilterComponent,
     ButtonComponent,
   ],
   templateUrl: './events-filter.component.html',

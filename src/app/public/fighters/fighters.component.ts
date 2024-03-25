@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {FightersFilterComponent} from '@libs/fighter/features/fighters-filter';
 import {FightersListComponent} from '@libs/fighter/features/fighters-list';
 import {Breadcrumb, PageComponent} from '@libs/shared/features/page';
 import {TranslocoDirective} from '@ngneat/transloco';
@@ -6,7 +7,7 @@ import {TranslocoDirective} from '@ngneat/transloco';
 @Component({
   selector: 'app-fighters',
   standalone: true,
-  imports: [PageComponent, TranslocoDirective, FightersListComponent],
+  imports: [PageComponent, TranslocoDirective, FightersListComponent, FightersFilterComponent],
   templateUrl: './fighters.component.html',
   styleUrl: './fighters.component.scss',
 })
