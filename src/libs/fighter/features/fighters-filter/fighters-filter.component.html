@@ -1,12 +1,5 @@
-<div class="filters">
-  <div class="container">
-    <div class="filters-container">
-      <div class="row">
-        <app-fighters-activity-filter class="col col-33 col-mobile-100" />
-        <app-fighters-weight-filter class="col col-33 col-mobile-100" />
-        <app-order-filter class="col col-33 col-mobile-100" />
-      </div>
-      <app-button class="col col-25 col-mobile-100">Filter fighters</app-button>
-    </div>
-  </div>
-</div>
+<app-filter-wrapper buttonText="Filter fighters">
+  <app-fighters-activity-filter class="col col-33 col-mobile-100" />
+  <app-fighters-weight-filter class="col col-33 col-mobile-100" />
+  <app-order-filter class="col col-33 col-mobile-100" />
+</app-filter-wrapper>
