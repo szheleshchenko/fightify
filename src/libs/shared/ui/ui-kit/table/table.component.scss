@@ -1,0 +1,7 @@
+@import 'variables';
+
+.table {width: 100%; max-width: 100%; color: $text-basic-color; box-sizing: border-box;
+  thead {
+    tr {border-bottom: 1px solid $grey;}
+  }
+}
