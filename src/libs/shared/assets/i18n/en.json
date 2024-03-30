@@ -12,7 +12,8 @@
       "TEXT_FIGHTERS": "Fighters",
       "TEXT_RANKINGS": "Rankings",
       "TEXT_LEADERBOARD": "Leaderboard",
-      "TEXT_FORUM": "Forum"
+      "TEXT_FORUM": "Forum",
+      "TEXT_FIGHTER_OVERVIEW": "Fighter Overview"
     },
     "HEADER": {
       "TEXT_ENTER_YOUR_SEARCH_HERE": "Enter your search here"
