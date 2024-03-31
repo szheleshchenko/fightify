@@ -1,7 +1,12 @@
 @import 'variables';
 
-.table {width: 100%; max-width: 100%; color: $text-basic-color; box-sizing: border-box;
-  thead {
-    tr {border-bottom: 1px solid $grey;}
+::ng-deep .table {width: 100%; max-width: 100%; font-size: $font-size-caption-2; font-weight: bold;
+  color: $text-basic-color; box-sizing: border-box; border-collapse: collapse;
+
+  thead, tbody {
+    tr {
+      th, td {padding: 14px 10px; border-bottom: 1px solid $grey; text-transform: uppercase;}
+      th {background-color: $text-alternative-color;}
+    }
   }
 }

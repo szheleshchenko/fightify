@@ -1,35 +1,11 @@
 <div class="row">
   <div class="col col-66">
-    <app-content-card heading="Last fights">
-      <app-table>
-        <ng-container #thead>
-          <tr>
-            <th>Date</th>
-            <th>Opponent</th>
-            <th>Result</th>
-            <th>Round</th>
-            <th>Time</th>
-          </tr>
-        </ng-container>
-        <ng-container #tbody>
-          <tr>
-            <td>Date</td>
-            <td>Opponent</td>
-            <td>Result</td>
-            <td>Round</td>
-            <td>Time</td>
-          </tr>
-          <tr>
-            <td>Date</td>
-            <td>Opponent</td>
-            <td>Result</td>
-            <td>Round</td>
-            <td>Time</td>
-          </tr>
-        </ng-container>
-      </app-table>
-    </app-content-card>
-    <app-content-card heading="Last news" />
+    <div class="row">
+      <app-content-card heading="Last fights" class="col col-100">
+        <app-fighter-last-fights />
+      </app-content-card>
+      <app-content-card heading="Last news" class="col col-100" />
+    </div>
   </div>
   <div class="col col-33"></div>
 </div>

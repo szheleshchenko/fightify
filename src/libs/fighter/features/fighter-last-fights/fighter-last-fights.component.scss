@@ -1,0 +1,6 @@
+@import 'variables';
+
+.fights {
+  &-date {padding-left: 24px; text-align: left;}
+  &-vs, &-result {text-align: left;}
+}
