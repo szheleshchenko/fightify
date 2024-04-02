@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
+import {OpponentDetailsComponent} from '@libs/shared/ui/opponent-details';
 import {TableComponent} from '@libs/shared/ui/ui-kit';
-import {OpponentDetailsComponent} from './components/opponent-details';
 
 @Component({
   selector: 'app-fighter-last-fights',
