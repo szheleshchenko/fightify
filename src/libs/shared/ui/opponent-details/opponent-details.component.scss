@@ -1,12 +1,11 @@
 @import 'variables';
 
 .opponent {display: flex; align-items: center; text-transform: none;
-  &-vs {margin-right: 8px;}
-  &-image {position: relative; width: 35px; height: 30px; margin: 0 8px;
+  &-image {position: relative; width: 26px; height: 26px; margin: 0 8px;
     img {object-fit: cover;}
   }
   &-details {
     &-nickname {font-size: $font-size-label-2; color: $text-hint-color; font-weight: 400;}
-    &-name {margin: 0; font-size: $font-size-caption;}
+    &-name {margin: 0; font-size: $font-size-caption-2;}
   }
 }

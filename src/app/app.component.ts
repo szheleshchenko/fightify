@@ -1,6 +1,7 @@
 import {isPlatformBrowser} from '@angular/common';
 import {Component, PLATFORM_ID, inject} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
+import {UpcomingEventsComponent} from '@libs/event/features/upcoming-events';
 import {FooterComponent} from '@libs/shared/features/footer';
 import {HeaderComponent, HeaderLink} from '@libs/shared/features/header';
 import {ProgressBarComponent} from '@libs/shared/features/progress-bar';
@@ -8,7 +9,13 @@ import {ProgressBarComponent} from '@libs/shared/features/progress-bar';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, ProgressBarComponent],
+  imports: [
+    RouterOutlet,
+    HeaderComponent,
+    FooterComponent,
+    ProgressBarComponent,
+    UpcomingEventsComponent,
+  ],
   templateUrl: 'app.html',
   styleUrls: ['app.scss'],
 })

@@ -1,0 +1,10 @@
+@import 'variables';
+
+.event {padding: 12px 26px; background-color: $background-alternative-color;
+  &-details {display: flex; align-items: center;
+    &-item {margin-right: 24px;}
+  }
+  &-divider {margin: 0 16px; font-size: $font-size-label; font-weight: 700; line-height: 10px;}
+  &-label {font-size: $font-size-label-2; color: $text-hint-color;}
+  &-value {font-size: $font-size-label;}
+}

@@ -3,10 +3,8 @@
 $header-height: 62px;
 $header-mobile-height: 100px;
 $header-top-height: 92px;
-$upcoming-events-height: 88px;
 
-.header {height: calc($header-height + $header-top-height + $upcoming-events-height); background-color: $background-alternative-color;
-  &-upcoming-events {height: $upcoming-events-height;}
+.header {height: calc($header-height + $header-top-height); background-color: $background-alternative-color;
   &-overlay {display: none; position: fixed; top: 0; right: 0; bottom: 0; left: 0; transition: visibility 0s, opacity .4s linear;
     visibility: hidden; opacity: 0; z-index: 102;
   }
@@ -59,7 +57,7 @@ $upcoming-events-height: 88px;
     &-secondary {height: $header-height; margin-left: auto;}
   }
 
-  @media screen and (max-width: $breakpoint-small-desktop) {height: calc($header-mobile-height + $upcoming-events-height);
+  @media screen and (max-width: $breakpoint-small-desktop) {height: calc($header-mobile-height);
     &-logo {top: 6px; left: 50%; transform: translateX(-50%); width: 114px; height: 114px; z-index: 10;
       &-mobile {display: block;}
     }
