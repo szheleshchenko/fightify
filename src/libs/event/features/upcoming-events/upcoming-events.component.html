@@ -7,7 +7,8 @@
       class="events-filter-select"
     />
   </div>
-  <div class="events-list">
+  <app-upcoming-events-controls (backClicked)="slideChanged(1)" (nextClicked)="slideChanged(-1)" />
+  <div [ngStyle]="{transform: 'translateX(' + offset() + 'px)'}" class="events-list">
     <app-upcoming-event />
     <app-upcoming-event />
     <app-upcoming-event />
