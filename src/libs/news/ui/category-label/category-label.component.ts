@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {CategoryLabelTheme} from './types';
 
 @Component({
@@ -7,6 +7,7 @@ import {CategoryLabelTheme} from './types';
   imports: [],
   templateUrl: './category-label.component.html',
   styleUrl: './category-label.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CategoryLabelComponent {
   @Input() theme: CategoryLabelTheme = 'purple';

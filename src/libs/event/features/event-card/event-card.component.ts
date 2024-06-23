@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {RouterLink} from '@angular/router';
 import {EventCountdownComponent} from '@libs/event/ui/event-countdown';
 import {EventFighterDetailsComponent} from '@libs/event/ui/event-fighter-details';
@@ -10,6 +10,7 @@ import {Event} from '@libs/shared/data-access/api/event';
   imports: [RouterLink, EventFighterDetailsComponent, EventCountdownComponent],
   templateUrl: './event-card.component.html',
   styleUrl: './event-card.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EventCardComponent {
   @Input() event!: Event;

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {Breadcrumb, PageComponent} from '@libs/shared/features/page';
 import {LoginFormComponent} from '@libs/user/features/login-form';
 import {TranslocoDirective} from '@ngneat/transloco';
@@ -9,6 +9,7 @@ import {TranslocoDirective} from '@ngneat/transloco';
   imports: [PageComponent, TranslocoDirective, LoginFormComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginPageComponent {
   public breadcrumbs: Array<Breadcrumb> = [

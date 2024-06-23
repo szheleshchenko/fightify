@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {OpponentDetailsComponent} from '@libs/shared/ui/opponent-details';
 import {TableComponent} from '@libs/shared/ui/ui-kit';
 
@@ -8,5 +8,6 @@ import {TableComponent} from '@libs/shared/ui/ui-kit';
   imports: [TableComponent, OpponentDetailsComponent],
   templateUrl: './fighter-last-fights.component.html',
   styleUrl: './fighter-last-fights.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FighterLastFightsComponent {}

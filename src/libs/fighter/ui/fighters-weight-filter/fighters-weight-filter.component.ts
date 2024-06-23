@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {FormControl, ReactiveFormsModule} from '@angular/forms';
 import {MaleWeight} from '@libs/shared/data-access/api/fighter';
 import {SelectComponent, SelectOption} from '@libs/shared/ui/ui-kit';
@@ -9,6 +9,7 @@ import {SelectComponent, SelectOption} from '@libs/shared/ui/ui-kit';
   imports: [SelectComponent, ReactiveFormsModule],
   templateUrl: './fighters-weight-filter.component.html',
   styleUrl: './fighters-weight-filter.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FightersWeightFilterComponent {
   public form = new FormControl<SelectOption<MaleWeight>>({title: 'All', value: 'all'});

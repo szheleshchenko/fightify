@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {OpponentDetailsComponent} from '@libs/shared/ui/opponent-details';
 
 @Component({
@@ -7,5 +7,6 @@ import {OpponentDetailsComponent} from '@libs/shared/ui/opponent-details';
   imports: [OpponentDetailsComponent],
   templateUrl: './upcoming-event.component.html',
   styleUrl: './upcoming-event.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UpcomingEventComponent {}

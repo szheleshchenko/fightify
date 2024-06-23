@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {EventCardComponent} from '@libs/event/features/event-card';
 import {FeaturedFighterComponent} from '@libs/fighter/features/featured-fighter';
 import {HomeNewsSectionComponent} from '@libs/news/features/home-news-section';
@@ -18,6 +18,7 @@ import {ContentCardComponent} from '@libs/shared/ui/ui-kit';
   ],
   templateUrl: './home-overview.component.html',
   styleUrl: './home-overview.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeOverviewComponent {
   public events: Array<Event> = [

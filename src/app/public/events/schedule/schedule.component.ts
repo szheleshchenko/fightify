@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 
 @Component({
   selector: 'app-schedule',
@@ -6,5 +6,6 @@ import {Component} from '@angular/core';
   imports: [],
   templateUrl: './schedule.component.html',
   styleUrl: './schedule.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SchedulePageComponent {}

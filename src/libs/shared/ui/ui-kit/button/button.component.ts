@@ -1,5 +1,5 @@
 import {NgClass} from '@angular/common';
-import {Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {ButtonSize, ButtonVariant} from './types';
 
 @Component({
@@ -8,6 +8,7 @@ import {ButtonSize, ButtonVariant} from './types';
   imports: [NgClass],
   templateUrl: 'button.component.html',
   styleUrl: 'button.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonComponent {
   @Input() variant: ButtonVariant = 'primary';

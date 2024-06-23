@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 
 @Component({
   selector: 'app-account',
@@ -6,5 +6,6 @@ import {Component} from '@angular/core';
   imports: [],
   templateUrl: './account.component.html',
   styleUrl: './account.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AccountPageComponent {}

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {Breadcrumb, PageComponent} from '@libs/shared/features/page';
 import {TranslocoDirective} from '@ngneat/transloco';
 
@@ -8,6 +8,7 @@ import {TranslocoDirective} from '@ngneat/transloco';
   imports: [PageComponent, TranslocoDirective],
   templateUrl: './leaderboard.component.html',
   styleUrl: './leaderboard.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LeaderboardPageComponent {
   public breadcrumbs: Array<Breadcrumb> = [

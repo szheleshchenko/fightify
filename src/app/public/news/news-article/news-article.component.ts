@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {NewsArticleComponent} from '@libs/news/features/news-article';
 import {PageComponent} from '@libs/shared/features/page';
 
@@ -8,5 +8,6 @@ import {PageComponent} from '@libs/shared/features/page';
   imports: [PageComponent, NewsArticleComponent],
   templateUrl: './news-article.component.html',
   styleUrl: './news-article.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NewsArticlePageComponent {}

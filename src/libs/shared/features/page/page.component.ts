@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {RouterLink} from '@angular/router';
 import {TranslocoDirective} from '@ngneat/transloco';
 import {Breadcrumb} from './types';
@@ -9,6 +9,7 @@ import {Breadcrumb} from './types';
   imports: [RouterLink, TranslocoDirective],
   templateUrl: './page.component.html',
   styleUrl: './page.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PageComponent {
   @Input() title!: string;

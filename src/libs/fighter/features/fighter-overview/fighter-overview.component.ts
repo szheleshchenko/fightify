@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {FighterLastFightsComponent} from '@libs/fighter/features/fighter-last-fights';
 import {ContentCardComponent} from '@libs/shared/ui/ui-kit';
 
@@ -8,5 +8,6 @@ import {ContentCardComponent} from '@libs/shared/ui/ui-kit';
   imports: [ContentCardComponent, FighterLastFightsComponent],
   templateUrl: './fighter-overview.component.html',
   styleUrl: './fighter-overview.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FighterOverviewComponent {}

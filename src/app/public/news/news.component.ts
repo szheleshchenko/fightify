@@ -1,5 +1,5 @@
 import {AsyncPipe} from '@angular/common';
-import {Component, inject} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {NewsOverviewComponent} from '@libs/news/features/news-overview';
 import {PaginationResponse} from '@libs/shared/data-access/api-client';
@@ -14,6 +14,7 @@ import {map} from 'rxjs';
   imports: [PageComponent, NewsOverviewComponent, TranslocoDirective, AsyncPipe],
   templateUrl: './news.component.html',
   styleUrl: './news.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NewsPageComponent {
   public news$ = inject(ActivatedRoute).data.pipe(

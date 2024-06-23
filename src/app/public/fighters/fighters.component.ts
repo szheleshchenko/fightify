@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {FightersFilterComponent} from '@libs/fighter/features/fighters-filter';
 import {FightersListComponent} from '@libs/fighter/features/fighters-list';
 import {Breadcrumb, PageComponent} from '@libs/shared/features/page';
@@ -10,6 +10,7 @@ import {TranslocoDirective} from '@ngneat/transloco';
   imports: [PageComponent, TranslocoDirective, FightersListComponent, FightersFilterComponent],
   templateUrl: './fighters.component.html',
   styleUrl: './fighters.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FightersPageComponent {
   public breadcrumbs: Array<Breadcrumb> = [

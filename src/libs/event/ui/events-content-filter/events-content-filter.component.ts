@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {FormControl, ReactiveFormsModule} from '@angular/forms';
 import {SelectComponent, SelectOption} from '@libs/shared/ui/ui-kit';
 import {EventContentFilter} from './types';
-import {FormControl, ReactiveFormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-events-content-filter',
@@ -9,6 +9,7 @@ import {FormControl, ReactiveFormsModule} from '@angular/forms';
   imports: [SelectComponent, ReactiveFormsModule],
   templateUrl: './events-content-filter.component.html',
   styleUrl: './events-content-filter.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EventsContentFilterComponent {
   public form = new FormControl<SelectOption<EventContentFilter>>({

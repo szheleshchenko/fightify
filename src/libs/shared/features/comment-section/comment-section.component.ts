@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {Comment} from '@libs/shared/data-access/api/comment';
 import {CommentComponent} from '@libs/shared/features/comment';
 
@@ -8,6 +8,7 @@ import {CommentComponent} from '@libs/shared/features/comment';
   imports: [CommentComponent],
   templateUrl: './comment-section.component.html',
   styleUrl: './comment-section.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CommentSectionComponent {
   public comments: Array<Comment> = [

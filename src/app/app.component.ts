@@ -1,5 +1,5 @@
 import {isPlatformBrowser} from '@angular/common';
-import {Component, PLATFORM_ID, inject} from '@angular/core';
+import {ChangeDetectionStrategy, Component, PLATFORM_ID, inject} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
 import {UpcomingEventsComponent} from '@libs/event/features/upcoming-events';
 import {FooterComponent} from '@libs/shared/features/footer';
@@ -18,6 +18,7 @@ import {ProgressBarComponent} from '@libs/shared/features/progress-bar';
   ],
   templateUrl: 'app.html',
   styleUrls: ['app.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   public isBrowser = isPlatformBrowser(inject(PLATFORM_ID));

@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {RouterLink} from '@angular/router';
 import {CategoryLabelComponent} from '@libs/news/ui/category-label';
 import {NewsDetailsComponent} from '@libs/news/ui/news-details';
@@ -18,6 +18,7 @@ import {ContentCardComponent} from '@libs/shared/ui/ui-kit';
   ],
   templateUrl: './news-card.component.html',
   styleUrl: './news-card.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NewsCardComponent {
   @Input() news!: News;

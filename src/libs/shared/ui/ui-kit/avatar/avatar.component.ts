@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {AvatarShape, AvatarSize} from './types';
 
 @Component({
@@ -7,6 +7,7 @@ import {AvatarShape, AvatarSize} from './types';
   imports: [],
   templateUrl: './avatar.component.html',
   styleUrl: './avatar.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AvatarComponent {
   @Input() src!: string;

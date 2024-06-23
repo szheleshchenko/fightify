@@ -1,5 +1,9 @@
 import {provideHttpClient, withFetch} from '@angular/common/http';
-import {ApplicationConfig, isDevMode} from '@angular/core';
+import {
+  ApplicationConfig,
+  isDevMode,
+  provideExperimentalZonelessChangeDetection,
+} from '@angular/core';
 import {provideClientHydration} from '@angular/platform-browser';
 import {provideRouter, withInMemoryScrolling, withViewTransitions} from '@angular/router';
 import {provideTransloco} from '@ngneat/transloco';
@@ -8,6 +12,7 @@ import {I18nLoader} from './i18n-loader';
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideExperimentalZonelessChangeDetection(),
     provideRouter(
       routes,
       withViewTransitions(),

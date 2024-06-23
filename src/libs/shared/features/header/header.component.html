@@ -1,51 +1,17 @@
-<header *transloco="let t" class="header">
-  <input
-    [formControl]="inputControl"
-    id="toggle"
-    type="checkbox"
-    class="header-toggler-checkbox"
-    hidden
-  />
-  <label for="toggle" class="header-overlay"></label>
-  <div class="header-top">
-    <div class="header-top-accessory">
-      <div class="header-top-accessory-layer">
-        <div class="header-top-accessory-inner"></div>
-      </div>
-    </div>
-    <div class="container header-top-navigation">
-      <app-text-field [label]="t('SHARED.HEADER.TEXT_ENTER_YOUR_SEARCH_HERE')" />
-    </div>
-  </div>
-  <div class="container header-container">
-    <a routerLink="/" class="header-logo">
-      <img src="/assets/logo-5.png" alt="Logo" />
-    </a>
-    <label for="toggle" class="material-symbols-outlined header-toggler">menu</label>
-    <nav class="header-navigation">
-      <a routerLink="/" class="header-logo-mobile">
-        <img src="/assets/logo-5.png" alt="Logo" />
-      </a>
-      <label for="toggle" class="material-symbols-outlined header-navigation-close">
-        arrow_back
-      </label>
-      <ul class="header-navigation-list">
-        @for (link of links; track link.path) {
-          <li class="header-navigation-item">
-            <a
-              [routerLink]="link.path"
-              routerLinkActive="header-navigation-item-link-active"
-              [routerLinkActiveOptions]="{exact: true}"
-              class="header-navigation-item-link"
-            >
-              {{ t(link.translationKey) }}
-            </a>
-          </li>
-        }
-      </ul>
-      <div class="header-navigation-secondary">
-        <app-profile-navigation />
-      </div>
-    </nav>
-  </div>
+<header *transloco="let translate" class="h-20 border-y border-slate-950">
+  <nav class="container flex">
+    <a routerLink="" class="inline-block h-20 pt-5 text-4xl">Fightify</a>
+    <ul class="flex items-center ml-16">
+      @for (link of links; track link.path) {
+        <li>
+          <a
+            [routerLink]="link.path"
+            class="inline-block h-20 py-7 px-4 text-lg leading-6 align-top hover:text-red-500"
+          >
+            {{ translate(link.translationKey) }}
+          </a>
+        </li>
+      }
+    </ul>
+  </nav>
 </header>

@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {NewsDetailsComponent} from '@libs/news/ui/news-details';
 import {News} from '@libs/shared/data-access/api/news';
 
@@ -8,6 +8,7 @@ import {News} from '@libs/shared/data-access/api/news';
   imports: [NewsDetailsComponent],
   templateUrl: './news-item.component.html',
   styleUrl: './news-item.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NewsItemComponent {
   @Input() news!: News;
