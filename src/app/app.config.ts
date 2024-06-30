@@ -6,7 +6,8 @@ import {
 } from '@angular/core';
 import {provideClientHydration} from '@angular/platform-browser';
 import {provideRouter, withInMemoryScrolling, withViewTransitions} from '@angular/router';
-import {provideTransloco} from '@ngneat/transloco';
+import {provideTransloco} from '@jsverse/transloco';
+import {provideAppLinks} from '@libs/shared/features/app-links';
 import {routes} from './app.routes';
 import {I18nLoader} from './i18n-loader';
 
@@ -27,6 +28,15 @@ export const appConfig: ApplicationConfig = {
         prodMode: !isDevMode(),
       },
       loader: I18nLoader,
+    }),
+    provideAppLinks({
+      root: '/',
+      fighters: '/fighters',
+      events: '/events',
+      forum: '/forum',
+      leaderboard: '/leaderboard',
+      news: '/news',
+      profile: '/profile',
     }),
   ],
 };

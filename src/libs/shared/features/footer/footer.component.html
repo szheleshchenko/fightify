@@ -1,0 +1,26 @@
+<div *transloco="let translate; prefix: 'SHARED.FOOTER'" class="bg-slate-950 text-white">
+  <div class="container flex flex-col flex-wrap justify-between gap-8 py-20 md:flex-row">
+    <div class="min-w-48 flex-[3]">
+      <app-logo classes="h-5" class="inline-block h-7" />
+      <p class="mt-7 text-base text-zinc-500">
+        We work six days, actually six days a week. Five days a week, we'll work three days a week.
+        One of those days we will work two days of the week. So, six days a week we will be working.
+      </p>
+    </div>
+    <app-footer-resources-list
+      [heading]="translate('TEXT_RESOURCES')"
+      [items]="resources"
+      class="min-w-48 flex-[2] lg:pl-20"
+    />
+    <app-footer-resources-list
+      [heading]="translate('TEXT_USEFUL_LINKS')"
+      [items]="usefulLinks"
+      class="min-w-48 flex-[2]"
+    />
+    <div class="flex min-w-48 flex-col gap-3 flex-[3]">
+      <h4 class="mb-8 text-2xl font-mono">Popular news</h4>
+      <app-post-card variant="footerPost" />
+      <app-post-card variant="footerPost" />
+    </div>
+  </div>
+</div>

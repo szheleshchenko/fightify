@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {RouterLink} from '@angular/router';
+import {TranslocoDirective} from '@jsverse/transloco';
 import {AvatarComponent, DropdownComponent, DropdownOption} from '@libs/shared/ui/ui-kit';
-import {TranslocoDirective} from '@ngneat/transloco';
 
 @Component({
   selector: 'app-profile-navigation',

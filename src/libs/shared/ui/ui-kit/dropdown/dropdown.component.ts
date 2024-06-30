@@ -1,7 +1,7 @@
 import {NgTemplateOutlet} from '@angular/common';
 import {ChangeDetectionStrategy, Component, ElementRef, Input, TemplateRef} from '@angular/core';
 import {RouterLink} from '@angular/router';
-import {TranslocoDirective} from '@ngneat/transloco';
+import {TranslocoDirective} from '@jsverse/transloco';
 import {DropdownOption} from './models';
 
 @Component({

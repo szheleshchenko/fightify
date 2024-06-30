@@ -1,8 +1,8 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {TranslocoDirective} from '@jsverse/transloco';
 import {FightersFilterComponent} from '@libs/fighter/features/fighters-filter';
 import {FightersListComponent} from '@libs/fighter/features/fighters-list';
 import {Breadcrumb, PageComponent} from '@libs/shared/features/page';
-import {TranslocoDirective} from '@ngneat/transloco';
 
 @Component({
   selector: 'app-fighters',

@@ -1,11 +1,11 @@
 import {AsyncPipe} from '@angular/common';
 import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {TranslocoDirective} from '@jsverse/transloco';
 import {NewsOverviewComponent} from '@libs/news/features/news-overview';
 import {PaginationResponse} from '@libs/shared/data-access/api-client';
 import {News} from '@libs/shared/data-access/api/news';
 import {Breadcrumb, PageComponent} from '@libs/shared/features/page';
-import {TranslocoDirective} from '@ngneat/transloco';
 import {map} from 'rxjs';
 
 @Component({

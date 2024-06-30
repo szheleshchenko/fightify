@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {TranslocoDirective} from '@jsverse/transloco';
 import {Breadcrumb, PageComponent} from '@libs/shared/features/page';
 import {LoginFormComponent} from '@libs/user/features/login-form';
-import {TranslocoDirective} from '@ngneat/transloco';
 
 @Component({
   selector: 'app-login',

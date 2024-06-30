@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {RouterLink} from '@angular/router';
-import {TranslocoDirective} from '@ngneat/transloco';
+import {TranslocoDirective} from '@jsverse/transloco';
 import {Breadcrumb} from './types';
 
 @Component({
@@ -8,7 +8,6 @@ import {Breadcrumb} from './types';
   standalone: true,
   imports: [RouterLink, TranslocoDirective],
   templateUrl: './page.component.html',
-  styleUrl: './page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PageComponent {

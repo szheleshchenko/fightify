@@ -1,8 +1,8 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {TranslocoDirective} from '@jsverse/transloco';
 import {EventsFilterComponent} from '@libs/event/features/events-filter';
 import {EventsListComponent} from '@libs/event/features/events-list';
 import {Breadcrumb, PageComponent} from '@libs/shared/features/page';
-import {TranslocoDirective} from '@ngneat/transloco';
 
 @Component({
   selector: 'app-events',
