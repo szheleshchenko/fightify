@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'app-upcoming-events-controls',
@@ -6,6 +6,7 @@ import {Component, EventEmitter, Output} from '@angular/core';
   imports: [],
   templateUrl: './upcoming-events-controls.component.html',
   styleUrl: './upcoming-events-controls.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UpcomingEventsControlsComponent {
   @Output() backClicked = new EventEmitter<void>();

@@ -1,10 +1,10 @@
-import {Component, signal} from '@angular/core';
+import {NgStyle} from '@angular/common';
+import {ChangeDetectionStrategy, Component, signal} from '@angular/core';
 import {FormControl, ReactiveFormsModule} from '@angular/forms';
 import {OrderFilter} from '@libs/shared/ui/order-filter';
 import {SelectComponent, SelectOption} from '@libs/shared/ui/ui-kit';
-import {UpcomingEventComponent} from './components/upcoming-event';
 import {UpcomingEventsControlsComponent} from './components/controls';
-import {NgStyle} from '@angular/common';
+import {UpcomingEventComponent} from './components/upcoming-event';
 
 @Component({
   selector: 'app-upcoming-events',
@@ -18,6 +18,7 @@ import {NgStyle} from '@angular/common';
   ],
   templateUrl: './upcoming-events.component.html',
   styleUrl: './upcoming-events.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UpcomingEventsComponent {
   public form = new FormControl<SelectOption<OrderFilter>>({title: 'Ascending', value: 'asc'});

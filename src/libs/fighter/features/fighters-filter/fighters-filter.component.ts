@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {FightersActivityFilterComponent} from '@libs/fighter/ui/fighters-activity-filter';
 import {FightersWeightFilterComponent} from '@libs/fighter/ui/fighters-weight-filter';
 import {FilterWrapperComponent} from '@libs/shared/ui/filter-wrapper';
@@ -17,5 +17,6 @@ import {ButtonComponent} from '@libs/shared/ui/ui-kit';
   ],
   templateUrl: './fighters-filter.component.html',
   styleUrl: './fighters-filter.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FightersFilterComponent {}

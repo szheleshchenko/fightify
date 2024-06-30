@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {Breadcrumb, PageComponent} from '@libs/shared/features/page';
 import {RegisterFormComponent} from '@libs/user/features/register-form';
 
@@ -8,6 +8,7 @@ import {RegisterFormComponent} from '@libs/user/features/register-form';
   imports: [PageComponent, RegisterFormComponent],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RegisterPageComponent {
   public breadcrumbs: Array<Breadcrumb> = [

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {NewsItemComponent} from '@libs/news/features/news-item';
 import {News} from '@libs/shared/data-access/api/news';
 
@@ -8,6 +8,7 @@ import {News} from '@libs/shared/data-access/api/news';
   imports: [NewsItemComponent],
   templateUrl: './popular-news.component.html',
   styleUrl: './popular-news.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PopularNewsComponent {
   public news: Array<News> = [

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {NewsAuthorComponent} from '@libs/news/features/news-author';
 import {PopularNewsComponent} from '@libs/news/features/popular-news';
 import {NewsDetailsComponent} from '@libs/news/ui/news-details';
@@ -20,6 +20,7 @@ import {ContentCardComponent} from '@libs/shared/ui/ui-kit';
   ],
   templateUrl: './news-article.component.html',
   styleUrl: './news-article.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NewsArticleComponent {
   public news: News = {

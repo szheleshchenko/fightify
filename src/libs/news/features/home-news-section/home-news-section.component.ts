@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {NewsCardComponent} from '@libs/news/features/news-card';
 import {News} from '@libs/shared/data-access/api/news';
 
@@ -8,6 +8,7 @@ import {News} from '@libs/shared/data-access/api/news';
   imports: [NewsCardComponent],
   templateUrl: './home-news-section.component.html',
   styleUrl: './home-news-section.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeNewsSectionComponent {
   public news: Array<News> = [

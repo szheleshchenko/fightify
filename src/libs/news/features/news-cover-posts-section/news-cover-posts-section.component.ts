@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {NewsCoverPostComponent} from '@libs/news/features/news-cover-post';
 import {News} from '@libs/shared/data-access/api/news';
 
@@ -8,6 +8,7 @@ import {News} from '@libs/shared/data-access/api/news';
   imports: [NewsCoverPostComponent],
   templateUrl: './news-cover-posts-section.component.html',
   styleUrl: './news-cover-posts-section.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NewsCoverPostsSectionComponent {
   public news: Array<News> = [

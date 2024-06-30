@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {FighterCardComponent} from '@libs/fighter/features/fighter-card';
 
 @Component({
@@ -7,5 +7,6 @@ import {FighterCardComponent} from '@libs/fighter/features/fighter-card';
   imports: [FighterCardComponent],
   templateUrl: './fighters-list.component.html',
   styleUrl: './fighters-list.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FightersListComponent {}

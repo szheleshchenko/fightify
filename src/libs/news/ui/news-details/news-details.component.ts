@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {CategoryLabelComponent} from '@libs/news/ui/category-label';
 import {News} from '@libs/shared/data-access/api/news';
 import {NewsDetailsAppearance} from './types/appearance';
@@ -9,6 +9,7 @@ import {NewsDetailsAppearance} from './types/appearance';
   imports: [CategoryLabelComponent],
   templateUrl: './news-details.component.html',
   styleUrl: './news-details.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NewsDetailsComponent {
   @Input() news!: News;

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {ReactiveFormsModule} from '@angular/forms';
 import {RouterLink} from '@angular/router';
 import {ButtonComponent, TextFieldComponent} from '@libs/shared/ui/ui-kit';
@@ -17,6 +17,7 @@ import {LoginForm} from './forms';
   ],
   templateUrl: './login-form.component.html',
   styleUrl: './login-form.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginFormComponent {
   public form = new LoginForm();

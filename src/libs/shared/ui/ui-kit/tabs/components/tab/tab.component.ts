@@ -1,4 +1,4 @@
-import {Component, input, signal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, input, signal} from '@angular/core';
 
 @Component({
   selector: 'app-tab',
@@ -6,6 +6,7 @@ import {Component, input, signal} from '@angular/core';
   imports: [],
   templateUrl: './tab.component.html',
   styleUrl: './tab.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TabComponent {
   public label = input.required<string>();

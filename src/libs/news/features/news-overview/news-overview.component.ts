@@ -1,5 +1,5 @@
 import {AsyncPipe} from '@angular/common';
-import {Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {NewsCardComponent} from '@libs/news/features/news-card';
 import {PaginationResponse} from '@libs/shared/data-access/api-client';
 import {News} from '@libs/shared/data-access/api/news';
@@ -11,6 +11,7 @@ import {ContentCardComponent} from '@libs/shared/ui/ui-kit';
   imports: [ContentCardComponent, AsyncPipe, NewsCardComponent],
   templateUrl: './news-overview.component.html',
   styleUrl: './news-overview.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NewsOverviewComponent {
   @Input() news?: PaginationResponse<News>;

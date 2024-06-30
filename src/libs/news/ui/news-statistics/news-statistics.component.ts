@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 
 @Component({
   selector: 'app-news-statistics',
@@ -6,5 +6,6 @@ import {Component} from '@angular/core';
   imports: [],
   templateUrl: './news-statistics.component.html',
   styleUrl: './news-statistics.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NewsStatisticsComponent {}

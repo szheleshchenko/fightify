@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {EventsContentFilterComponent} from '@libs/event/ui/events-content-filter';
 import {EventsStatusFilterComponent} from '@libs/event/ui/events-status-filter';
 import {FilterWrapperComponent} from '@libs/shared/ui/filter-wrapper';
@@ -17,5 +17,6 @@ import {ButtonComponent} from '@libs/shared/ui/ui-kit';
   ],
   templateUrl: './events-filter.component.html',
   styleUrl: './events-filter.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EventsFilterComponent {}

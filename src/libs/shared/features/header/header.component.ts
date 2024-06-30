@@ -1,47 +1,72 @@
-import {DOCUMENT} from '@angular/common';
-import {Component, Input, OnInit, inject} from '@angular/core';
-import {FormControl, ReactiveFormsModule} from '@angular/forms';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  DestroyRef,
+  ElementRef,
+  OnInit,
+  inject,
+  viewChild,
+} from '@angular/core';
+import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 import {NavigationStart, Router, RouterLink, RouterLinkActive} from '@angular/router';
-import {ProfileNavigationComponent} from '@libs/shared/features/profile-navigation';
-import {TextFieldComponent} from '@libs/shared/ui/ui-kit';
-import {TranslocoDirective} from '@ngneat/transloco';
+import {TranslocoDirective} from '@jsverse/transloco';
 import {filter} from 'rxjs';
-import {HeaderLink} from './types';
+import {injectAppLinks} from '../app-links';
+import {LogoComponent} from '../logo';
 
 @Component({
   standalone: true,
   selector: 'app-header',
-  imports: [
-    RouterLink,
-    RouterLinkActive,
-    TranslocoDirective,
-    TextFieldComponent,
-    ReactiveFormsModule,
-    ProfileNavigationComponent,
-  ],
+  imports: [RouterLink, RouterLinkActive, TranslocoDirective, LogoComponent],
   templateUrl: 'header.component.html',
-  styleUrl: 'header.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent implements OnInit {
-  @Input() links!: Array<HeaderLink>;
+  private mobileMenuToggler = viewChild<ElementRef<HTMLInputElement>>('mobileMenuToggler');
+  public appLinks = injectAppLinks();
 
-  public router = inject(Router);
-  public document = inject(DOCUMENT);
-  public inputControl = new FormControl<boolean>(false);
+  public navigationLinks = [
+    {
+      translationKey: 'TEXT_HOME',
+      path: this.appLinks.root,
+    },
+    {
+      translationKey: 'TEXT_NEWS',
+      path: this.appLinks.news,
+    },
+    {
+      translationKey: 'TEXT_EVENTS',
+      path: this.appLinks.events,
+    },
+    {
+      translationKey: 'TEXT_FIGHTERS',
+      path: this.appLinks.fighters,
+    },
+    {
+      translationKey: 'TEXT_LEADERBOARD',
+      path: this.appLinks.leaderboard,
+    },
+    {
+      translationKey: 'TEXT_FORUM',
+      path: this.appLinks.forum,
+    },
+  ];
+
+  private router = inject(Router);
+  private destroyRef = inject(DestroyRef);
 
   public ngOnInit(): void {
-    this.inputControl.valueChanges.subscribe((value) => {
-      const className = 'header-open';
-
-      if (value) {
-        this.document.body.classList.add(className);
-      } else {
-        this.document.body.classList.remove(className);
-      }
-    });
-
     this.router.events
-      .pipe(filter((event) => event instanceof NavigationStart))
-      .subscribe(() => this.inputControl.setValue(false));
+      .pipe(
+        takeUntilDestroyed(this.destroyRef),
+        filter((event) => event instanceof NavigationStart),
+      )
+      .subscribe(() => {
+        const inputElement = this.mobileMenuToggler();
+
+        if (inputElement) {
+          inputElement.nativeElement.checked = false;
+        }
+      });
   }
 }

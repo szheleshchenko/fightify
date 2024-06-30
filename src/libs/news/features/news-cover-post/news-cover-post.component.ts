@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {RouterLink} from '@angular/router';
 import {NewsDetailsComponent} from '@libs/news/ui/news-details';
 import {News} from '@libs/shared/data-access/api/news';
@@ -10,6 +10,7 @@ import {NewsCoverPostVariant} from './types';
   imports: [RouterLink, NewsDetailsComponent],
   templateUrl: './news-cover-post.component.html',
   styleUrl: './news-cover-post.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NewsCoverPostComponent {
   @Input() news!: News;

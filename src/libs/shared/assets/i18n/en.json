@@ -1,29 +1,24 @@
 {
   "SHARED": {
-    "NAVIGATION": {
+    "HEADER": {
       "TEXT_HOME": "Home",
       "TEXT_NEWS": "News",
-      "TEXT_LOGIN": "Login",
-      "TEXT_REGISTER": "Register",
       "TEXT_EVENTS": "Events",
-      "TEXT_UPCOMING": "Upcoming",
-      "TEXT_RESULTS": "Results",
-      "TEXT_SCHEDULE": "Schedule",
       "TEXT_FIGHTERS": "Fighters",
-      "TEXT_RANKINGS": "Rankings",
+      "TEXT_LEADERBOARD": "Leaderboard",
+      "TEXT_FORUM": "Forum"
+    },
+    "FOOTER": {
+      "TEXT_RESOURCES": "Resources",
+      "TEXT_NEWS": "News",
+      "TEXT_EVENTS": "Events",
+      "TEXT_FIGHTERS": "Fighters",
       "TEXT_LEADERBOARD": "Leaderboard",
       "TEXT_FORUM": "Forum",
-      "TEXT_FIGHTER_OVERVIEW": "Fighter Overview"
-    },
-    "HEADER": {
-      "TEXT_ENTER_YOUR_SEARCH_HERE": "Enter your search here"
-    },
-    "PROFILE_NAVIGATION": {
-      "TEXT_ACCOUNT_SETTINGS": "Account settings",
-      "TEXT_BETS_HISTORY": "Bets history",
-      "TEXT_COMMENTS_HISTORY": "Comments history",
-      "TEXT_LOGOUT": "Logout",
-      "TEXT_HELLO": "Hello!"
+      "TEXT_USEFUL_LINKS": "Useful links",
+      "TEXT_ABOUT": "About",
+      "TEXT_CONTACT_US": "Contact us",
+      "TEXT_FEEDBACK": "Feedback"
     }
   }
 }

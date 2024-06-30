@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {ButtonComponent} from '@libs/shared/ui/ui-kit';
 
 @Component({
@@ -7,6 +7,7 @@ import {ButtonComponent} from '@libs/shared/ui/ui-kit';
   imports: [ButtonComponent],
   templateUrl: './login-form-wrapper.component.html',
   styleUrl: './login-form-wrapper.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginFormWrapperComponent {
   @Input() buttonText!: string;

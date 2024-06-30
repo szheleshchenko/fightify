@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-event-fighter-details',
@@ -6,6 +6,7 @@ import {Component, Input} from '@angular/core';
   imports: [],
   templateUrl: './event-fighter-details.component.html',
   styleUrl: './event-fighter-details.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EventFighterDetailsComponent {
   @Input() isWinner?: boolean;

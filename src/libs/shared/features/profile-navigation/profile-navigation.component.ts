@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {RouterLink} from '@angular/router';
+import {TranslocoDirective} from '@jsverse/transloco';
 import {AvatarComponent, DropdownComponent, DropdownOption} from '@libs/shared/ui/ui-kit';
-import {TranslocoDirective} from '@ngneat/transloco';
 
 @Component({
   selector: 'app-profile-navigation',
@@ -9,6 +9,7 @@ import {TranslocoDirective} from '@ngneat/transloco';
   imports: [DropdownComponent, AvatarComponent, RouterLink, TranslocoDirective],
   templateUrl: './profile-navigation.component.html',
   styleUrl: './profile-navigation.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProfileNavigationComponent {
   public links: Array<DropdownOption> = [

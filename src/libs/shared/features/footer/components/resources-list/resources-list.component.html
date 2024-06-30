@@ -1,0 +1,12 @@
+<ng-container *transloco="let translate; prefix: 'SHARED.FOOTER'">
+  <h4 class="mb-7 text-2xl font-mono">{{ heading() }}</h4>
+  <ul>
+    @for (item of items(); track item.translationKey) {
+      <li class="mb-3">
+        <a [routerLink]="item.path" class="text-base text-zinc-500 hover:text-red-600">
+          {{ translate(item.translationKey) }}
+        </a>
+      </li>
+    }
+  </ul>
+</ng-container>
