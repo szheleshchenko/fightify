@@ -1,24 +1,24 @@
-<div class="card">
-  <div class="card-header">
-    <span class="card-header-title">UFC FIGHT NIGHT:<br />ANKALAEV VS WALKER 2</span>
-    <span class="card-header-time">Sunday, January 14</span>
-  </div>
-  <div class="card-details">
-    <app-event-fighter-details [isWinner]="isUpcoming ? false : true" />
-    <div class="card-details-meta">
-      <div class="card-details-meta-divider">vs</div>
-      <time class="card-details-meta-time">03:00 GMT+6</time>
-      <a routerLink="/events/11-ankalaev-vs-walker" class="card-details-meta-link">
-        @if (isUpcoming) {
-          See details
-        } @else {
-          See results
-        }
-      </a>
+<div class="text-center lg:px-6">
+  <h3 class="mb-1 text-xl font-mono hover:opacity-70">
+    <a routerLink="/">UFC 303: Pereira vs Prochazka 2</a>
+  </h3>
+  <p class="text-sm font-medium text-zinc-500 uppercase">Saturday, June 29, 2024</p>
+  <div class="flex gap-6 justify-between mt-5 mb-6">
+    <app-event-fighter-details class="flex-1" />
+    <div class="pt-9">
+      <span class="text-3xl font-mono">vs</span>
     </div>
-    <app-event-fighter-details />
+    <app-event-fighter-details class="flex-1" />
   </div>
-  @if (isUpcoming) {
-    <app-event-countdown />
-  }
+  <div class="flex items-center justify-between gap-6">
+    <div class="text-xs text-left font-medium text-zinc-500 uppercase">
+      <time class="text-sm text-black font-semibold">
+        9:00
+        <small class="text-xs text-left font-medium text-zinc-500">PM</small>
+        EST
+      </time>
+      <p>Ball Arena, Denver US</p>
+    </div>
+    <app-button>See results</app-button>
+  </div>
 </div>

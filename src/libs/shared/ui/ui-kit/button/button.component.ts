@@ -1,20 +1,23 @@
-import {NgClass} from '@angular/common';
-import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
-import {ButtonSize, ButtonVariant} from './types';
+import {ChangeDetectionStrategy, Component, computed, input} from '@angular/core';
+import {cva} from '@libs/shared/utils/cva';
+
+const buttonVariants = cva(
+  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+  {
+    variants: {
+      default: 'h-10 px-4 py-2 text-white bg-slate-950 hover:bg-slate-950/90',
+    },
+  },
+);
 
 @Component({
   selector: 'app-button',
   standalone: true,
-  imports: [NgClass],
+  imports: [],
   templateUrl: 'button.component.html',
-  styleUrl: 'button.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonComponent {
-  @Input() variant: ButtonVariant = 'primary';
-  @Input() size: ButtonSize = 'medium';
-
-  public get className(): string {
-    return ['button', `button-${this.variant}`, `button-${this.size}`].join(' ');
-  }
+  public variant = input<Parameters<typeof buttonVariants>[0]>('default');
+  public classes = computed(() => buttonVariants(this.variant()));
 }

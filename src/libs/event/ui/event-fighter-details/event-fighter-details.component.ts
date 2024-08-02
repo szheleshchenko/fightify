@@ -5,7 +5,6 @@ import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './event-fighter-details.component.html',
-  styleUrl: './event-fighter-details.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EventFighterDetailsComponent {

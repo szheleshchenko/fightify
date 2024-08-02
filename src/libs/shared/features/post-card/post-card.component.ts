@@ -34,10 +34,7 @@ const postVariants = cva(
 })
 export class PostCardComponent {
   public variant = input<Parameters<typeof postVariants>[0]>('default');
-  public postVariant = computed(() => {
-    console.log(this.variant());
-    return postVariants(this.variant());
-  });
+  public postVariant = computed(() => postVariants(this.variant()));
   public image =
     'https://cdn.vox-cdn.com/thumbor/RQFvaLaZZC_jOAOzV1KblN7nKEM=/0x0:7451x4967/900x600/filters:focal(2777x1347:3969x2539)/cdn.vox-cdn.com/uploads/chorus_image/image/73435906/2159890877.0.jpg';
 }
