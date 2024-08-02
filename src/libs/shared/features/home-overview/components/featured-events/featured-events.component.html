@@ -1,0 +1,19 @@
+<div
+  *transloco="let translate; prefix: 'SHARED.HOME_OVERVIEW'"
+  class="flex flex-col gap-6 lg:flex-row"
+>
+  <div class="flex-[2]">
+    <h2 class="mb-7 text-2xl font-mono">{{ translate('TEXT_UPCOMING_EVENTS') }}</h2>
+    <div class="flex flex-col gap-6">
+      <app-upcoming-event />
+      <app-upcoming-event />
+    </div>
+  </div>
+  <div class="flex-1">
+    <h2 class="mb-7 text-2xl font-mono">{{ translate('TEXT_PAST_EVENTS') }}</h2>
+    <div class="flex flex-col gap-6">
+      <app-event-card />
+      <app-event-card />
+    </div>
+  </div>
+</div>

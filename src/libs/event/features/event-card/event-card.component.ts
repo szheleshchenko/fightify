@@ -3,13 +3,13 @@ import {RouterLink} from '@angular/router';
 import {EventCountdownComponent} from '@libs/event/ui/event-countdown';
 import {EventFighterDetailsComponent} from '@libs/event/ui/event-fighter-details';
 import {Event} from '@libs/shared/data-access/api/event';
+import {ButtonComponent} from '@libs/shared/ui/ui-kit';
 
 @Component({
   selector: 'app-event-card',
   standalone: true,
-  imports: [RouterLink, EventFighterDetailsComponent, EventCountdownComponent],
+  imports: [RouterLink, EventFighterDetailsComponent, EventCountdownComponent, ButtonComponent],
   templateUrl: './event-card.component.html',
-  styleUrl: './event-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EventCardComponent {

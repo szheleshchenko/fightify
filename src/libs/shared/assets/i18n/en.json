@@ -19,6 +19,10 @@
       "TEXT_ABOUT": "About",
       "TEXT_CONTACT_US": "Contact us",
       "TEXT_FEEDBACK": "Feedback"
+    },
+    "HOME_OVERVIEW": {
+      "TEXT_PAST_EVENTS": "Past Events",
+      "TEXT_UPCOMING_EVENTS": "Upcoming Events"
     }
   }
 }
