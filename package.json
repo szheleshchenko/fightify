@@ -23,7 +23,6 @@
     "@angular/router": "^18.0.4",
     "@angular/ssr": "^18.0.5",
     "@jsverse/transloco": "^7.4.2",
-    "@tanstack/query-core": "^5.4.3",
     "class-transformer": "^0.5.1",
     "clsx": "^2.1.1",
     "express": "^4.18.2",
