@@ -1,9 +1,9 @@
-import {Directive, Input} from '@angular/core';
+import {Directive, input} from '@angular/core';
 import {AbstractControl, ControlValueAccessor, ValidationErrors, Validator} from '@angular/forms';
 
 @Directive()
 export class BaseFormControlDirective<T> implements ControlValueAccessor, Validator {
-  @Input() placeholder?: string;
+  public placeholder = input<string>();
 
   public value?: T;
   public disabled: boolean = false;

@@ -13,11 +13,18 @@ import {TranslocoDirective} from '@jsverse/transloco';
 import {filter} from 'rxjs';
 import {injectAppLinks} from '../app-links';
 import {LogoComponent} from '../logo';
+import {HeaderProfileMenuComponent} from './components';
 
 @Component({
   standalone: true,
   selector: 'app-header',
-  imports: [RouterLink, RouterLinkActive, TranslocoDirective, LogoComponent],
+  imports: [
+    RouterLink,
+    RouterLinkActive,
+    TranslocoDirective,
+    LogoComponent,
+    HeaderProfileMenuComponent,
+  ],
   templateUrl: 'header.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

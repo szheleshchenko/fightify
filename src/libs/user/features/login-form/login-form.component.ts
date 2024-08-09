@@ -1,9 +1,12 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import {ReactiveFormsModule} from '@angular/forms';
 import {RouterLink} from '@angular/router';
+import {AuthService, LoginRequest} from '@libs/shared/data-access/api/auth';
 import {ButtonComponent, TextFieldComponent} from '@libs/shared/ui/ui-kit';
 import {LoginFormWrapperComponent} from '@libs/user/ui/login-form-wrapper';
-import {LoginForm} from './forms';
+import {injectMutation} from '@tanstack/angular-query-experimental';
+import {lastValueFrom} from 'rxjs';
+import {LoginForm, LoginFormFieldValues} from './forms';
 
 @Component({
   selector: 'app-login-form',
@@ -21,8 +24,17 @@ import {LoginForm} from './forms';
 })
 export class LoginFormComponent {
   public form = new LoginForm();
+  private authService = inject(AuthService);
+
+  public mutation = injectMutation(() => ({
+    mutationFn: (data: LoginRequest) => lastValueFrom(this.authService.login(data)),
+  }));
 
   public submitted(): void {
-    return;
+    if (this.form.invalid) {
+      return this.form.markAllAsTouched();
+    }
+
+    this.mutation.mutate(new LoginRequest(this.form.value as LoginFormFieldValues));
   }
 }
