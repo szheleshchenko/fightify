@@ -1,4 +1,4 @@
-import {provideHttpClient, withFetch} from '@angular/common/http';
+import {provideHttpClient, withFetch, withInterceptors} from '@angular/common/http';
 import {
   ApplicationConfig,
   isDevMode,
@@ -7,7 +7,9 @@ import {
 import {provideClientHydration} from '@angular/platform-browser';
 import {provideRouter, withInMemoryScrolling, withViewTransitions} from '@angular/router';
 import {provideTransloco} from '@jsverse/transloco';
+import {jwtInterceptor} from '@libs/shared/data-access/api/auth';
 import {provideAppLinks} from '@libs/shared/features/app-links';
+import {provideAngularQuery, QueryClient} from '@tanstack/angular-query-experimental';
 import {routes} from './app.routes';
 import {I18nLoader} from './i18n-loader';
 
@@ -20,7 +22,7 @@ export const appConfig: ApplicationConfig = {
       withInMemoryScrolling({anchorScrolling: 'enabled', scrollPositionRestoration: 'top'}),
     ),
     provideClientHydration(),
-    provideHttpClient(withFetch()),
+    provideHttpClient(withFetch(), withInterceptors([jwtInterceptor])),
     provideTransloco({
       config: {
         availableLangs: ['en', 'ru'],
@@ -29,6 +31,7 @@ export const appConfig: ApplicationConfig = {
       },
       loader: I18nLoader,
     }),
+    provideAngularQuery(new QueryClient()),
     provideAppLinks({
       root: '/',
       fighters: '/fighters',

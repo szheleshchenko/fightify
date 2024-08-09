@@ -6,7 +6,7 @@ import {AppHttpParams} from './types';
 @Injectable({providedIn: 'root'})
 export class ApiService {
   private httpClient = inject(HttpClient);
-  private baseUrl = '/assets/api';
+  private baseUrl = 'http://localhost:3000/';
 
   public get<T>(
     endpoint: string,
@@ -19,12 +19,12 @@ export class ApiService {
     });
   }
 
-  public post<T>(
+  public post<Request, Response>(
     endpoint: string,
-    data: Partial<T> = {},
+    data: Partial<Request> = {},
     options: Parameters<HttpClient['post']>[2] = {},
-  ): Observable<T> {
-    return this.httpClient.post<T>(`${this.baseUrl}${endpoint}`, data, options);
+  ): Observable<Response> {
+    return this.httpClient.post<Response>(`${this.baseUrl}${endpoint}`, data, options);
   }
 
   public put<T>(
