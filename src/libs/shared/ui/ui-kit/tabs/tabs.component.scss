@@ -1,25 +1,58 @@
 @import 'variables';
 
 .tabs {
-  &-items {display: flex; margin-bottom: 40px; border-left: 1px solid $grey; border-right: 1px solid $grey;
+  &-items {
+    display: flex;
+    margin-bottom: 40px;
+    border-left: 1px solid $grey;
+    border-right: 1px solid $grey;
     background-color: $text-alternative-color;
   }
-  &-item, &-tab {transition: 0.2s background-color, color ease-out;}
-  &-item {position: relative; flex: 1; cursor: pointer;
-    &-active {background-color: $background-alternative-color;
-      .tabs-tab {color: $text-basic-color;}
-      &::before {content: ''; position: absolute; width: 100%; height: 4px; bottom: 0; left: 0;
+  &-item,
+  &-tab {
+    transition:
+      0.2s background-color,
+      color ease-out;
+  }
+  &-item {
+    position: relative;
+    flex: 1;
+    cursor: pointer;
+    &-active {
+      background-color: $background-alternative-color;
+      .tabs-tab {
+        color: $text-basic-color;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        bottom: 0;
+        left: 0;
         background-color: $text-basic-color;
       }
     }
 
     &:first-child {
-      .tabs-tab {border-left: none;}
+      .tabs-tab {
+        border-left: none;
+      }
     }
   }
-  &-tab {display: block; padding: 28px 0; font-size: $font-size-caption-2; font-weight: bold; color: $text-control-color;
-    text-align: center; text-transform: uppercase; border: 1px solid $grey; border-right: none;
+  &-tab {
+    display: block;
+    padding: 28px 0;
+    font-size: $font-size-caption-2;
+    font-weight: bold;
+    color: $text-control-color;
+    text-align: center;
+    text-transform: uppercase;
+    border: 1px solid $grey;
+    border-right: none;
 
-    &:hover {color: $text-basic-color;}
+    &:hover {
+      color: $text-basic-color;
+    }
   }
 }

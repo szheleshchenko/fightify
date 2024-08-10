@@ -1,14 +1,12 @@
-<form class="wrapper">
-  <div class="wrapper-header">
-    <hgroup>
-      <h4 class="wrapper-heading">{{ heading }}</h4>
-      @if (subheading) {
-        <h5 class="wrapper-subheading">{{ subheading }}</h5>
-      }
-    </hgroup>
-  </div>
-  <div class="wrapper-content">
+<form class="max-w-md mx-auto border border-zinc-200 rounded-2xl">
+  <hgroup class="space-y-2 p-6">
+    <h4 class="text-2xl font-mono font-semibold">{{ heading() }}</h4>
+    @if (subheading()) {
+      <h5 class="text-sm text-zinc-500">{{ subheading() }}</h5>
+    }
+  </hgroup>
+  <div class="flex flex-col gap-3 p-6 pt-0">
     <ng-content />
-    <app-button size="large" class="wrapper-button">{{ buttonText }}</app-button>
   </div>
+  <app-button size="large" class="block px-6 pb-6 box-border">{{ buttonText() }}</app-button>
 </form>

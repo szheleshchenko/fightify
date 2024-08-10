@@ -22,7 +22,15 @@
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/favicon.ico", "src/assets", "src/libs/shared/assets"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              "src/libs/event/assets",
+              "src/libs/fighter/assets",
+              "src/libs/news/assets",
+              "src/libs/shared/assets",
+              "src/libs/user/assets"
+            ],
             "styles": ["src/assets/styles/styles.scss"],
             "stylePreprocessorOptions": {
               "includePaths": ["src/assets/styles"]
@@ -79,7 +87,15 @@
           "options": {
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/favicon.ico", "src/assets", "src/libs/shared/assets"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              "src/libs/event/assets",
+              "src/libs/fighter/assets",
+              "src/libs/news/assets",
+              "src/libs/shared/assets",
+              "src/libs/user/assets"
+            ],
             "styles": ["src/assets/styles/styles.scss"],
             "stylePreprocessorOptions": {
               "includePaths": ["src/assets/styles"]

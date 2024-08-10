@@ -1,19 +1,28 @@
-<div class="space-y-1">
-  <label
-    class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-    for="label"
-  >
+<div class="space-y-2">
+  @let isInvalid = formControl.invalid && (formControl.dirty || formControl.touched);
+
+  <label [class.text-red-600]="isInvalid" class="text-sm font-medium leading-none" [for]="label()">
     {{ label() }}
   </label>
   <input
-    class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-    [attr.placeholder]="placeholder()"
+    [formControl]="formControl"
     [id]="label()"
+    (input)="changed($event)"
+    [value]="value()"
+    [attr.placeholder]="placeholder()"
+    class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-zinc-400 ring-slate-950 focus-visible:outline-none focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50"
     aria-describedby=":r13u:-form-item-description"
     aria-invalid="false"
     name="username"
   />
   @if (description()) {
-    <p class="text-sm text-muted-foreground">{{ description() }}</p>
+    <p class="text-sm text-zinc-400">{{ description() }}</p>
+  }
+  @if (isInvalid) {
+    <p class="text-sm font-medium text-red-600">
+      @if (formControl.hasError('required')) {
+        This field is required
+      }
+    </p>
   }
 </div>

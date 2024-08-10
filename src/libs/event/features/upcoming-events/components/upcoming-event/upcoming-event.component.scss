@@ -1,11 +1,34 @@
 @import 'variables';
 
-.event {padding: 20px; background-color: $background-alternative-color; white-space: nowrap;
-  &-details {display: flex; align-items: center;
-    &-item {margin-right: 24px;}
+.event {
+  padding: 20px;
+  background-color: $background-alternative-color;
+  white-space: nowrap;
+  &-details {
+    display: flex;
+    align-items: center;
+    &-item {
+      margin-right: 24px;
+    }
   }
-  &-fighters {margin-bottom: 12px; line-height: 0;}
-  &-divider {margin: 0 16px; font-size: $font-size-label; font-weight: 700; line-height: 10px;}
-  &-label {font-size: $font-size-label-2; color: $text-hint-color; line-height: 10px;}
-  &-value {font-size: $font-size-label; font-weight: 700; line-height: 12px;}
+  &-fighters {
+    margin-bottom: 12px;
+    line-height: 0;
+  }
+  &-divider {
+    margin: 0 16px;
+    font-size: $font-size-label;
+    font-weight: 700;
+    line-height: 10px;
+  }
+  &-label {
+    font-size: $font-size-label-2;
+    color: $text-hint-color;
+    line-height: 10px;
+  }
+  &-value {
+    font-size: $font-size-label;
+    font-weight: 700;
+    line-height: 12px;
+  }
 }

@@ -1,9 +1,24 @@
 @import 'variables';
 
-.news {display: flex;
-  &-image {position: relative; min-width: 109px; clip-path: polygon(0 0,100% 0,54.5% 100%,0 100%);}
-  &-content {padding: 18px 24px 18px 0;}
-  &-title {margin: 8px 0; font-size: $font-size-caption;}
-  &-meta {font-size: $font-size-label; color: $text-hint-color;}
-  &-author {font-weight: 700;}
+.news {
+  display: flex;
+  &-image {
+    position: relative;
+    min-width: 109px;
+    clip-path: polygon(0 0, 100% 0, 54.5% 100%, 0 100%);
+  }
+  &-content {
+    padding: 18px 24px 18px 0;
+  }
+  &-title {
+    margin: 8px 0;
+    font-size: $font-size-caption;
+  }
+  &-meta {
+    font-size: $font-size-label;
+    color: $text-hint-color;
+  }
+  &-author {
+    font-weight: 700;
+  }
 }

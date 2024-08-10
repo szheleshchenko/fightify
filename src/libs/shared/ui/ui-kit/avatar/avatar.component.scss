@@ -1,11 +1,26 @@
 @import 'variables';
 
-.avatar {position: relative; aspect-ratio: 1; overflow: hidden;
-  &-large {width: 120px;}
-  &-big {width: 60px;}
-  &-medium {width: 28px;}
-  &-small {width: 18px;}
-  
-  &-round {border-radius: 50%;}
-  &-square {border-radius: 0;}
+.avatar {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  &-large {
+    width: 120px;
+  }
+  &-big {
+    width: 60px;
+  }
+  &-medium {
+    width: 28px;
+  }
+  &-small {
+    width: 18px;
+  }
+
+  &-round {
+    border-radius: 50%;
+  }
+  &-square {
+    border-radius: 0;
+  }
 }

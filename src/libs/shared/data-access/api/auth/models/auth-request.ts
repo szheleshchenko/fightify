@@ -1,13 +1,13 @@
 import {Expose} from 'class-transformer';
 
-export class LoginRequest {
+export class AuthRequest {
   @Expose({name: 'username'})
   public username!: string;
 
   @Expose({name: 'password'})
   public password!: string;
 
-  constructor(loginRequest: Partial<LoginRequest> = {}) {
+  constructor(loginRequest: Partial<AuthRequest> = {}) {
     Object.assign(this, loginRequest);
   }
 }
