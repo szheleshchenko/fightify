@@ -1,0 +1,12 @@
+{
+  "USER": {
+    "LOGIN_FORM": {
+      "TEXT_LOGIN": "Login",
+      "TEXT_ENTER_YOUR_USERNAME": "Enter your username below to login to your account",
+      "TEXT_USERNAME": "Username",
+      "TEXT_PASSWORD": "Password",
+      "TEXT_6_CHARACTERS": "6+ characters",
+      "LINK_FORGOT_PASSWORD": "Forgot password?"
+    }
+  }
+}

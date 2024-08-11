@@ -10,9 +10,15 @@ export type RegisterFormFieldValues = {
 export class RegisterForm extends FormGroup<InferFormSchema<RegisterFormFieldValues>> {
   constructor() {
     super({
-      email: new FormControl<string>('', [Validators.required, Validators.email]),
-      password: new FormControl<string>('', [Validators.required]),
-      confirmPassword: new FormControl<string>('', [Validators.required]),
+      email: new FormControl<string>('', {
+        nonNullable: true,
+        validators: [Validators.required, Validators.email],
+      }),
+      password: new FormControl<string>('', {nonNullable: true, validators: [Validators.required]}),
+      confirmPassword: new FormControl<string>('', {
+        nonNullable: true,
+        validators: [Validators.required],
+      }),
     });
   }
 }

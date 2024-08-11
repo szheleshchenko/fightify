@@ -8,7 +8,10 @@ export type ForgotPasswordFormFieldValues = {
 export class ForgotPasswordForm extends FormGroup<InferFormSchema<ForgotPasswordFormFieldValues>> {
   constructor() {
     super({
-      email: new FormControl<string>('', [Validators.required, Validators.email]),
+      email: new FormControl<string>('', {
+        nonNullable: true,
+        validators: [Validators.required, Validators.email],
+      }),
     });
   }
 }

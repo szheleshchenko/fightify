@@ -1,11 +1,25 @@
 <app-login-form-wrapper
   [formGroup]="form"
+  *transloco="let t; prefix: 'USER.LOGIN_FORM'"
   (ngSubmit)="submitted()"
-  buttonText="Login"
-  heading="Login"
-  subheading="We're Happy To See You Again"
+  [heading]="t('TEXT_LOGIN')"
+  [subheading]="t('TEXT_ENTER_YOUR_USERNAME')"
+  [buttonText]="t('TEXT_LOGIN')"
 >
-  <app-text-field formControlName="username" [isRequired]="true" label="Username" />
-  <app-text-field formControlName="password" [isRequired]="true" label="Password" />
-  <span class="form-link">Forgot password? <a routerLink="/forgot-password">Click here</a></span>
+  <app-text-field
+    formControlName="username"
+    [isRequired]="true"
+    [label]="t('TEXT_USERNAME')"
+    placeholder="yourusername"
+  />
+  <app-text-field
+    formControlName="password"
+    [isRequired]="true"
+    [label]="t('TEXT_PASSWORD')"
+    [placeholder]="t('TEXT_6_CHARACTERS')"
+    type="password"
+  />
+  <div class="text-right">
+    <a [routerLink]="links.forgotPassword" class="text-sm">{{ t('LINK_FORGOT_PASSWORD') }}</a>
+  </div>
 </app-login-form-wrapper>

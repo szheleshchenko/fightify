@@ -1,20 +1,25 @@
 import {inject, Injectable} from '@angular/core';
 import {ApiService} from '@libs/shared/data-access/api-client';
-import {plainToInstance} from 'class-transformer';
+import {instanceToPlain, plainToInstance} from 'class-transformer';
 import {SsrCookieService} from 'ngx-cookie-service-ssr';
 import {map, Observable, tap} from 'rxjs';
-import {LoginRequest, LoginResponse, RefreshTokenRequest, RegisterRequest} from './models';
+import {AuthRequest, AuthResponse, RefreshTokenRequest, RegisterRequest} from './models';
 
 @Injectable({providedIn: 'root'})
 export class AuthService {
   private apiService = inject(ApiService);
   public cookieService = inject(SsrCookieService);
 
-  public login(loginRequest: LoginRequest): Observable<LoginResponse> {
+  public login(credentials: AuthRequest): Observable<AuthResponse> {
+    const request = new AuthRequest(credentials);
+
     return this.apiService
-      .post<LoginRequest, LoginResponse>('auth/login', loginRequest, {withCredentials: true})
+      .post<
+        AuthRequest,
+        AuthResponse
+      >('auth/login', instanceToPlain(request), {withCredentials: true})
       .pipe(
-        map((response) => plainToInstance(LoginResponse, response)),
+        map((response) => plainToInstance(AuthResponse, response)),
         tap((response) => this.saveTokens(response)),
       );
   }
@@ -23,11 +28,11 @@ export class AuthService {
     return this.apiService.post<RegisterRequest, void>('auth/register', registerRequest);
   }
 
-  public refreshToken(refreshTokenRequest: RefreshTokenRequest): Observable<LoginResponse> {
+  public refreshToken(refreshTokenRequest: RefreshTokenRequest): Observable<AuthResponse> {
     return this.apiService
-      .post<RefreshTokenRequest, LoginResponse>('auth/refresh-token', refreshTokenRequest)
+      .post<RefreshTokenRequest, AuthResponse>('auth/refresh-token', refreshTokenRequest)
       .pipe(
-        map((response) => plainToInstance(LoginResponse, response)),
+        map((response) => plainToInstance(AuthResponse, response)),
         tap((response) => this.saveTokens(response)),
       );
   }
@@ -41,7 +46,7 @@ export class AuthService {
     this.cookieService.delete('refresh_token');
   }
 
-  private saveTokens(response: LoginResponse): void {
+  private saveTokens(response: AuthResponse): void {
     this.cookieService.set('access_token', response.accessToken, {
       expires: new Date().setDate(new Date().getDate() + 7),
       secure: true,

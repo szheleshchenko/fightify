@@ -40,6 +40,8 @@ export const appConfig: ApplicationConfig = {
       leaderboard: '/leaderboard',
       news: '/news',
       profile: '/profile',
+      forgotPassword: '/forgot-password',
+      login: '/login',
     }),
   ],
 };

@@ -8,7 +8,10 @@ export class I18nLoader implements TranslocoLoader {
   private http = inject(HttpClient);
 
   getTranslation(lang: string) {
-    const translations = [`libs/shared/assets/i18n/${lang}.json`];
+    const translations = [
+      `libs/user/assets/i18n/${lang}.json`,
+      `libs/shared/assets/i18n/${lang}.json`,
+    ];
 
     return forkJoin(translations.map((path) => this.http.get<Translation>(path))).pipe(
       map((translations) => {

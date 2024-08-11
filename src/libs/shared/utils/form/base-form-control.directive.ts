@@ -1,11 +1,11 @@
-import {Directive, input} from '@angular/core';
+import {Directive, input, signal} from '@angular/core';
 import {AbstractControl, ControlValueAccessor, ValidationErrors, Validator} from '@angular/forms';
 
 @Directive()
 export class BaseFormControlDirective<T> implements ControlValueAccessor, Validator {
   public placeholder = input<string>();
-
-  public value?: T;
+  public errors = signal<Array<string>>([]);
+  public value = signal<T | undefined>(undefined);
   public disabled: boolean = false;
 
   public valueChanged(value?: T): void {
@@ -29,11 +29,15 @@ export class BaseFormControlDirective<T> implements ControlValueAccessor, Valida
   }
 
   public writeValue(value?: T): void {
-    this.value = value;
+    this.value.set(value);
   }
 
   public validate(control: AbstractControl): ValidationErrors | null {
     if (control.errors) {
+      if (control.errors['required']) {
+        this.errors.set(['This field is required.']);
+      }
+
       return control.errors;
     }
 
