@@ -23,6 +23,10 @@
     "HOME_OVERVIEW": {
       "TEXT_PAST_EVENTS": "Past Events",
       "TEXT_UPCOMING_EVENTS": "Upcoming Events"
+    },
+    "TEXT_FIELD": {
+      "TEXT_REQUIRED": "This field is required",
+      "TEXT_LONGER_THAN": "{{label}} must be longer than {{length}} characters"
     }
   }
 }

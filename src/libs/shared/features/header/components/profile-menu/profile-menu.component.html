@@ -1,13 +1,12 @@
-<input id="profile-menu-toggler" type="checkbox" class="hidden peer" />
 <label for="profile-menu-toggler" class="cursor-pointer">
-  <app-avatar src="https://avatars.githubusercontent.com/u/124599?v=4" />
+  @if (isAuthorized()) {
+    <app-avatar src="https://avatars.githubusercontent.com/u/124599?v=4" />
+  } @else {
+    <a
+      routerLink="/login"
+      class="inline-block px-5 py-3 text-base leading-6 align-top hover:text-red-600 lg:h-20 lg:px-4 lg:py-7"
+    >
+      Login
+    </a>
+  }
 </label>
-<label
-  for="profile-menu-toggler"
-  class="hidden w-dvw h-dvh fixed top-0 left-0 bg-slate-950/40 blur-sm transition z-40 peer-checked:block"
-></label>
-<div
-  class="w-80 h-dvh fixed top-0 right-0 bg-slate-950 translate-x-80 transition-transform z-50 peer-checked:-translate-x-0"
->
-  <app-avatar />
-</div>

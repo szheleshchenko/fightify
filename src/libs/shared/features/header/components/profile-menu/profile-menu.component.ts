@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, inject, signal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import {RouterLink} from '@angular/router';
 import {AuthService} from '@libs/shared/data-access/api/auth';
 import {AvatarComponent} from '@libs/shared/ui/ui-kit';
@@ -12,5 +12,5 @@ import {AvatarComponent} from '@libs/shared/ui/ui-kit';
 })
 export class HeaderProfileMenuComponent {
   public authService = inject(AuthService);
-  public isAuthenticated = signal(this.authService.getAccessToken());
+  public isAuthorized = this.authService.isAuthorized;
 }

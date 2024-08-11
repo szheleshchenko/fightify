@@ -4,13 +4,13 @@
   (ngSubmit)="submitted()"
   [heading]="t('TEXT_LOGIN')"
   [subheading]="t('TEXT_ENTER_YOUR_USERNAME')"
-  [buttonText]="t('TEXT_LOGIN')"
+  #ngForm="ngForm"
 >
   <app-text-field
     formControlName="username"
     [isRequired]="true"
     [label]="t('TEXT_USERNAME')"
-    placeholder="yourusername"
+    placeholder="your_username"
   />
   <app-text-field
     formControlName="password"
@@ -22,4 +22,13 @@
   <div class="text-right">
     <a [routerLink]="links.forgotPassword" class="text-sm">{{ t('LINK_FORGOT_PASSWORD') }}</a>
   </div>
+  <app-button
+    [isLoading]="action.isPending()"
+    [isDisabled]="form.invalid && ngForm.submitted"
+    size="large"
+    class="block"
+    actionContent
+  >
+    {{ t('TEXT_LOGIN') }}
+  </app-button>
 </app-login-form-wrapper>

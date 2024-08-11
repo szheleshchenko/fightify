@@ -4,6 +4,7 @@ export * from './checkbox';
 export * from './content-card';
 export * from './dropdown';
 export * from './select';
+export * from './spinner';
 export * from './table';
 export * from './tabs';
 export * from './text-field';
