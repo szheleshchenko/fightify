@@ -1,11 +1,12 @@
 import {Component, inject, input, OnInit} from '@angular/core';
 import {FormControl, NgControl, ReactiveFormsModule} from '@angular/forms';
+import {TranslocoDirective} from '@jsverse/transloco';
 import {BaseFormControlDirective} from '@libs/shared/utils/form';
 
 @Component({
   selector: 'app-text-field',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, TranslocoDirective],
   templateUrl: 'text-field.component.html',
 })
 export class TextFieldComponent extends BaseFormControlDirective<string> implements OnInit {
@@ -20,10 +21,6 @@ export class TextFieldComponent extends BaseFormControlDirective<string> impleme
     super();
 
     this.ngControl.valueAccessor = this;
-  }
-
-  public changed(event: Event): void {
-    this.valueChanged((event.target as HTMLInputElement).value);
   }
 
   public ngOnInit(): void {

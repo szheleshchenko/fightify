@@ -1,1 +1,6 @@
-<button [class]="classes()"><ng-content /></button>
+<button [class]="classes()" [disabled]="isLoading() || isDisabled()">
+  @if (isLoading()) {
+    <app-spinner />
+  }
+  <ng-content />
+</button>

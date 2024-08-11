@@ -1,4 +1,5 @@
 import {Routes} from '@angular/router';
+import {authorizedGuard} from '@app/guards';
 import {PublicPageComponent} from './public.component';
 
 export const routes: Routes = [
@@ -38,14 +39,17 @@ export const routes: Routes = [
       },
       {
         path: 'login',
+        canActivate: [authorizedGuard],
         loadChildren: () => import('./login/login.routes').then((module) => module.routes),
       },
       {
         path: 'register',
+        canActivate: [authorizedGuard],
         loadChildren: () => import('./register/register.routes').then((module) => module.routes),
       },
       {
         path: 'forgot-password',
+        canActivate: [authorizedGuard],
         loadChildren: () =>
           import('./forgot-password/forgot-password.routes').then((module) => module.routes),
       },

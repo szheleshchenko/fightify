@@ -1,4 +1,4 @@
-import {inject, Injectable} from '@angular/core';
+import {inject, Injectable, signal} from '@angular/core';
 import {ApiService} from '@libs/shared/data-access/api-client';
 import {instanceToPlain, plainToInstance} from 'class-transformer';
 import {SsrCookieService} from 'ngx-cookie-service-ssr';
@@ -8,7 +8,12 @@ import {AuthRequest, AuthResponse, RefreshTokenRequest, RegisterRequest} from '.
 @Injectable({providedIn: 'root'})
 export class AuthService {
   private apiService = inject(ApiService);
-  public cookieService = inject(SsrCookieService);
+  private cookieService = inject(SsrCookieService);
+  public isAuthorized = signal<boolean>(false);
+
+  constructor() {
+    this.isAuthorized.set(!!this.getAccessToken());
+  }
 
   public login(credentials: AuthRequest): Observable<AuthResponse> {
     const request = new AuthRequest(credentials);
@@ -44,6 +49,7 @@ export class AuthService {
   public logout(): void {
     this.cookieService.delete('access_token');
     this.cookieService.delete('refresh_token');
+    this.isAuthorized.set(false);
   }
 
   private saveTokens(response: AuthResponse): void {
@@ -55,5 +61,6 @@ export class AuthService {
       expires: new Date().setDate(new Date().getDate() + 7),
       secure: true,
     });
+    this.isAuthorized.set(true);
   }
 }

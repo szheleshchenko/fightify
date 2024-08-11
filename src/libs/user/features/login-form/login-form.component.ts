@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import {ReactiveFormsModule} from '@angular/forms';
-import {RouterLink} from '@angular/router';
+import {Router, RouterLink} from '@angular/router';
 import {TranslocoDirective} from '@jsverse/transloco';
 import {AuthService} from '@libs/shared/data-access/api/auth';
 import {AppLinks} from '@libs/shared/features/app-links';
@@ -28,9 +28,12 @@ export class LoginFormComponent {
   public form = new LoginForm();
   public links = inject(AppLinks);
   private authService = inject(AuthService);
+  public router = inject(Router);
 
-  public mutation = injectMutation(() => ({
+  public action = injectMutation(() => ({
     mutationFn: (data: LoginFormFieldValues) => lastValueFrom(this.authService.login(data)),
+    onSuccess: () => this.router.navigate(['/']),
+    onError: () => this.form.reset(),
   }));
 
   public submitted(): void {
@@ -38,6 +41,6 @@ export class LoginFormComponent {
       return this.form.markAllAsTouched();
     }
 
-    this.mutation.mutate(this.form.value as LoginFormFieldValues);
+    this.action.mutate(this.form.value as LoginFormFieldValues);
   }
 }

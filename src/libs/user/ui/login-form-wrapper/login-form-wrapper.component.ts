@@ -10,6 +10,5 @@ import {ButtonComponent} from '@libs/shared/ui/ui-kit';
 })
 export class LoginFormWrapperComponent {
   public heading = input.required<string>();
-  public buttonText = input.required<string>();
   public subheading = input<string>();
 }

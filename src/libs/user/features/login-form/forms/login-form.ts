@@ -10,7 +10,10 @@ export class LoginForm extends FormGroup<InferFormSchema<LoginFormFieldValues>> 
   constructor() {
     super({
       username: new FormControl<string>('', {nonNullable: true, validators: [Validators.required]}),
-      password: new FormControl<string>('', {nonNullable: true, validators: [Validators.required]}),
+      password: new FormControl<string>('', {
+        nonNullable: true,
+        validators: [Validators.required, Validators.minLength(6)],
+      }),
     });
   }
 }

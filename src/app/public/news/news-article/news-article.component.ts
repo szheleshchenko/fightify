@@ -7,7 +7,6 @@ import {PageComponent} from '@libs/shared/features/page';
   standalone: true,
   imports: [PageComponent, NewsArticleComponent],
   templateUrl: './news-article.component.html',
-  styleUrl: './news-article.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NewsArticlePageComponent {}
