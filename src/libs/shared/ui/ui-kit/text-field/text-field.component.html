@@ -30,6 +30,10 @@
           })
         }}
       }
+
+      @if (formControl.hasError('server')) {
+        {{ formControl.errors?.['server'] }}
+      }
     </p>
   }
 </div>

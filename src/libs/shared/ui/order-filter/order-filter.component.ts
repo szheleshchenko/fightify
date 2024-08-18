@@ -8,7 +8,6 @@ import {OrderFilter} from './types';
   standalone: true,
   imports: [SelectComponent, ReactiveFormsModule],
   templateUrl: './order-filter.component.html',
-  styleUrl: './order-filter.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OrderFilterComponent {
