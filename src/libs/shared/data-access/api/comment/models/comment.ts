@@ -1,7 +1,7 @@
-import {BaseModel} from '@libs/shared/data-access/api-client';
+import {BaseEntity} from '@libs/shared/data-access/api-client';
 import {Expose} from 'class-transformer';
 
-export class Comment extends BaseModel {
+export class Comment extends BaseEntity {
   @Expose()
   public authorName!: string;
 

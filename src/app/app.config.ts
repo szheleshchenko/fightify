@@ -7,6 +7,7 @@ import {
 import {provideClientHydration} from '@angular/platform-browser';
 import {provideRouter, withInMemoryScrolling, withViewTransitions} from '@angular/router';
 import {provideTransloco} from '@jsverse/transloco';
+import {errorInterceptor} from '@libs/shared/data-access/api-client';
 import {jwtInterceptor} from '@libs/shared/data-access/api/auth';
 import {provideAppLinks} from '@libs/shared/features/app-links';
 import {provideAngularQuery, QueryClient} from '@tanstack/angular-query-experimental';
@@ -22,7 +23,7 @@ export const appConfig: ApplicationConfig = {
       withInMemoryScrolling({anchorScrolling: 'enabled', scrollPositionRestoration: 'top'}),
     ),
     provideClientHydration(),
-    provideHttpClient(withFetch(), withInterceptors([jwtInterceptor])),
+    provideHttpClient(withFetch(), withInterceptors([jwtInterceptor, errorInterceptor])),
     provideTransloco({
       config: {
         availableLangs: ['en', 'ru'],
