@@ -1,12 +1,15 @@
-<label for="profile-menu-toggler" class="cursor-pointer">
-  @if (isAuthorized()) {
-    <app-avatar src="https://avatars.githubusercontent.com/u/124599?v=4" />
-  } @else {
-    <a
-      routerLink="/login"
-      class="inline-block px-5 py-3 text-base leading-6 align-top hover:text-red-600 lg:h-20 lg:px-4 lg:py-7"
-    >
-      Login
-    </a>
-  }
-</label>
+<app-dropdown-menu classes="top-[40px]">
+  <ng-container trigger>
+    @if (isAuthorized()) {
+      <app-avatar src="https://avatars.githubusercontent.com/u/124599?v=4" />
+    } @else {
+      <span class="material-symbols-outlined text-slate-950">account_circle</span>
+    }
+  </ng-container>
+  <ng-container accessoryTop>
+    <div class="space-y-1">
+      <p class="text-sm">szheleshchenko</p>
+      <p class="text-xs"></p>
+    </div>
+  </ng-container>
+</app-dropdown-menu>
