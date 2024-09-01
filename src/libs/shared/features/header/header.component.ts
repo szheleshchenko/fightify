@@ -10,9 +10,9 @@ import {
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 import {NavigationStart, Router, RouterLink, RouterLinkActive} from '@angular/router';
 import {TranslocoDirective} from '@jsverse/transloco';
+import {LogoComponent} from '@libs/shared/ui/ui-kit';
 import {filter} from 'rxjs';
 import {injectAppLinks} from '../app-links';
-import {LogoComponent} from '../logo';
 import {HeaderProfileMenuComponent} from './components';
 
 @Component({
@@ -33,10 +33,6 @@ export class HeaderComponent implements OnInit {
   public appLinks = injectAppLinks();
 
   public navigationLinks = [
-    {
-      translationKey: 'TEXT_HOME',
-      path: this.appLinks.root,
-    },
     {
       translationKey: 'TEXT_NEWS',
       path: this.appLinks.news,
