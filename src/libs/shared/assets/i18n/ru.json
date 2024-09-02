@@ -1,7 +1,6 @@
 {
   "SHARED": {
     "NAVIGATION": {
-      "TEXT_HOME": "Главная",
       "TEXT_NEWS": "Новости",
       "TEXT_LOGIN": "Вход",
       "TEXT_REGISTER": "Регистрация",

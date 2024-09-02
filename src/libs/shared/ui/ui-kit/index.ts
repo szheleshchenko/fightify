@@ -3,6 +3,8 @@ export * from './button';
 export * from './checkbox';
 export * from './content-card';
 export * from './dropdown';
+export * from './dropdown-menu';
+export * from './logo';
 export * from './select';
 export * from './spinner';
 export * from './table';

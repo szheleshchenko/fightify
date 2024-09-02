@@ -1,0 +1,20 @@
+<div class="relative">
+  <a
+    (click)="toggled()"
+    (keydown)="toggled()"
+    tabindex="0"
+    class="block leading-[0px] cursor-pointer"
+  >
+    <ng-content select="[trigger]" />
+  </a>
+  <div
+    [attr.data-state]="isOpen()"
+    [ngClass]="classes()"
+    class="absolute bg-white right-0 z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md data-[state=open]:visible data-[state=false]:invisible data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95"
+  >
+    <div class="px-2 py-1.5">
+      <ng-content select="[accessoryTop]" />
+    </div>
+    <ng-content select="[content]" />
+  </div>
+</div>
