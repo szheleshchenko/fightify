@@ -13,7 +13,6 @@ export class DropdownMenuComponent {
   public isOpen = signal(false);
 
   public toggled(): void {
-    console.log('trigger', this.isOpen());
     this.isOpen.set(!this.isOpen());
   }
 }

@@ -23,6 +23,8 @@
     "@angular/router": "^18.1.3",
     "@angular/ssr": "^18.1.3",
     "@jsverse/transloco": "^7.4.2",
+    "@ngrx/operators": "^18.0.2",
+    "@ngrx/signals": "^18.0.2",
     "@tanstack/angular-query-experimental": "^5.51.21",
     "class-transformer": "^0.5.1",
     "clsx": "^2.1.1",

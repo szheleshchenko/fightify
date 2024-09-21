@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import {RouterLink} from '@angular/router';
-import {AuthService} from '@libs/shared/data-access/api/auth';
+import {AuthStore} from '@libs/shared/data-access/api/auth';
 import {AvatarComponent, DropdownMenuComponent} from '@libs/shared/ui/ui-kit';
 
 @Component({
@@ -11,6 +11,5 @@ import {AvatarComponent, DropdownMenuComponent} from '@libs/shared/ui/ui-kit';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderProfileMenuComponent {
-  public authService = inject(AuthService);
-  public isAuthorized = this.authService.isAuthorized;
+  public authStore = inject(AuthStore);
 }

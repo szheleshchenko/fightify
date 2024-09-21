@@ -10,7 +10,6 @@ import {provideTransloco} from '@jsverse/transloco';
 import {errorInterceptor} from '@libs/shared/data-access/api-client';
 import {jwtInterceptor} from '@libs/shared/data-access/api/auth';
 import {provideAppLinks} from '@libs/shared/features/app-links';
-import {provideAngularQuery, QueryClient} from '@tanstack/angular-query-experimental';
 import {routes} from './app.routes';
 import {I18nLoader} from './i18n-loader';
 
@@ -32,7 +31,6 @@ export const appConfig: ApplicationConfig = {
       },
       loader: I18nLoader,
     }),
-    provideAngularQuery(new QueryClient()),
     provideAppLinks({
       root: '/',
       fighters: '/fighters',

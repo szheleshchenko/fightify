@@ -1,7 +1,10 @@
 <app-dropdown-menu classes="top-[40px]">
   <ng-container trigger>
-    @if (isAuthorized()) {
-      <app-avatar src="https://avatars.githubusercontent.com/u/124599?v=4" />
+    @if (authStore.isAuthenticated()) {
+      <app-avatar
+        (click)="authStore.unauthorize()"
+        src="https://avatars.githubusercontent.com/u/124599?v=4"
+      />
     } @else {
       <span class="material-symbols-outlined text-slate-950">account_circle</span>
     }
