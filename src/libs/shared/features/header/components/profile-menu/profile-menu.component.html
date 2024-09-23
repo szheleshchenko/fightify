@@ -1,25 +1,26 @@
-<app-dropdown-menu align="end">
-  <ng-container trigger>
-    @if (authStore.isAuthenticated()) {
-      <app-avatar
-        (click)="authStore.unauthorize()"
-        src="https://avatars.githubusercontent.com/u/124599?v=4"
-      />
-    } @else {
-      <span class="material-symbols-outlined select-none text-slate-950">account_circle</span>
-    }
-  </ng-container>
-  <ng-container content>
-    <app-menu>
-      <app-menu-group>
-        <div appMenuItem>Profile</div>
-        <div appMenuItem>Bets</div>
-        <div appMenuItem>Settings</div>
-      </app-menu-group>
-      <app-menu-separator />
-      <app-menu-group>
-        <div appMenuItem>Log out</div>
-      </app-menu-group>
-    </app-menu>
-  </ng-container>
-</app-dropdown-menu>
+@if (authStore.isAuthenticated()) {
+  <app-avatar
+    (click)="authStore.unauthorize()"
+    src="https://avatars.githubusercontent.com/u/124599?v=4"
+  />
+} @else {
+  <span
+    [appDropdownMenuTriggerFor]="content"
+    class="flex material-symbols-outlined select-none text-slate-950"
+  >
+    account_circle
+  </span>
+}
+<ng-template #content>
+  <app-menu>
+    <app-menu-group>
+      <div appMenuItem>Profile</div>
+      <div appMenuItem>Bets</div>
+      <div appMenuItem>Settings</div>
+    </app-menu-group>
+    <app-menu-separator />
+    <app-menu-group>
+      <div appMenuItem>Log out</div>
+    </app-menu-group>
+  </app-menu>
+</ng-template>

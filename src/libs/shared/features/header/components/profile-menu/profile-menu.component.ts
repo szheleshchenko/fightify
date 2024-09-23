@@ -1,8 +1,7 @@
-import {CdkMenu} from '@angular/cdk/menu';
 import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import {RouterLink} from '@angular/router';
 import {AuthStore} from '@libs/shared/data-access/api/auth';
-import {AvatarComponent, DropdownMenuComponent} from '@libs/shared/ui/ui-kit';
+import {AvatarComponent, DropdownMenuTriggerDirective} from '@libs/shared/ui/ui-kit';
 import {
   MenuGroupComponent,
   MenuItemDirective,
@@ -16,12 +15,11 @@ import {MenuComponent} from '@libs/shared/ui/ui-kit/menu/menu.component';
   imports: [
     AvatarComponent,
     RouterLink,
-    DropdownMenuComponent,
     MenuItemDirective,
     MenuComponent,
     MenuSeparatorComponent,
     MenuGroupComponent,
-    CdkMenu,
+    DropdownMenuTriggerDirective,
   ],
   templateUrl: 'profile-menu.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
