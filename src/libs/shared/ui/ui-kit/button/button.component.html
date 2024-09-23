@@ -1,4 +1,4 @@
-<button [class]="classes()" [disabled]="isLoading() || isDisabled()">
+<button appButton [variant]="variant()" [disabled]="isLoading() || isDisabled()">
   @if (isLoading()) {
     <app-spinner />
   }
