@@ -1,12 +1,12 @@
 import {inject} from '@angular/core';
 import {CanActivateFn, Router} from '@angular/router';
-import {AuthService} from '@libs/shared/data-access/api/auth';
+import {AuthStore} from '@libs/shared/data-access/api/auth';
 
 export const unauthorizedGuard: CanActivateFn = (): boolean => {
   const router = inject(Router);
-  const authService = inject(AuthService);
+  const authService = inject(AuthStore);
 
-  if (authService.isAuthorized()) {
+  if (authService.isAuthenticated()) {
     return true;
   }
 
