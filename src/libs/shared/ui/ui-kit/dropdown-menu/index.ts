@@ -1,1 +1,1 @@
-export * from './dropdown-menu.component';
+export * from './directives';
