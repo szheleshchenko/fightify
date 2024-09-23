@@ -32,7 +32,7 @@ export class DropdownMenuTriggerDirective {
   }
 
   @Input()
-  set appDropdownMenuTriggerFor(value: TemplateRef<unknown> | null) {
+  public set appDropdownMenuTriggerFor(value: TemplateRef<unknown> | null) {
     this.cdkTrigger.menuTemplateRef = value;
   }
 }
