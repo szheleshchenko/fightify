@@ -13,6 +13,6 @@ import type {ClassValue} from 'clsx';
 export class MenuSeparatorComponent {
   public readonly userClasses = input<ClassValue>('', {alias: 'class'});
   public classes = computed(() =>
-    mergeClasses('block -mx-1 my-1 h-px bg-gray', this.userClasses()),
+    mergeClasses('block -mx-1 my-1 h-px bg-gray-200', this.userClasses()),
   );
 }

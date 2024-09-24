@@ -1,6 +1,13 @@
 {
   "SHARED": {
     "HEADER": {
+      "PROFILE_MENU": {
+        "TEXT_SIGN_UP": "Sign up",
+        "TEXT_LOGIN": "Login",
+        "TEXT_LOG_OUT": "Log out",
+        "TEXT_PROFILE": "Profile",
+        "TEXT_SETTINGS": "Settings"
+      },
       "TEXT_NEWS": "News",
       "TEXT_EVENTS": "Events",
       "TEXT_FIGHTERS": "Fighters",
