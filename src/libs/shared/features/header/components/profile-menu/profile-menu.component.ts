@@ -1,13 +1,19 @@
 import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import {RouterLink} from '@angular/router';
+import {TranslocoDirective} from '@jsverse/transloco';
 import {AuthStore} from '@libs/shared/data-access/api/auth';
-import {AvatarComponent, DropdownMenuTriggerDirective} from '@libs/shared/ui/ui-kit';
+import {injectAppLinks} from '@libs/shared/features/app-links';
 import {
+  AvatarComponent,
+  ButtonDirective,
+  DropdownMenuTriggerDirective,
+} from '@libs/shared/ui/ui-kit';
+import {
+  MenuComponent,
   MenuGroupComponent,
   MenuItemDirective,
   MenuSeparatorComponent,
 } from '@libs/shared/ui/ui-kit/menu';
-import {MenuComponent} from '@libs/shared/ui/ui-kit/menu/menu.component';
 
 @Component({
   selector: 'app-header-profile-menu',
@@ -20,10 +26,13 @@ import {MenuComponent} from '@libs/shared/ui/ui-kit/menu/menu.component';
     MenuSeparatorComponent,
     MenuGroupComponent,
     DropdownMenuTriggerDirective,
+    TranslocoDirective,
+    ButtonDirective,
   ],
   templateUrl: 'profile-menu.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderProfileMenuComponent {
   public authStore = inject(AuthStore);
+  public links = injectAppLinks();
 }
