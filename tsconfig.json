@@ -22,7 +22,8 @@
     "paths": {
       "@app/*": ["./src/app/*"],
       "@libs/*": ["./src/libs/*"],
-      "@assets/*": ["./src/assets/*"]
+      "@assets/*": ["./src/assets/*"],
+      "@configuration/*": ["./src/configurations/*"]
     }
   },
   "angularCompilerOptions": {
