@@ -5,11 +5,7 @@ import {FeatureId} from './enums';
 
 @Injectable()
 export class FeatureFlagService {
-  private config: Record<FeatureId, AppEnvName>;
-
-  constructor() {
-    this.config = {};
-  }
+  private config: Record<FeatureId, AppEnvName> = {};
 
   public isFeatureEnabled(featureId: FeatureId): boolean {
     const currentEnvironment = appConfiguration.environment;
