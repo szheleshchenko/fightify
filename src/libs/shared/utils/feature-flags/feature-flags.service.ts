@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {appConfiguration} from '../../../../configurations/configuration';
+import {appConfiguration} from '@configuration';
 import {AppEnvName, appEnvStage} from '../env';
 import {FeatureId} from './enums';
 

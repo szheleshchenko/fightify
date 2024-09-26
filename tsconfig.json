@@ -23,7 +23,7 @@
       "@app/*": ["./src/app/*"],
       "@libs/*": ["./src/libs/*"],
       "@assets/*": ["./src/assets/*"],
-      "@configuration/*": ["./src/configurations/*"]
+      "@configuration": ["./src/configurations"]
     }
   },
   "angularCompilerOptions": {
