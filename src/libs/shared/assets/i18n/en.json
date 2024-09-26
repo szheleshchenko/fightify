@@ -33,6 +33,9 @@
     "TEXT_FIELD": {
       "TEXT_REQUIRED": "This field is required",
       "TEXT_LONGER_THAN": "{{label}} must be longer than {{length}} characters"
+    },
+    "UNDER_CONSTRUCTION": {
+      "TEXT_UNDER_CONSTRUCTION": "Under construction"
     }
   }
 }
