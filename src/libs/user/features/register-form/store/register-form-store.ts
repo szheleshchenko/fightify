@@ -8,17 +8,17 @@ import {tapResponse} from '@ngrx/operators';
 import {patchState, signalStore, withMethods, withState} from '@ngrx/signals';
 import {rxMethod} from '@ngrx/signals/rxjs-interop';
 import {filter, pipe, switchMap, tap} from 'rxjs';
-import {LoginForm, LoginFormFieldValues} from '../forms';
+import {RegisterForm, RegisterFormFieldValues} from '../forms';
 
-type LoginFormState = {
-  form: LoginForm;
+type RegisterFormState = {
+  form: RegisterForm;
 };
 
-const initialState: LoginFormState = {
-  form: new LoginForm(),
+const initialState: RegisterFormState = {
+  form: new RegisterForm(),
 };
 
-export const LoginFormStore = signalStore(
+export const RegisterFormStore = signalStore(
   withState(initialState),
   withRequestStatus(),
   withMethods(
@@ -35,7 +35,7 @@ export const LoginFormStore = signalStore(
           filter(() => store.form().valid),
           tap(() => patchState(store, setFetching())),
           switchMap(() =>
-            authService.login(store.form().value as LoginFormFieldValues).pipe(
+            authService.register(store.form().value as RegisterFormFieldValues).pipe(
               tapResponse({
                 next: (response) => {
                   authStore.authorize(response);

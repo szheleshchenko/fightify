@@ -1,38 +1,49 @@
 @let isInvalid = formControl.invalid && (formControl.dirty || formControl.touched);
+@let labelText = label();
+@let errorId = label() + 'error';
 
 <div *transloco="let t; prefix: 'SHARED.TEXT_FIELD'" class="space-y-2">
-  <label [class.text-red-600]="isInvalid" class="text-sm font-medium leading-none" [for]="label()">
-    {{ label() }}
+  <label
+    [for]="labelText"
+    [class.text-red-600]="isInvalid"
+    class="text-sm font-medium leading-none"
+  >
+    {{ labelText }}
   </label>
   <input
     [formControl]="formControl"
-    [id]="label()"
+    [id]="labelText"
     [attr.placeholder]="placeholder()"
+    [attr.aria-labelledby]="labelText"
+    [attr.aria-describedby]="isInvalid ? errorId : null"
+    [attr.aria-invalid]="isInvalid"
+    [name]="labelText"
+    [type]="type()"
     class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-zinc-400 ring-slate-950 focus-visible:outline-none focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50"
-    aria-describedby=":r13u:-form-item-description"
-    aria-invalid="false"
-    name="username"
   />
   @if (description()) {
     <p class="text-sm text-zinc-400">{{ description() }}</p>
   }
   @if (isInvalid) {
-    <p class="text-sm font-medium text-red-600">
-      @if (formControl.hasError('required')) {
-        {{ t('TEXT_REQUIRED') }}
-      }
-
-      @if (formControl.hasError('minlength')) {
-        {{
-          t('TEXT_LONGER_THAN', {
-            label: label(),
-            length: formControl.errors?.['minlength'].requiredLength,
-          })
-        }}
-      }
-
-      @if (formControl.hasError('server')) {
-        {{ formControl.errors?.['server'] }}
+    <p [id]="errorId" class="text-sm font-medium text-red-600">
+      @switch (true) {
+        @case (!!errorMessage()) {
+          {{ errorMessage() }}
+        }
+        @case (formControl.hasError('required')) {
+          {{ t('TEXT_REQUIRED') }}
+        }
+        @case (formControl.hasError('minlength')) {
+          {{
+            t('TEXT_LONGER_THAN', {
+              label: label(),
+              length: formControl.errors?.['minlength'].requiredLength,
+            })
+          }}
+        }
+        @case (formControl.hasError('server')) {
+          {{ formControl.errors?.['server'] }}
+        }
       }
     </p>
   }

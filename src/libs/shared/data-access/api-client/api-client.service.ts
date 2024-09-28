@@ -1,12 +1,13 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable, inject} from '@angular/core';
+import {appConfiguration} from '@configuration';
 import {Observable} from 'rxjs';
 import {AppHttpParams} from './types';
 
 @Injectable({providedIn: 'root'})
 export class ApiService {
   private httpClient = inject(HttpClient);
-  private baseUrl = 'http://localhost:3000/';
+  private baseUrl = appConfiguration.api.baseUrl;
 
   public get<T>(
     endpoint: string,

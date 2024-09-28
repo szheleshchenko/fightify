@@ -15,12 +15,20 @@ export class AuthService {
       .post<
         AuthRequest,
         AuthResponse
-      >('auth/login', instanceToPlain(request), {withCredentials: true})
+      >('/auth/login', instanceToPlain(request), {withCredentials: true})
       .pipe(map((response) => plainToInstance(AuthResponse, response)));
   }
 
-  public register(registerRequest: RegisterRequest): Observable<void> {
-    return this.apiService.post<RegisterRequest, void>('auth/register', registerRequest);
+  public register(registerRequest: RegisterRequest): Observable<AuthResponse> {
+    const request = new RegisterRequest(registerRequest);
+
+    return this.apiService.post<RegisterRequest, AuthResponse>(
+      '/auth/register',
+      instanceToPlain(request),
+      {
+        withCredentials: true,
+      },
+    );
   }
 
   public refreshToken(refreshTokenRequest: RefreshTokenRequest): Observable<AuthResponse> {
