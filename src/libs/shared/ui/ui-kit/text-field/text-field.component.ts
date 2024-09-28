@@ -14,6 +14,8 @@ export class TextFieldComponent extends BaseFormControlDirective<string> impleme
   public label = input<string>();
   public description = input<string>();
   public isRequired = input<boolean>(false);
+  public errorMessage = input<string>();
+
   public ngControl = inject(NgControl);
   public formControl!: FormControl;
 

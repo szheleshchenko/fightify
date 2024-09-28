@@ -1,11 +1,47 @@
+@let form = registerFormStore.form();
+
 <app-login-form-wrapper
   [formGroup]="form"
-  (ngSubmit)="submitted()"
-  heading="Register"
-  subheading="Register To Enjoy All The Benefits"
-  buttonText="Create Account"
+  *transloco="let t; prefix: 'USER.REGISTER_FORM'"
+  (ngSubmit)="registerFormStore.submitForm()"
+  [heading]="t('TEXT_SIGN_UP')"
+  [subheading]="t('TEXT_ENTER_YOUR_USERNAME')"
+  #ngForm="ngForm"
 >
-  <app-text-field formControlName="email" [isRequired]="true" label="Email" />
-  <app-text-field formControlName="password" [isRequired]="true" label="Password" />
-  <app-text-field formControlName="confirmPassword" [isRequired]="true" label="Confirm password" />
+  <app-text-field
+    formControlName="username"
+    [isRequired]="true"
+    [label]="t('TEXT_USERNAME')"
+    placeholder="your_username"
+  />
+  <app-text-field
+    formControlName="password"
+    [isRequired]="true"
+    [label]="t('TEXT_PASSWORD')"
+    [placeholder]="t('TEXT_6_CHARACTERS')"
+    type="password"
+  />
+  <app-text-field
+    formControlName="confirmPassword"
+    [isRequired]="true"
+    [label]="t('TEXT_CONFIRM_PASSWORD')"
+    [placeholder]="t('TEXT_6_CHARACTERS')"
+    type="password"
+    [errorMessage]="
+      form.errors?.['passwordNotMatch'] ? t('TEXT_PASSWORDS_DO_NOT_MATCH') : undefined
+    "
+  />
+  <div class="text-right text-sm">
+    {{ t('TEXT_ALREADY_HAVE_AN_ACCOUNT') }}
+    <a [routerLink]="links.login">{{ t('LINK_LOGIN') }}</a>
+  </div>
+  <app-button
+    [isLoading]="registerFormStore.isFetching()"
+    [isDisabled]="form.invalid && ngForm.submitted"
+    size="large"
+    class="block"
+    actionContent
+  >
+    {{ t('BUTTON_CREATE_ACCOUNT') }}
+  </app-button>
 </app-login-form-wrapper>
