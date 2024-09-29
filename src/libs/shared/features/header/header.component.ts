@@ -10,10 +10,10 @@ import {
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 import {NavigationStart, Router, RouterLink, RouterLinkActive} from '@angular/router';
 import {TranslocoDirective} from '@jsverse/transloco';
-import {LogoComponent} from '@libs/shared/ui/ui-kit';
+import {ButtonDirective, LogoComponent} from '@libs/shared/ui/ui-kit';
 import {filter} from 'rxjs';
 import {injectAppLinks} from '../app-links';
-import {HeaderProfileMenuComponent} from './components';
+import {HeaderProfileMenuComponent, HeaderThemeTogglerComponent} from './components';
 
 @Component({
   standalone: true,
@@ -24,6 +24,8 @@ import {HeaderProfileMenuComponent} from './components';
     TranslocoDirective,
     LogoComponent,
     HeaderProfileMenuComponent,
+    HeaderThemeTogglerComponent,
+    ButtonDirective,
   ],
   templateUrl: 'header.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

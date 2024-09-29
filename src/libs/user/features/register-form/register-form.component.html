@@ -32,14 +32,13 @@
     "
   />
   <div class="text-right text-sm">
-    {{ t('TEXT_ALREADY_HAVE_AN_ACCOUNT') }}
+    <span class="text-muted-foreground">{{ t('TEXT_ALREADY_HAVE_AN_ACCOUNT') }} </span>
     <a [routerLink]="links.login">{{ t('LINK_LOGIN') }}</a>
   </div>
   <app-button
     [isLoading]="registerFormStore.isFetching()"
     [isDisabled]="form.invalid && ngForm.submitted"
-    size="large"
-    class="block"
+    class="w-full"
     actionContent
   >
     {{ t('BUTTON_CREATE_ACCOUNT') }}
