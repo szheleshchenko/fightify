@@ -1,7 +1,7 @@
 <div class="h-14"></div>
 <header
   *transloco="let translate; prefix: 'SHARED.HEADER'"
-  class="fixed top-0 w-full h-14 bg-white border-b shadow-sm z-50"
+  class="fixed top-0 w-full h-14 bg-background border-b shadow-sm z-50"
 >
   <div class="container h-full flex items-center">
     <input id="mobile-menu-toggler" type="checkbox" class="peer" hidden #mobileMenuToggler />
@@ -9,26 +9,26 @@
       <app-logo classes="hover:opacity-70" />
     </a>
     <nav
-      class="absolute flex flex-col gap-4 w-[calc(100%-2rem)] scale-95 peer-checked:scale-100 invisible peer-checked:visible leading-5 top-16 transition z-50 lg:relative lg:gap-1 lg:flex-row lg:items-center lg:ml-16 lg:scale-100 lg:visible lg:top-0 lg:w-auto"
+      class="absolute flex flex-col w-[calc(100%-2rem)] bg-background invisible scale-95 peer-checked:visible peer-checked:scale-100 leading-5 top-14 transition z-50 lg:relative lg:gap-1 lg:flex-row lg:items-center lg:ml-16 lg:scale-100 lg:visible lg:top-0 lg:w-auto lg:bg-transparent"
     >
       @for (link of navigationLinks; track link.path) {
-        <a
-          [routerLink]="link.path"
-          class="inline-block text-sm text-slate-950 align-top px-3 py-1 rounded-md transition hover:bg-zinc-50"
-        >
+        <a [routerLink]="link.path" size="sm" variant="ghost" appButton>
           {{ translate(link.translationKey) }}
         </a>
       }
     </nav>
-    <div class="flex items-center gap-4 ml-auto">
-      <button class="material-symbols-outlined text-slate-950 hover:text-red-600">search</button>
+    <div class="flex items-center gap-2 ml-auto">
+      <app-header-profile-menu />
+      <app-header-theme-toggler />
       <label
         for="mobile-menu-toggler"
-        class="material-symbols-outlined text-slate-950 hover:text-red-600 inline-block cursor-pointer select-none lg:hidden"
+        class="material-symbols-outlined text-lg cursor-pointer lg:hidden"
+        size="sm"
+        variant="ghost"
+        appButton
       >
         menu
       </label>
-      <app-header-profile-menu />
     </div>
   </div>
 </header>

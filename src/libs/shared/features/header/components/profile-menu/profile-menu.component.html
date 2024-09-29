@@ -1,15 +1,14 @@
 <ng-container *transloco="let t; prefix: 'SHARED.HEADER.PROFILE_MENU'">
   @if (authStore.isAuthenticated()) {
     <app-avatar
-      (click)="authStore.unauthorize()"
-      src="https://avatars.githubusercontent.com/u/124599?v=4"
       [appDropdownMenuTriggerFor]="content"
+      src="https://avatars.githubusercontent.com/u/124599?v=4"
       align="end"
     />
   } @else {
     <div class="flex items-center gap-2">
-      <a [routerLink]="links.login" appButton>{{ t('TEXT_LOGIN') }}</a>
-      <a [routerLink]="links.register" appButton>{{ t('TEXT_SIGN_UP') }}</a>
+      <a [routerLink]="links.login" size="sm" variant="ghost" appButton>{{ t('TEXT_LOGIN') }}</a>
+      <a [routerLink]="links.register" size="sm" appButton>{{ t('TEXT_SIGN_UP') }}</a>
     </div>
   }
   <ng-template #content>
