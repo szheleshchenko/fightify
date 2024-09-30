@@ -1,1 +1,1 @@
-export * from './register-form-store';
+export * from './register-form.store';

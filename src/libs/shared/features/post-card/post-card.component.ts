@@ -1,28 +1,21 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component, computed, input} from '@angular/core';
 import {RouterLink} from '@angular/router';
+import {mergeClasses} from '@libs/shared/utils/merge-classes';
+import {cva, VariantProps} from 'class-variance-authority';
 
-/* const postVariants = cva(
-  {
-    titleClasses: 'mb-1 text-2xl font-mono hover:opacity-70',
-    detailsClasses: 'flex gap-3 text-xs text-zinc-500 uppercase font-medium lg:text-sm',
-    linksClasses: 'text-black hover:text-red-600',
-    isDescriptionShown: false,
-    isAuthorShown: false,
-    isImageShown: true,
-  },
-  {
-    variants: {
-      default: {titleClasses: 'lg:text-4xl lg:mb-2', isDescriptionShown: true, isAuthorShown: true},
-      small: {titleClasses: 'lg:text-2xl'},
-      footerPost: {
-        titleClasses: 'text-base',
-        linksClasses: 'text-white',
-        detailsClasses: 'lg:text-xs',
-        isImageShown: false,
-      },
+const titleVariants = cva('mb-1 text-2xl font-mono hover:opacity-70', {
+  variants: {
+    variant: {
+      default: 'lg:text-4xl lg:mb-2',
+      small: 'lg:text-2xl',
     },
   },
-); */
+  defaultVariants: {
+    variant: 'default',
+  },
+});
+
+type TitleVariant = VariantProps<typeof titleVariants>['variant'];
 
 @Component({
   selector: 'app-post-card',
@@ -32,8 +25,13 @@ import {RouterLink} from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PostCardComponent {
-  /* public variant = input<Parameters<typeof postVariants>[0]>('default');
-  public postVariant = computed(() => postVariants(this.variant()));
+  public titleVariant = input<TitleVariant>('default');
+
+  public titleClasses = computed(() => titleVariants({variant: this.titleVariant()}));
+  public detailsClasses = computed(() => mergeClasses());
+  public isDescriptionShown = computed(() => this.titleVariant() === 'default');
+  public isAuthorShown = computed(() => this.titleVariant() === 'default');
+
   public image =
-    'https://cdn.vox-cdn.com/thumbor/RQFvaLaZZC_jOAOzV1KblN7nKEM=/0x0:7451x4967/900x600/filters:focal(2777x1347:3969x2539)/cdn.vox-cdn.com/uploads/chorus_image/image/73435906/2159890877.0.jpg'; */
+    'https://cdn.vox-cdn.com/thumbor/RQFvaLaZZC_jOAOzV1KblN7nKEM=/0x0:7451x4967/900x600/filters:focal(2777x1347:3969x2539)/cdn.vox-cdn.com/uploads/chorus_image/image/73435906/2159890877.0.jpg';
 }
