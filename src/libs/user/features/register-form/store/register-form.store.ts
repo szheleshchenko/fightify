@@ -34,29 +34,33 @@ export const RegisterFormStore = signalStore(
           tap(() => store.form().markAllAsTouched()),
           filter(() => store.form().valid),
           tap(() => patchState(store, setFetching())),
-          switchMap(() =>
-            authService.register(store.form().value as RegisterFormFieldValues).pipe(
-              tapResponse({
-                next: (response) => {
-                  authStore.authorize(response);
-                  router.navigate([links.root]);
-                },
-                error: (error) => {
-                  patchState(store, setError(error));
-                  store.form().enable();
+          switchMap(() => {
+            const formValue = store.form().value as RegisterFormFieldValues;
 
-                  if (error instanceof ApiError) {
-                    error.errors.forEach((error) => {
-                      const control = store.form().get(error.property);
+            return authService
+              .register({username: formValue.username, password: formValue.password})
+              .pipe(
+                tapResponse({
+                  next: (response) => {
+                    authStore.authorize(response);
+                    router.navigate([links.root]);
+                  },
+                  error: (error) => {
+                    patchState(store, setError(error));
+                    store.form().enable();
 
-                      control?.setErrors({['server']: error.message});
-                      control?.markAsTouched();
-                    });
-                  }
-                },
-              }),
-            ),
-          ),
+                    if (error instanceof ApiError) {
+                      error.errors.forEach((error) => {
+                        const control = store.form().get(error.property);
+
+                        control?.setErrors({['server']: error.message});
+                        control?.markAsTouched();
+                      });
+                    }
+                  },
+                }),
+              );
+          }),
         ),
       ),
     }),

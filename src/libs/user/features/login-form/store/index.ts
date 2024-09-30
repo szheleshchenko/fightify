@@ -1,1 +1,1 @@
-export * from './login-form-store';
+export * from './login-form.store';
