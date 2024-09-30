@@ -5,13 +5,14 @@ import {Injectable} from '@angular/core';
 })
 export class LocalStorageService {
   private storage: Storage =
-    localStorage ??
-    ({
-      getItem: () => {},
-      setItem: () => {},
-      removeItem: () => {},
-      clear: () => {},
-    } as unknown as Storage);
+    typeof localStorage !== 'undefined'
+      ? localStorage
+      : ({
+          getItem: () => {},
+          setItem: () => {},
+          removeItem: () => {},
+          clear: () => {},
+        } as unknown as Storage);
 
   public setItem(key: string, value: string): void {
     this.storage.setItem(key, value);

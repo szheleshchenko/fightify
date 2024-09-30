@@ -1,4 +1,4 @@
-import {isPlatformBrowser} from '@angular/common';
+import {DOCUMENT, isPlatformBrowser} from '@angular/common';
 import {computed, inject, PLATFORM_ID} from '@angular/core';
 import {LocalStorageService} from '@libs/shared/data-access/local-storage';
 import {
@@ -29,6 +29,7 @@ export const ThemeStore = signalStore(
       store,
       platformId = inject(PLATFORM_ID),
       localStorageService = inject(LocalStorageService),
+      document = inject(DOCUMENT),
     ) => ({
       setTheme: (theme: Theme) => {
         patchState(store, {theme});
