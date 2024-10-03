@@ -35,6 +35,7 @@
     "ngx-progressbar": "^11.1.0",
     "rxjs": "~7.8.1",
     "tailwind-merge": "^2.3.0",
+    "tailwind-variants": "^0.2.1",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
