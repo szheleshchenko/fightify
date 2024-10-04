@@ -27,6 +27,9 @@
       "TEXT_FEEDBACK": "Feedback"
     },
     "HOME_OVERVIEW": {
+      "MOST_POPULAR": {
+        "TEXT_MOST_POPULAR": "Most Popular"
+      },
       "TEXT_PAST_EVENTS": "Past Events",
       "TEXT_UPCOMING_EVENTS": "Upcoming Events"
     },

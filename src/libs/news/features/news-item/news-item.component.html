@@ -1,14 +1,27 @@
-<div class="news">
-  <div class="news-image">
-    <img [src]="news.image" alt="News image" />
-  </div>
-  <div class="news-content">
-    <div class="news-details">
-      <app-news-details [news]="news" />
+@let classes = newsItem();
+
+<article [class]="classes.wrapper()">
+  <a routerLink="/news" [class]="classes.image()">
+    <img [src]="image" class="absolute w-full h-full object-cover" alt="Description of image" />
+  </a>
+  <div [class]="classes.content()">
+    <a routerLink="/news">
+      <h2 [class]="classes.title()">
+        Alex Pereira demolishes Jiri Prochazka with brutal head kick knockout in UFC 303 main event
+      </h2>
+    </a>
+    <p [class]="classes.description()">
+      Alex Pereira is quickly rocketing up the ladder of all-time greats after delivering another
+      jaw-dropping knockout to defend his title in the UFC 303 main event.
+    </p>
+    <div [class]="classes.meta()">
+      <span>
+        in <a routerLink="/news" class="text-foreground hover:text-foreground/60">News</a>
+      </span>
+      <span>
+        by <a routerLink="/news" class="text-foreground hover:text-foreground/60">Admin</a>
+      </span>
+      <time datetime="2023-01-31">January 31, 2023</time>
     </div>
-    <h6 class="news-title">
-      Alchemists Connor Starkson will go to the Blue Cross charity event on August 24th
-    </h6>
-    <span class="news-meta"><span class="news-author">Nick Grissom</span> 7 hours ago</span>
   </div>
-</div>
+</article>

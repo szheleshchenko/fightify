@@ -1,0 +1,11 @@
+<h2 *transloco="let t; prefix: 'SHARED.HOME_OVERVIEW.MOST_POPULAR'" class="mb-7 text-2xl font-mono">
+  {{ t('TEXT_MOST_POPULAR') }}
+</h2>
+<div class="flex flex-col gap-6 lg:flex-row">
+  <app-news-item class="flex-[4]" variant="featured" />
+  <div class="flex-[6]">
+    <app-news-item variant="horizontal-featured" />
+    <div class="border my-6"></div>
+    <app-news-item variant="horizontal-featured" />
+  </div>
+</div>

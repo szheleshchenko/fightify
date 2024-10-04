@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
-import {NewsItemComponent} from '@libs/news/features/news-item';
 import {News} from '@libs/shared/data-access/api/news';
+import {NewsItemComponent} from '../news-item';
 
 @Component({
   selector: 'app-popular-news',
