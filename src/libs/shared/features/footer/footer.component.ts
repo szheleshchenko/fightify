@@ -3,19 +3,12 @@ import {RouterLink} from '@angular/router';
 import {TranslocoDirective} from '@jsverse/transloco';
 import {TemplateLink, injectAppLinks} from '../app-links';
 import {LogoComponent} from '../logo';
-import {PostCardComponent} from '../post-card';
 import {FooterResourcesListComponent} from './components/resources-list';
 
 @Component({
   standalone: true,
   selector: 'app-footer',
-  imports: [
-    RouterLink,
-    LogoComponent,
-    TranslocoDirective,
-    FooterResourcesListComponent,
-    PostCardComponent,
-  ],
+  imports: [RouterLink, LogoComponent, TranslocoDirective, FooterResourcesListComponent],
   templateUrl: 'footer.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

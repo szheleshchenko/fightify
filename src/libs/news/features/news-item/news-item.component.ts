@@ -14,14 +14,14 @@ const newsItemVariant = tv({
   variants: {
     variant: {
       featured: {
-        content: 'gap-3',
+        content: 'lg:gap-3',
         title: 'lg:text-4xl',
         description: 'lg:inline',
       },
       'horizontal-featured': {
-        wrapper: 'flex-row-reverse items-center',
-        image: 'aspect-[1.15]',
-        content: 'gap-3',
+        wrapper: 'lg:flex-row-reverse lg:items-center',
+        image: 'lg:aspect-[1.15]',
+        content: 'lg:gap-3',
         title: 'lg:text-3xl',
         description: 'lg:inline',
       },

@@ -1,11 +1,11 @@
 @let classes = newsItem();
 
-<div [class]="classes.wrapper()">
-  <a routerLink="/" [class]="classes.image()">
-    <img [src]="image" class="absolute w-full h-full object-cover" alt="" />
+<article [class]="classes.wrapper()">
+  <a routerLink="/news" [class]="classes.image()">
+    <img [src]="image" class="absolute w-full h-full object-cover" alt="Description of image" />
   </a>
   <div [class]="classes.content()">
-    <a routerLink="/">
+    <a routerLink="/news">
       <h2 [class]="classes.title()">
         Alex Pereira demolishes Jiri Prochazka with brutal head kick knockout in UFC 303 main event
       </h2>
@@ -21,7 +21,7 @@
       <span>
         by <a routerLink="/news" class="text-foreground hover:text-foreground/60">Admin</a>
       </span>
-      <span>January 31, 2023</span>
+      <time datetime="2023-01-31">January 31, 2023</time>
     </div>
   </div>
-</div>
+</article>
