@@ -1,6 +1,9 @@
 {
   "USER": {
     "LOGIN_FORM": {
+      "TOASTS": {
+        "TEXT_TOAST_1": "Who da fk is that guy? Ooh, it’s you, I’m sorry. Welcome back!"
+      },
       "TEXT_LOGIN": "Login",
       "TEXT_ENTER_YOUR_USERNAME": "Enter your username below to login to your account",
       "TEXT_USERNAME": "Username",
