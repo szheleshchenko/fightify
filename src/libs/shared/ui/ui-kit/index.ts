@@ -10,3 +10,4 @@ export * from './spinner';
 export * from './table';
 export * from './tabs';
 export * from './text-field';
+export * from './toast';

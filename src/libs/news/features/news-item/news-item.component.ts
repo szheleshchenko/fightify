@@ -15,7 +15,7 @@ const newsItemVariant = tv({
     variant: {
       featured: {
         content: 'lg:gap-3',
-        title: 'lg:text-4xl',
+        title: 'lg:text-3xl',
         description: 'lg:inline',
       },
       'horizontal-featured': {
