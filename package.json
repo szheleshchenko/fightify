@@ -33,6 +33,7 @@
     "express": "^4.18.2",
     "ngx-cookie-service-ssr": "^18.0.0",
     "ngx-progressbar": "^11.1.0",
+    "ngx-quill": "^26.0.8",
     "rxjs": "~7.8.1",
     "tailwind-merge": "^2.3.0",
     "tailwind-variants": "^0.2.1",
