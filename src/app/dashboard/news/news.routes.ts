@@ -7,7 +7,7 @@ export const routes: Routes = [
     component: DashboardNewsPageComponent,
   },
   {
-    path: 'editor',
+    path: ':slug',
     loadChildren: () => import('./editor/editor.routes').then((module) => module.routes),
   },
 ];

@@ -3,9 +3,7 @@
     <div class="row">
       @if (news) {
         @for (news of news.data; track news.title) {
-          <div class="col col-50 col-mobile-100">
-            <app-news-card [news]="news" />
-          </div>
+          <div class="col col-50 col-mobile-100"></div>
         }
       }
     </div>

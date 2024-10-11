@@ -1,5 +1,5 @@
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
-import {QuillConfigModule} from 'ngx-quill';
+import {QuillConfigModule, QuillEditorComponent} from 'ngx-quill';
 import {ContentEditorComponent} from './content-editor.component';
 
 @NgModule({
@@ -9,6 +9,7 @@ import {ContentEditorComponent} from './content-editor.component';
         syntax: true,
       },
     }),
+    QuillEditorComponent,
   ],
   declarations: [ContentEditorComponent],
   exports: [ContentEditorComponent],

@@ -5,6 +5,7 @@
         "TEXT_SIGN_UP": "Sign up",
         "TEXT_LOGIN": "Login",
         "TEXT_LOG_OUT": "Log out",
+        "TEXT_DASHBOARD": "Dashboard",
         "TEXT_PROFILE": "Profile",
         "TEXT_SETTINGS": "Settings"
       },

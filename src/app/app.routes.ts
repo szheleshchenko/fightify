@@ -15,7 +15,6 @@ export const routes: Routes = [
   {
     path: 'dashboard',
     canActivate: [unauthorizedGuard],
-    loadChildren: () =>
-      import('./account-access/account-access.routes').then((module) => module.routes),
+    loadChildren: () => import('./dashboard/dashboard.routes').then((module) => module.routes),
   },
 ];
