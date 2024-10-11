@@ -8,6 +8,7 @@ type NavigationPath =
   | 'profile'
   | 'login'
   | 'register'
-  | 'forgotPassword';
+  | 'forgotPassword'
+  | 'dashboard';
 
 export type NavigationLinks = Record<NavigationPath, string>;

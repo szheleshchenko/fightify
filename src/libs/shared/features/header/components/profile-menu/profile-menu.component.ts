@@ -7,13 +7,11 @@ import {
   AvatarComponent,
   ButtonDirective,
   DropdownMenuTriggerDirective,
-} from '@libs/shared/ui/ui-kit';
-import {
   MenuComponent,
   MenuGroupComponent,
   MenuItemDirective,
   MenuSeparatorComponent,
-} from '@libs/shared/ui/ui-kit/menu';
+} from '@libs/shared/ui/ui-kit';
 
 @Component({
   selector: 'app-header-profile-menu',

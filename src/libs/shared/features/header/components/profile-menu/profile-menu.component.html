@@ -12,8 +12,9 @@
     </div>
   }
   <ng-template #content>
-    <app-menu class="w-56">
+    <app-menu class="w-56 mt-2">
       <app-menu-group>
+        <a [routerLink]="links.dashboard" appMenuItem>{{ t('TEXT_DASHBOARD') }}</a>
         <a [routerLink]="links.profile" appMenuItem>{{ t('TEXT_PROFILE') }}</a>
         <div appMenuItem>{{ t('TEXT_SETTINGS') }}</div>
       </app-menu-group>

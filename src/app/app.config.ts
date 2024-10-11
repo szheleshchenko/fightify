@@ -42,6 +42,7 @@ export const appConfig: ApplicationConfig = {
       login: '/login',
       register: '/register',
       forgotPassword: '/forgot-password',
+      dashboard: '/dashboard',
     }),
   ],
 };

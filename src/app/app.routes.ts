@@ -12,4 +12,9 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./account-access/account-access.routes').then((module) => module.routes),
   },
+  {
+    path: 'dashboard',
+    canActivate: [unauthorizedGuard],
+    loadChildren: () => import('./dashboard/dashboard.routes').then((module) => module.routes),
+  },
 ];
