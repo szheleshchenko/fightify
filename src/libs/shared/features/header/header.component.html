@@ -1,6 +1,7 @@
 <div class="h-14"></div>
 <header
   *transloco="let translate; prefix: 'SHARED.HEADER'"
+  [ngClass]="classes()"
   class="fixed top-0 w-full h-14 bg-background border-b shadow-sm z-50"
 >
   <div class="container h-full flex items-center">
