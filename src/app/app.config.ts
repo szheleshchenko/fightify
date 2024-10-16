@@ -43,6 +43,8 @@ export const appConfig: ApplicationConfig = {
       register: '/register',
       forgotPassword: '/forgot-password',
       dashboard: '/dashboard',
+      dashboardUsers: '/dashboard/users',
+      dashboardNews: '/dashboard/news',
     }),
   ],
 };

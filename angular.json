@@ -29,7 +29,8 @@
               "src/libs/fighter/assets",
               "src/libs/news/assets",
               "src/libs/shared/assets",
-              "src/libs/user/assets"
+              "src/libs/user/assets",
+              "src/libs/dashboard/assets"
             ],
             "styles": ["src/assets/styles/styles.scss"],
             "stylePreprocessorOptions": {
@@ -99,7 +100,8 @@
               "src/libs/fighter/assets",
               "src/libs/news/assets",
               "src/libs/shared/assets",
-              "src/libs/user/assets"
+              "src/libs/user/assets",
+              "src/libs/dashboard/assets"
             ],
             "styles": ["src/assets/styles/styles.scss"],
             "stylePreprocessorOptions": {

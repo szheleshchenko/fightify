@@ -9,6 +9,7 @@ export class I18nLoader implements TranslocoLoader {
 
   getTranslation(lang: string) {
     const translations = [
+      `libs/dashboard/assets/i18n/${lang}.json`,
       `libs/user/assets/i18n/${lang}.json`,
       `libs/shared/assets/i18n/${lang}.json`,
     ];

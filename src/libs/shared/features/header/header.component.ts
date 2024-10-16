@@ -1,3 +1,4 @@
+import {NgClass} from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -5,6 +6,7 @@ import {
   ElementRef,
   OnInit,
   inject,
+  input,
   viewChild,
 } from '@angular/core';
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
@@ -26,12 +28,13 @@ import {HeaderProfileMenuComponent, HeaderThemeTogglerComponent} from './compone
     HeaderProfileMenuComponent,
     HeaderThemeTogglerComponent,
     ButtonDirective,
+    NgClass,
   ],
   templateUrl: 'header.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent implements OnInit {
-  private mobileMenuToggler = viewChild<ElementRef<HTMLInputElement>>('mobileMenuToggler');
+  public classes = input<string>('', {alias: 'class'});
   public appLinks = injectAppLinks();
 
   public navigationLinks = [
@@ -57,6 +60,7 @@ export class HeaderComponent implements OnInit {
     },
   ];
 
+  private mobileMenuToggler = viewChild<ElementRef<HTMLInputElement>>('mobileMenuToggler');
   private router = inject(Router);
   private destroyRef = inject(DestroyRef);
 
