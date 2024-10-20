@@ -4,7 +4,7 @@ import {DashboardPageComponent} from './dashboard.component';
 export const routes: Routes = [
   {
     path: 'dashboard',
-    redirectTo: '/dashboard/news',
+    redirectTo: '/dashboard/users',
     pathMatch: 'full',
   },
   {

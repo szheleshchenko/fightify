@@ -1,0 +1,36 @@
+<app-table>
+  <app-table-header>
+    <app-table-row>
+      @for (column of columns(); track column.name) {
+        <app-table-cell class="group">
+          <button (click)="sortBy(column.field)" variant="ghost" size="sm" appButton>
+            {{ column.name }}
+            @if (column.sortable) {
+              <span
+                [ngClass]="{
+                  'opacity-100': sortField() === column.field,
+                  '[transform:rotateX(180deg)]':
+                    sortField() === column.field && sortDirection() === 'asc',
+                }"
+                class="material-symbols-outlined text-base opacity-0 transition-opacity group-hover:opacity-100"
+              >
+                sort
+              </span>
+            }
+          </button>
+        </app-table-cell>
+      }
+    </app-table-row>
+  </app-table-header>
+  <app-table-body>
+    @for (row of rows(); track row.id) {
+      <app-table-row>
+        @for (column of columns(); track column.name) {
+          <app-table-cell>
+            {{ row[column.field] }}
+          </app-table-cell>
+        }
+      </app-table-row>
+    }
+  </app-table-body>
+</app-table>
