@@ -1,10 +1,11 @@
 import {Routes} from '@angular/router';
 import {DashboardPageComponent} from './dashboard.component';
+import {dashboardUsersResolver} from './users/users.resolver';
 
 export const routes: Routes = [
   {
     path: 'dashboard',
-    redirectTo: '/dashboard/news',
+    redirectTo: '/dashboard/users',
     pathMatch: 'full',
   },
   {
@@ -18,6 +19,7 @@ export const routes: Routes = [
       {
         path: 'users',
         loadChildren: () => import('./users/users.routes').then((module) => module.routes),
+        resolve: {users: dashboardUsersResolver},
       },
     ],
   },

@@ -33,7 +33,7 @@ export const AuthStore = signalStore(
     authorize: (response: AuthResponse): void => {
       patchState(store, response);
       cookieService.set('access_token', response.accessToken, {
-        expires: new Date().setDate(new Date().getDate() + 1),
+        expires: new Date().setDate(new Date().getDate() + 7),
         secure: true,
       });
       cookieService.set('refresh_token', response.refreshToken, {

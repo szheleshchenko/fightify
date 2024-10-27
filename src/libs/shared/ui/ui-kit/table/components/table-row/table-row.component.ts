@@ -1,13 +1,13 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
 
 @Component({
-  selector: 'app-table',
+  selector: 'app-table-row',
   standalone: true,
   imports: [],
-  templateUrl: './table.component.html',
+  templateUrl: './table-row.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'contents',
   },
 })
-export class TableComponent {}
+export class TableRowComponent {}
