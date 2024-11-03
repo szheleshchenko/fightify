@@ -5,7 +5,12 @@ import {
   provideExperimentalZonelessChangeDetection,
 } from '@angular/core';
 import {provideClientHydration} from '@angular/platform-browser';
-import {provideRouter, withInMemoryScrolling, withViewTransitions} from '@angular/router';
+import {
+  provideRouter,
+  withComponentInputBinding,
+  withInMemoryScrolling,
+  withViewTransitions,
+} from '@angular/router';
 import {provideTransloco} from '@jsverse/transloco';
 import {errorInterceptor} from '@libs/shared/data-access/api-client';
 import {jwtInterceptor} from '@libs/shared/data-access/api/auth';
@@ -20,6 +25,7 @@ export const appConfig: ApplicationConfig = {
       routes,
       withViewTransitions(),
       withInMemoryScrolling({anchorScrolling: 'enabled', scrollPositionRestoration: 'top'}),
+      withComponentInputBinding(),
     ),
     provideClientHydration(),
     provideHttpClient(withFetch(), withInterceptors([jwtInterceptor, errorInterceptor])),

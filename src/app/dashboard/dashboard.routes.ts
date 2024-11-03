@@ -20,6 +20,7 @@ export const routes: Routes = [
         path: 'users',
         loadChildren: () => import('./users/users.routes').then((module) => module.routes),
         resolve: {users: dashboardUsersResolver},
+        runGuardsAndResolvers: 'always',
       },
     ],
   },

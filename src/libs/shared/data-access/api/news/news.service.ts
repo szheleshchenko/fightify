@@ -11,7 +11,12 @@ export class NewsService {
   public search() {
     return this.httpClient.get<PaginationResponse<News>>('/news/news.json').pipe(
       delay(1000),
-      map((response) => ({data: response.data.map((news) => plainToInstance(News, news))})),
+      map(({data, pagination}) =>
+        plainToInstance(PaginationResponse, {
+          data: data.map((news) => plainToInstance(News, news)),
+          pagination,
+        }),
+      ),
     );
   }
 }

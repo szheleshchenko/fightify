@@ -1,3 +1,9 @@
 <app-page>
-  <app-data-table [columns]="columns" [data]="data" />
+  <app-data-table [columns]="columns" [data]="store.entities()" />
+  <app-pagination
+    (pageChanged)="pageChanged($event)"
+    [currentPage]="store.currentPage()"
+    [lastPage]="store.lastPage()"
+    class="block py-4"
+  />
 </app-page>

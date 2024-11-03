@@ -7,6 +7,7 @@ export * from './dropdown';
 export * from './dropdown-menu';
 export * from './logo';
 export * from './menu';
+export * from './pagination';
 export * from './select';
 export * from './spinner';
 export * from './table';

@@ -1,19 +1,22 @@
 import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
-import {DashboardUserItemComponent} from '@libs/dashboard/features/dashboard-user-item';
+import {ActivatedRoute, Router} from '@angular/router';
 import {User} from '@libs/shared/data-access/api/user';
 import {PageComponent} from '@libs/shared/features/page';
-import {Column, DataTableComponent} from '@libs/shared/ui/ui-kit';
+import {Column, DataTableComponent, PaginationComponent} from '@libs/shared/ui/ui-kit';
 import {DashboardUsersPageStore} from './users.store';
 
 @Component({
   selector: 'app-dashboard-users',
   standalone: true,
-  imports: [PageComponent, DashboardUserItemComponent, DataTableComponent],
+  imports: [PageComponent, DataTableComponent, PaginationComponent],
   providers: [DashboardUsersPageStore],
   templateUrl: 'users.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardUsersPageComponent {
+  private readonly route = inject(ActivatedRoute);
+  private readonly router = inject(Router);
+
   public columns: Array<Column<User>> = [
     {
       name: 'Id',
@@ -25,18 +28,17 @@ export class DashboardUsersPageComponent {
       field: 'username',
       sortable: true,
     },
-  ];
-
-  public store = inject(DashboardUsersPageStore);
-
-  public data: Array<User> = [
     {
-      id: 1,
-      username: 'admin',
-    },
-    {
-      id: 2,
-      username: 'szheleshchenko',
+      name: '',
+      field: 'actions',
     },
   ];
+
+  protected store = inject(DashboardUsersPageStore);
+
+  protected pageChanged(page: number) {
+    this.router.navigate(['/dashboard', 'users'], {
+      queryParams: {page},
+    });
+  }
 }

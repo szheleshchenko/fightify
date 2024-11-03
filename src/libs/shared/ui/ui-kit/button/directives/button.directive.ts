@@ -5,7 +5,7 @@ import {ClassValue} from 'clsx';
 import {tv} from 'tailwind-variants';
 
 const buttonVariants = tv({
-  base: 'inline-flex items-center gap-2 justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
+  base: 'inline-flex items-center gap-2 justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors cursor-pointer select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
   variants: {
     variant: {
       default: 'bg-primary text-primary-foreground hover:bg-primary/90',
