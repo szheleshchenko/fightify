@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
 import {User} from '@libs/shared/data-access/api/user';
+import {injectAppLinks} from '@libs/shared/features/app-links';
 import {PageComponent} from '@libs/shared/features/page';
 import {Column, DataTableComponent, PaginationComponent} from '@libs/shared/ui/ui-kit';
 import {DashboardUsersPageStore} from './users.store';
@@ -14,8 +14,8 @@ import {DashboardUsersPageStore} from './users.store';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardUsersPageComponent {
-  private readonly route = inject(ActivatedRoute);
-  private readonly router = inject(Router);
+  protected readonly store = inject(DashboardUsersPageStore);
+  protected readonly appLinks = injectAppLinks();
 
   public columns: Array<Column<User>> = [
     {
@@ -30,15 +30,7 @@ export class DashboardUsersPageComponent {
     },
     {
       name: '',
-      field: 'actions',
+      field: 'id',
     },
   ];
-
-  protected store = inject(DashboardUsersPageStore);
-
-  protected pageChanged(page: number) {
-    this.router.navigate(['/dashboard', 'users'], {
-      queryParams: {page},
-    });
-  }
 }

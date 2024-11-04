@@ -1,14 +1,15 @@
 <nav role="navigation" aria-label="pagination" class="mx-auto flex w-full justify-center">
   <ul class="flex flex-row items-center gap-1">
-    @for (page of pages(); track page) {
+    @for (page of lastPage() | repeat: 1; track page) {
       @let isActive = page === currentPage();
 
       <li>
         <a
-          (click)="pageChanged.emit(page)"
-          (keyup.enter)="pageChanged.emit(page)"
+          [routerLink]="link()"
+          [queryParams]="{page}"
           [attr.aria-current]="isActive ? 'page' : null"
           [variant]="isActive ? 'outline' : 'ghost'"
+          [isDisabled]="isActive"
           size="icon"
           tabindex="0"
           appButton

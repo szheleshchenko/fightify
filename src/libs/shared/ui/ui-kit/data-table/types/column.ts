@@ -1,5 +1,5 @@
 export type Column<T> = {
   name: string;
-  field: keyof T | 'actions';
+  field: keyof T;
   sortable?: boolean;
 };

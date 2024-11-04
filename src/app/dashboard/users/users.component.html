@@ -1,7 +1,7 @@
 <app-page>
   <app-data-table [columns]="columns" [data]="store.entities()" />
   <app-pagination
-    (pageChanged)="pageChanged($event)"
+    [link]="appLinks.dashboardUsers"
     [currentPage]="store.currentPage()"
     [lastPage]="store.lastPage()"
     class="block py-4"
