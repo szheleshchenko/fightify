@@ -1,6 +1,6 @@
 import {Expose} from 'class-transformer';
 
-export class Pagination {
+export class Pagination<TEntity> {
   @Expose({name: 'current_page'})
   public currentPage!: number;
 
@@ -19,7 +19,13 @@ export class Pagination {
   @Expose()
   public to!: number;
 
-  constructor(pagination: Partial<Pagination> = {}) {
+  @Expose({name: 'order_by'})
+  public orderBy?: keyof TEntity;
+
+  @Expose()
+  public desc?: boolean;
+
+  constructor(pagination: Partial<Pagination<TEntity>> = {}) {
     Object.assign(this, pagination);
   }
 }

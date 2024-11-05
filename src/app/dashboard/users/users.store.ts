@@ -6,11 +6,22 @@ import {User} from '@libs/shared/data-access/api/user';
 import {patchState, signalStore, withHooks, withState} from '@ngrx/signals';
 import {setAllEntities, withEntities} from '@ngrx/signals/entities';
 
+type DashboardUsersPageState = {
+  currentPage: number;
+  lastPage: number;
+  sortField: keyof User | null;
+  desc: boolean | null;
+};
+
+const initialState: DashboardUsersPageState = {
+  currentPage: 1,
+  lastPage: 1,
+  sortField: null,
+  desc: null,
+};
+
 export const DashboardUsersPageStore = signalStore(
-  withState({
-    currentPage: 1,
-    lastPage: 1,
-  }),
+  withState(initialState),
   withEntities<User>(),
   withHooks((store, activatedRoute = inject(ActivatedRoute)) => ({
     onInit: () => {
@@ -20,6 +31,9 @@ export const DashboardUsersPageStore = signalStore(
         patchState(store, setAllEntities(users.data), {
           currentPage: users.pagination.currentPage,
           lastPage: users.pagination.lastPage,
+          desc: activatedRoute.snapshot.queryParamMap.get('desc') === 'true',
+          sortField:
+            (activatedRoute.snapshot.queryParamMap.get('order_by') as keyof User) ?? undefined,
         });
       });
     },

@@ -22,11 +22,15 @@ export class DashboardUsersPageComponent {
       name: 'Id',
       field: 'id',
       sortable: true,
+      query: 'id',
+      link: this.appLinks.dashboardUsers,
     },
     {
       name: 'Username',
       field: 'username',
       sortable: true,
+      query: 'username',
+      link: this.appLinks.dashboardUsers,
     },
     {
       name: '',

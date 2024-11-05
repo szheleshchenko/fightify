@@ -1,0 +1,12 @@
+<a
+  [routerLink]="link()"
+  [queryParams]="{page: page()}"
+  queryParamsHandling="merge"
+  [variant]="isActive() ? 'outline' : 'ghost'"
+  [isDisabled]="isActive()"
+  size="icon"
+  tabindex="0"
+  appButton
+>
+  <ng-content />
+</a>

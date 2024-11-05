@@ -6,7 +6,7 @@ export class PaginationResponse<TEntity> {
   public data!: Array<TEntity>;
 
   @Expose()
-  public pagination!: Pagination;
+  public pagination!: Pagination<TEntity>;
 
   constructor(pagination: Partial<PaginationResponse<TEntity>> = {}) {
     Object.assign(this, pagination);
