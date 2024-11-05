@@ -1,0 +1,37 @@
+<nav role="navigation" aria-label="pagination" class="mx-auto flex w-full justify-center">
+  <ul class="flex flex-row items-center gap-1">
+    @let isFirstPage = currentPage() === 1;
+
+    <li>
+      <app-pagination-item
+        [link]="link()"
+        [isActive]="isFirstPage"
+        [page]="isFirstPage ? 1 : currentPage() - 1"
+      >
+        <span class="material-symbols-outlined"> arrow_back </span>
+      </app-pagination-item>
+    </li>
+
+    @for (page of lastPage() | repeat: 1; track page) {
+      @let isActive = page === currentPage();
+
+      <li>
+        <app-pagination-item [link]="link()" [isActive]="isActive" [page]="page">
+          {{ page }}
+        </app-pagination-item>
+      </li>
+    }
+
+    @let isLastPage = currentPage() === lastPage();
+
+    <li>
+      <app-pagination-item
+        [link]="link()"
+        [isActive]="isLastPage"
+        [page]="isLastPage ? lastPage() : currentPage() + 1"
+      >
+        <span class="material-symbols-outlined"> arrow_forward </span>
+      </app-pagination-item>
+    </li>
+  </ul>
+</nav>

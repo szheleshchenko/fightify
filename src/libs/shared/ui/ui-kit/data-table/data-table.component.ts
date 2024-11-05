@@ -1,5 +1,6 @@
 import {NgClass} from '@angular/common';
-import {ChangeDetectionStrategy, Component, computed, input, signal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, input} from '@angular/core';
+import {RouterLink} from '@angular/router';
 import {ButtonDirective} from '../button';
 import {
   TableBodyComponent,
@@ -21,6 +22,7 @@ import {Column} from './types';
     TableRowComponent,
     NgClass,
     ButtonDirective,
+    RouterLink,
   ],
   templateUrl: 'data-table.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -32,44 +34,6 @@ export class DataTableComponent<T extends {id: number | string}> {
   public perPage = input<number>(10);
   public total = input<number>(0);
 
-  public sortField = signal<keyof T | undefined>(undefined);
-  public sortDirection = signal<'asc' | 'desc'>('desc');
-
-  public sortedRows = computed(() => {
-    const sortField = this.sortField();
-
-    if (!sortField) {
-      return this.data();
-    }
-
-    return this.data()
-      .slice()
-      .sort((a, b) => {
-        const sortDirection = this.sortDirection();
-
-        if (a[sortField] < b[sortField]) {
-          return sortDirection === 'asc' ? -1 : 1;
-        }
-
-        if (a[sortField] > b[sortField]) {
-          return sortDirection === 'asc' ? 1 : -1;
-        }
-
-        return 0;
-      });
-  });
-
-  public rows = computed(() =>
-    this.sortedRows().slice((this.currentPage() - 1) * this.currentPage(), this.perPage()),
-  );
-
-  public sortBy(field: keyof T) {
-    if (this.sortField() === field) {
-      this.sortDirection.set(this.sortDirection() === 'asc' ? 'desc' : 'asc');
-    } else {
-      this.sortDirection.set('asc');
-    }
-
-    this.sortField.set(field);
-  }
+  public sortField = input<keyof T | null>(null);
+  public desc = input<boolean | null>(true);
 }

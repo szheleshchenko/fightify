@@ -1,3 +1,14 @@
 <app-page>
-  <app-data-table [columns]="columns" [data]="data" />
+  <app-data-table
+    [columns]="columns"
+    [data]="store.entities()"
+    [sortField]="store.sortField()"
+    [desc]="store.desc()"
+  />
+  <app-pagination
+    [link]="appLinks.dashboardUsers"
+    [currentPage]="store.currentPage()"
+    [lastPage]="store.lastPage()"
+    class="block py-4"
+  />
 </app-page>
