@@ -1,5 +1,6 @@
 import {Routes} from '@angular/router';
 import {DashboardPageComponent} from './dashboard.component';
+import {dashboardNewsResolver} from './news/news.resolver';
 import {dashboardUsersResolver} from './users/users.resolver';
 
 export const routes: Routes = [
@@ -15,6 +16,8 @@ export const routes: Routes = [
       {
         path: 'news',
         loadChildren: () => import('./news/news.routes').then((module) => module.routes),
+        resolve: {news: dashboardNewsResolver},
+        runGuardsAndResolvers: 'always',
       },
       {
         path: 'users',

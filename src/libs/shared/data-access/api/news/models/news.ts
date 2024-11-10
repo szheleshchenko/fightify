@@ -1,9 +1,7 @@
+import {BaseEntity} from '@libs/shared/data-access/api-client';
 import {Expose} from 'class-transformer';
 
-export class News {
-  @Expose()
-  public id!: number;
-
+export class News extends BaseEntity<number> {
   @Expose()
   public title!: string;
 
@@ -41,6 +39,8 @@ export class News {
   public status?: string;
 
   constructor(news: Partial<News> = {}) {
+    super(news);
+
     Object.assign(this, news);
   }
 }
