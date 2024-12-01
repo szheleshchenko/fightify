@@ -1,1 +1,10 @@
-<quill-editor />
+<div class="space-y-4">
+  @if (label()) {
+    <label [for]="label()" class="text-sm font-medium leading-none">
+      {{ label() }}
+    </label>
+  }
+  <div class="block">
+    <quill-editor (onContentChanged)="valueChanged($event.html)" />
+  </div>
+</div>

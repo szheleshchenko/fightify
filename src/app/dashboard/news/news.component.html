@@ -1,1 +1,17 @@
-<app-page> News page </app-page>
+<app-page>
+  <div class="flex justify-end mb-4">
+    <a [routerLink]="appLinks.dashboardNewsEditor" appButton>Add news</a>
+  </div>
+  <app-data-table
+    [columns]="columns"
+    [data]="store.entities()"
+    [sortField]="store.sortField()"
+    [desc]="store.desc()"
+  />
+  <app-pagination
+    [link]="appLinks.dashboardUsers"
+    [currentPage]="store.currentPage()"
+    [lastPage]="store.lastPage()"
+    class="block py-4"
+  />
+</app-page>

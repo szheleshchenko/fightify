@@ -11,6 +11,7 @@ type NavigationPath =
   | 'forgotPassword'
   | 'dashboard'
   | 'dashboardNews'
+  | 'dashboardNewsEditor'
   | 'dashboardUsers';
 
 export type NavigationLinks = Record<NavigationPath, string>;

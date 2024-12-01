@@ -1,22 +1,38 @@
-import {Injectable, inject} from '@angular/core';
-import {ApiService, PaginationResponse} from '@libs/shared/data-access/api-client';
+import {inject, Injectable} from '@angular/core';
+import {
+  ApiService,
+  Pagination,
+  PaginationRequest,
+  PaginationResponse,
+  prepareRequestParams,
+} from '@libs/shared/data-access/api-client';
 import {plainToInstance} from 'class-transformer';
-import {delay, map} from 'rxjs';
+import {map, Observable} from 'rxjs';
 import {News} from './models';
 
 @Injectable({providedIn: 'root'})
 export class NewsService {
-  private httpClient = inject(ApiService);
+  private apiService = inject(ApiService);
 
-  public search() {
-    return this.httpClient.get<PaginationResponse<News>>('/news/news.json').pipe(
-      delay(1000),
-      map(({data, pagination}) =>
-        plainToInstance(PaginationResponse, {
-          data: data.map((news) => plainToInstance(News, news)),
-          pagination,
-        }),
+  public search(request: PaginationRequest<News>): Observable<PaginationResponse<News>> {
+    const params = prepareRequestParams(new PaginationRequest(request));
+
+    return this.apiService.get<PaginationResponse<News>>('/news', params).pipe(
+      map(
+        ({data, pagination}) =>
+          ({
+            data: data.map((news) => plainToInstance(News, news)),
+            pagination: plainToInstance(Pagination, pagination),
+          }) as PaginationResponse<News>,
       ),
     );
+  }
+
+  public create(news: News): Observable<News> {
+    const params = prepareRequestParams(news);
+
+    return this.apiService
+      .post<News, News>('/news', params)
+      .pipe(map((news) => plainToInstance(News, news)));
   }
 }

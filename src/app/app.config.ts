@@ -51,6 +51,7 @@ export const appConfig: ApplicationConfig = {
       dashboard: '/dashboard',
       dashboardUsers: '/dashboard/users',
       dashboardNews: '/dashboard/news',
+      dashboardNewsEditor: '/dashboard/news/editor',
     }),
   ],
 };
