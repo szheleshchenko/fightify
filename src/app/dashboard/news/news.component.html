@@ -1,4 +1,7 @@
 <app-page>
+  <div class="flex justify-end mb-4">
+    <a [routerLink]="appLinks.dashboardNewsEditor" appButton>Add news</a>
+  </div>
   <app-data-table
     [columns]="columns"
     [data]="store.entities()"

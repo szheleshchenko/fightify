@@ -1,14 +1,20 @@
 import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
+import {RouterLink} from '@angular/router';
 import {News} from '@libs/shared/data-access/api/news';
 import {injectAppLinks} from '@libs/shared/features/app-links';
 import {PageComponent} from '@libs/shared/features/page';
-import {Column, DataTableComponent, PaginationComponent} from '@libs/shared/ui/ui-kit';
+import {
+  ButtonDirective,
+  Column,
+  DataTableComponent,
+  PaginationComponent,
+} from '@libs/shared/ui/ui-kit';
 import {DashboardNewsPageStore} from './news.store';
 
 @Component({
   selector: 'app-dashboard-news',
   standalone: true,
-  imports: [PageComponent, DataTableComponent, PaginationComponent],
+  imports: [PageComponent, DataTableComponent, PaginationComponent, RouterLink, ButtonDirective],
   providers: [DashboardNewsPageStore],
   templateUrl: './news.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

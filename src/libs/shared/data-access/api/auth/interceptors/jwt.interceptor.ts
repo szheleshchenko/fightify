@@ -7,7 +7,7 @@ export function jwtInterceptor(
   req: HttpRequest<unknown>,
   next: HttpHandlerFn,
 ): Observable<HttpEvent<unknown>> {
-  const accessToken = inject(AuthStore).accessToken;
+  const accessToken = inject(AuthStore).accessToken();
 
   if (!req.url.includes('auth') && accessToken) {
     req = req.clone({

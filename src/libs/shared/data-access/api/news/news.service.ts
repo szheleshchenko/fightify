@@ -27,4 +27,12 @@ export class NewsService {
       ),
     );
   }
+
+  public create(news: News): Observable<News> {
+    const params = prepareRequestParams(news);
+
+    return this.apiService
+      .post<News, News>('/news', params)
+      .pipe(map((news) => plainToInstance(News, news)));
+  }
 }
