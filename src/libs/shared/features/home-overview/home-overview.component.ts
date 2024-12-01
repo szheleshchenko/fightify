@@ -7,7 +7,6 @@ import {
 
 @Component({
   selector: 'app-home-overview',
-  standalone: true,
   imports: [
     HomeOverviewFeaturedPostsComponent,
     HomeOverviewFeaturedEventsComponent,

@@ -4,7 +4,6 @@ import {PageComponent} from '@libs/shared/features/page';
 
 @Component({
   selector: 'app-home',
-  standalone: true,
   imports: [PageComponent, HomeOverviewComponent],
   templateUrl: './home.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

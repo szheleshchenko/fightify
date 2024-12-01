@@ -7,7 +7,6 @@ import {ButtonComponent} from '@libs/shared/ui/ui-kit';
 
 @Component({
   selector: 'app-event-card',
-  standalone: true,
   imports: [RouterLink, EventFighterDetailsComponent, EventCountdownComponent, ButtonComponent],
   templateUrl: './event-card.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

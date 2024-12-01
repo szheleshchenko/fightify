@@ -7,7 +7,6 @@ import {ButtonComponent} from '@libs/shared/ui/ui-kit';
 
 @Component({
   selector: 'app-events-filter',
-  standalone: true,
   imports: [
     EventsStatusFilterComponent,
     EventsContentFilterComponent,

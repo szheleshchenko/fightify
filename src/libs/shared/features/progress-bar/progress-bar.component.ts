@@ -15,7 +15,6 @@ const PROGRESS_BAR_DELAY = 30;
 
 @Component({
   selector: 'app-progress-bar',
-  standalone: true,
   imports: [NgProgressComponent],
   templateUrl: './progress-bar.component.html',
 })

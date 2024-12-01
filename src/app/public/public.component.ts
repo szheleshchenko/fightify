@@ -4,7 +4,6 @@ import {HeaderComponent} from '@libs/shared/features/header';
 
 @Component({
   selector: 'app-public',
-  standalone: true,
   imports: [RouterOutlet, HeaderComponent],
   templateUrl: './public.component.html',
   styleUrl: './public.component.scss',

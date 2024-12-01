@@ -4,7 +4,6 @@ import {PageComponent} from '@libs/shared/features/page';
 
 @Component({
   selector: 'app-dashboard-news-editor',
-  standalone: true,
   imports: [PageComponent, NewsEditorFormComponent],
   templateUrl: './editor.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

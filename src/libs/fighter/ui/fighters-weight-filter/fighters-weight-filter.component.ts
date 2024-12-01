@@ -5,7 +5,6 @@ import {SelectComponent, SelectOption} from '@libs/shared/ui/ui-kit';
 
 @Component({
   selector: 'app-fighters-weight-filter',
-  standalone: true,
   imports: [SelectComponent, ReactiveFormsModule],
   templateUrl: './fighters-weight-filter.component.html',
   styleUrl: './fighters-weight-filter.component.scss',

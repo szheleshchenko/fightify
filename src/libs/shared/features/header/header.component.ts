@@ -18,7 +18,6 @@ import {injectAppLinks} from '../app-links';
 import {HeaderProfileMenuComponent, HeaderThemeTogglerComponent} from './components';
 
 @Component({
-  standalone: true,
   selector: 'app-header',
   imports: [
     RouterLink,

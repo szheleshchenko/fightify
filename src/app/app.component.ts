@@ -7,7 +7,6 @@ import {ProgressBarComponent} from '@libs/shared/features/progress-bar';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [RouterOutlet, FooterComponent, ProgressBarComponent, UpcomingEventsComponent],
   templateUrl: 'app.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -13,7 +13,6 @@ import {Column} from './types';
 
 @Component({
   selector: 'app-data-table',
-  standalone: true,
   imports: [
     TableComponent,
     TableBodyComponent,

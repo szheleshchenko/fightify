@@ -4,7 +4,6 @@ import {ContentCardComponent} from '@libs/shared/ui/ui-kit';
 
 @Component({
   selector: 'app-fighter-overview',
-  standalone: true,
   imports: [ContentCardComponent, FighterLastFightsComponent],
   templateUrl: './fighter-overview.component.html',
   styleUrl: './fighter-overview.component.scss',

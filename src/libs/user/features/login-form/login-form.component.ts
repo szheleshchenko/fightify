@@ -9,7 +9,6 @@ import {LoginFormStore} from './store';
 
 @Component({
   selector: 'app-login-form',
-  standalone: true,
   imports: [
     LoginFormWrapperComponent,
     TextFieldComponent,

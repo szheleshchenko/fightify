@@ -3,7 +3,6 @@ import {TabComponent} from './components';
 
 @Component({
   selector: 'app-tabs',
-  standalone: true,
   imports: [],
   templateUrl: './tabs.component.html',
   styleUrl: './tabs.component.scss',

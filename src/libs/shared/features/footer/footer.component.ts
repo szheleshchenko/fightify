@@ -6,7 +6,6 @@ import {LogoComponent} from '../logo';
 import {FooterResourcesListComponent} from './components/resources-list';
 
 @Component({
-  standalone: true,
   selector: 'app-footer',
   imports: [RouterLink, LogoComponent, TranslocoDirective, FooterResourcesListComponent],
   templateUrl: 'footer.component.html',

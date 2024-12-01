@@ -4,7 +4,6 @@ import {ButtonDirective, ButtonSize, ButtonVariant} from './directives';
 
 @Component({
   selector: 'app-button',
-  standalone: true,
   imports: [SpinnerComponent, ButtonDirective],
   templateUrl: 'button.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

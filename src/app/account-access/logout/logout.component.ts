@@ -3,7 +3,6 @@ import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-logout',
-  standalone: true,
   imports: [],
   template: '',
 })

@@ -4,7 +4,6 @@ import {ButtonDirective} from '@libs/shared/ui/ui-kit/button';
 
 @Component({
   selector: 'app-pagination-item',
-  standalone: true,
   imports: [RouterLink, ButtonDirective],
   templateUrl: './item.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

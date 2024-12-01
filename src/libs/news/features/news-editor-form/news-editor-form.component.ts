@@ -6,7 +6,6 @@ import {DashboardNewsEditorStore} from './news-editor-form.store';
 
 @Component({
   selector: 'app-news-editor-form',
-  standalone: true,
   imports: [ContentEditorModule, TextFieldComponent, ReactiveFormsModule, ButtonComponent],
   providers: [DashboardNewsEditorStore],
   templateUrl: './news-editor-form.component.html',

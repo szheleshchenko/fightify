@@ -5,7 +5,6 @@ import {EventContentFilter} from './types';
 
 @Component({
   selector: 'app-events-content-filter',
-  standalone: true,
   imports: [SelectComponent, ReactiveFormsModule],
   templateUrl: './events-content-filter.component.html',
   styleUrl: './events-content-filter.component.scss',

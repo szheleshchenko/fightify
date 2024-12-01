@@ -4,7 +4,6 @@ import {Breadcrumb, PageComponent} from '@libs/shared/features/page';
 
 @Component({
   selector: 'app-leaderboard',
-  standalone: true,
   imports: [PageComponent, TranslocoDirective],
   templateUrl: './leaderboard.component.html',
   styleUrl: './leaderboard.component.scss',

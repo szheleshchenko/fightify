@@ -7,7 +7,6 @@ import {ButtonComponent} from '@libs/shared/ui/ui-kit';
 
 @Component({
   selector: 'app-fighters-filter',
-  standalone: true,
   imports: [
     ButtonComponent,
     FightersActivityFilterComponent,

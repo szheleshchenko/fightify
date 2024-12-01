@@ -4,7 +4,6 @@ import {ButtonDirective} from '@libs/shared/ui/ui-kit';
 
 @Component({
   selector: 'app-header-theme-toggler',
-  standalone: true,
   imports: [ButtonDirective],
   templateUrl: './theme-toggler.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

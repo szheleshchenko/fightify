@@ -5,7 +5,6 @@ import {SelectOption} from './models';
 
 @Component({
   selector: 'app-select',
-  standalone: true,
   imports: [],
   templateUrl: './select.component.html',
   styleUrl: './select.component.scss',

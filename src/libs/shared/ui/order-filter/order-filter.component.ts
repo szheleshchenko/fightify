@@ -5,7 +5,6 @@ import {OrderFilter} from './types';
 
 @Component({
   selector: 'app-order-filter',
-  standalone: true,
   imports: [SelectComponent, ReactiveFormsModule],
   templateUrl: './order-filter.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

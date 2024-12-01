@@ -2,7 +2,6 @@ import {ChangeDetectionStrategy, Component, EventEmitter, Output} from '@angular
 
 @Component({
   selector: 'app-upcoming-events-controls',
-  standalone: true,
   imports: [],
   templateUrl: './upcoming-events-controls.component.html',
   styleUrl: './upcoming-events-controls.component.scss',

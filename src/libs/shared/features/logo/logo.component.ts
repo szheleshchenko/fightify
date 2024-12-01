@@ -5,7 +5,6 @@ import {injectAppLinks} from '../app-links';
 
 @Component({
   selector: 'app-logo',
-  standalone: true,
   imports: [RouterLink],
   templateUrl: 'logo.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

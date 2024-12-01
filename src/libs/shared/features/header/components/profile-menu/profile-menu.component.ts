@@ -15,7 +15,6 @@ import {
 
 @Component({
   selector: 'app-header-profile-menu',
-  standalone: true,
   imports: [
     AvatarComponent,
     RouterLink,

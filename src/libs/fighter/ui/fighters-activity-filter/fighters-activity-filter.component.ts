@@ -5,7 +5,6 @@ import {SelectComponent, SelectOption} from '@libs/shared/ui/ui-kit';
 
 @Component({
   selector: 'app-fighters-activity-filter',
-  standalone: true,
   imports: [SelectComponent, ReactiveFormsModule],
   templateUrl: './fighters-activity-filter.component.html',
   styleUrl: './fighters-activity-filter.component.scss',
