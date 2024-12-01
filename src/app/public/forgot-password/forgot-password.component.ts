@@ -5,7 +5,6 @@ import {ForgotPasswordFormComponent} from '@libs/user/features/forgot-password-f
 
 @Component({
   selector: 'app-forgot-password',
-  standalone: true,
   imports: [PageComponent, ForgotPasswordFormComponent, FightersFilterComponent],
   templateUrl: './forgot-password.component.html',
   styleUrl: './forgot-password.component.scss',

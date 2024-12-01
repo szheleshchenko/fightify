@@ -7,7 +7,6 @@ import {DashboardUsersPageStore} from './users.store';
 
 @Component({
   selector: 'app-dashboard-users',
-  standalone: true,
   imports: [PageComponent, DataTableComponent, PaginationComponent],
   providers: [DashboardUsersPageStore],
   templateUrl: 'users.component.html',

@@ -5,7 +5,6 @@ import {BaseFormControlDirective} from '@libs/shared/utils/form';
 
 @Component({
   selector: 'app-text-field',
-  standalone: true,
   imports: [ReactiveFormsModule, TranslocoDirective],
   templateUrl: 'text-field.component.html',
 })

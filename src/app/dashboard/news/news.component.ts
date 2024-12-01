@@ -13,7 +13,6 @@ import {DashboardNewsPageStore} from './news.store';
 
 @Component({
   selector: 'app-dashboard-news',
-  standalone: true,
   imports: [PageComponent, DataTableComponent, PaginationComponent, RouterLink, ButtonDirective],
   providers: [DashboardNewsPageStore],
   templateUrl: './news.component.html',

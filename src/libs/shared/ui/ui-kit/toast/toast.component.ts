@@ -3,7 +3,6 @@ import {ChangeDetectionStrategy, Component, signal} from '@angular/core';
 
 @Component({
   selector: 'app-toast',
-  standalone: true,
   imports: [NgClass],
   templateUrl: './toast.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

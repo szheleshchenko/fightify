@@ -5,7 +5,6 @@ import {HeaderComponent} from '@libs/shared/features/header';
 
 @Component({
   selector: 'app-dashboard',
-  standalone: true,
   imports: [HeaderComponent, RouterOutlet, DashboardHeaderComponent],
   templateUrl: './dashboard.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -6,7 +6,6 @@ import {ForgotPasswordForm} from './forms';
 
 @Component({
   selector: 'app-forgot-password-form',
-  standalone: true,
   imports: [LoginFormWrapperComponent, ReactiveFormsModule, TextFieldComponent],
   templateUrl: './forgot-password-form.component.html',
   styleUrl: './forgot-password-form.component.scss',

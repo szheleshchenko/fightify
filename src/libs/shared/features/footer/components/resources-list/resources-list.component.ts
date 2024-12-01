@@ -5,7 +5,6 @@ import {TemplateLink} from '@libs/shared/features/app-links';
 
 @Component({
   selector: 'app-footer-resources-list',
-  standalone: true,
   imports: [RouterLink, TranslocoDirective],
   templateUrl: 'resources-list.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

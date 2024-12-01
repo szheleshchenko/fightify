@@ -5,7 +5,6 @@ import {Breadcrumb} from './types';
 
 @Component({
   selector: 'app-page',
-  standalone: true,
   imports: [RouterLink, TranslocoDirective],
   templateUrl: './page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

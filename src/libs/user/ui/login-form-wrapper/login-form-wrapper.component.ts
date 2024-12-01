@@ -3,7 +3,6 @@ import {ButtonComponent} from '@libs/shared/ui/ui-kit';
 
 @Component({
   selector: 'app-login-form-wrapper',
-  standalone: true,
   imports: [ButtonComponent],
   templateUrl: './login-form-wrapper.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

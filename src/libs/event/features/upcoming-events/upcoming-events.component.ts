@@ -8,7 +8,6 @@ import {UpcomingEventComponent} from './components/upcoming-event';
 
 @Component({
   selector: 'app-upcoming-events',
-  standalone: true,
   imports: [
     SelectComponent,
     ReactiveFormsModule,

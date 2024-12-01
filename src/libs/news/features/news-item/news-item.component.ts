@@ -33,7 +33,6 @@ type NewsItemVariant = VariantProps<typeof newsItemVariant>['variant'];
 
 @Component({
   selector: 'app-news-item',
-  standalone: true,
   imports: [RouterLink],
   templateUrl: './news-item.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

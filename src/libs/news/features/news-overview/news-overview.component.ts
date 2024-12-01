@@ -6,7 +6,6 @@ import {ContentCardComponent} from '@libs/shared/ui/ui-kit';
 
 @Component({
   selector: 'app-news-overview',
-  standalone: true,
   imports: [ContentCardComponent, AsyncPipe],
   templateUrl: './news-overview.component.html',
   styleUrl: './news-overview.component.scss',

@@ -5,7 +5,6 @@ import {PaginationItemComponent} from './components';
 
 @Component({
   selector: 'app-pagination',
-  standalone: true,
   imports: [PaginationItemComponent, RouterLink, RepeatPipe],
   templateUrl: 'pagination.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

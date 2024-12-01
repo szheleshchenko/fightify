@@ -5,7 +5,6 @@ import {SelectComponent, SelectOption} from '@libs/shared/ui/ui-kit';
 
 @Component({
   selector: 'app-events-status-filter',
-  standalone: true,
   imports: [SelectComponent, ReactiveFormsModule],
   templateUrl: './events-status-filter.component.html',
   styleUrl: './events-status-filter.component.scss',

@@ -6,7 +6,6 @@ import {Breadcrumb, PageComponent} from '@libs/shared/features/page';
 
 @Component({
   selector: 'app-events',
-  standalone: true,
   imports: [PageComponent, TranslocoDirective, EventsListComponent, EventsFilterComponent],
   templateUrl: './events.component.html',
   styleUrl: './events.component.scss',

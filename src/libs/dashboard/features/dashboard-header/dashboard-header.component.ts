@@ -6,7 +6,6 @@ import {ButtonDirective} from '@libs/shared/ui/ui-kit';
 
 @Component({
   selector: 'app-dashboard-header',
-  standalone: true,
   imports: [ButtonDirective, RouterLink, TranslocoDirective],
   templateUrl: './dashboard-header.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -10,7 +10,6 @@ import {RegisterFormStore} from './store';
 
 @Component({
   selector: 'app-register-form',
-  standalone: true,
   imports: [
     RouterLink,
     ButtonComponent,

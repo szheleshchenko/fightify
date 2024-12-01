@@ -6,7 +6,6 @@ import {Breadcrumb, PageComponent} from '@libs/shared/features/page';
 
 @Component({
   selector: 'app-fighters',
-  standalone: true,
   imports: [PageComponent, TranslocoDirective, FightersListComponent, FightersFilterComponent],
   templateUrl: './fighters.component.html',
   styleUrl: './fighters.component.scss',

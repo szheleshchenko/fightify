@@ -3,7 +3,6 @@ import {OpponentDetailsComponent} from '@libs/shared/ui/opponent-details';
 
 @Component({
   selector: 'app-upcoming-event',
-  standalone: true,
   imports: [OpponentDetailsComponent],
   templateUrl: './upcoming-event.component.html',
   styleUrl: './upcoming-event.component.scss',

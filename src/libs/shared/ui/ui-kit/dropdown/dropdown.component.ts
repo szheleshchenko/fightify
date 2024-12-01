@@ -6,7 +6,6 @@ import {DropdownOption} from './models';
 
 @Component({
   selector: 'app-dropdown',
-  standalone: true,
   imports: [NgTemplateOutlet, TranslocoDirective, RouterLink],
   templateUrl: './dropdown.component.html',
   styleUrl: './dropdown.component.scss',

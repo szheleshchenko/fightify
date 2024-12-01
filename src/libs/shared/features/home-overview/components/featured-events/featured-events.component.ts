@@ -5,7 +5,6 @@ import {UpcomingEventComponent} from '@libs/event/features/upcoming-event';
 
 @Component({
   selector: 'app-home-overview-featured-events',
-  standalone: true,
   imports: [EventCardComponent, TranslocoDirective, UpcomingEventComponent],
   templateUrl: 'featured-events.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

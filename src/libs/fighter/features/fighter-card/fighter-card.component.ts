@@ -4,7 +4,6 @@ import {AvatarComponent} from '@libs/shared/ui/ui-kit';
 
 @Component({
   selector: 'app-fighter-card',
-  standalone: true,
   imports: [RouterLink, AvatarComponent],
   templateUrl: './fighter-card.component.html',
   styleUrl: './fighter-card.component.scss',

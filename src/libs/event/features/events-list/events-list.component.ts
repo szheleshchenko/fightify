@@ -4,7 +4,6 @@ import {Event} from '@libs/shared/data-access/api/event';
 
 @Component({
   selector: 'app-events-list',
-  standalone: true,
   imports: [EventCardComponent],
   templateUrl: './events-list.component.html',
   styleUrl: './events-list.component.scss',

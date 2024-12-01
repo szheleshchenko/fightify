@@ -10,7 +10,6 @@ import {map} from 'rxjs';
 
 @Component({
   selector: 'app-news',
-  standalone: true,
   imports: [PageComponent, NewsOverviewComponent, TranslocoDirective, AsyncPipe],
   templateUrl: './news.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
