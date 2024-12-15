@@ -40,6 +40,12 @@
     "tailwind-variants": "^0.2.1",
     "tslib": "^2.3.0"
   },
+  "overrides": {
+    "@ngrx/signals": {
+      "@angular/common": "$@angular/common",
+      "@angular/core": "$@angular/core"
+    }
+  },
   "devDependencies": {
     "@angular-devkit/build-angular": "^19.0.2",
     "@angular-eslint/builder": "19.0.0",
