@@ -1,9 +1,7 @@
-@let form = loginFormStore.form();
-
 <app-login-form-wrapper
   [formGroup]="form"
   *transloco="let t; prefix: 'USER.LOGIN_FORM'"
-  (ngSubmit)="loginFormStore.submitForm()"
+  (ngSubmit)="submitted()"
   [heading]="t('TEXT_LOGIN')"
   [subheading]="t('TEXT_ENTER_YOUR_USERNAME')"
   #ngForm="ngForm"
@@ -25,7 +23,7 @@
     <a [routerLink]="links.forgotPassword" class="text-sm">{{ t('LINK_FORGOT_PASSWORD') }}</a>
   </div>
   <app-button
-    [isLoading]="loginFormStore.isFetching()"
+    [isLoading]="action.isPending()"
     [isDisabled]="form.invalid && ngForm.submitted"
     class="w-full"
     actionContent

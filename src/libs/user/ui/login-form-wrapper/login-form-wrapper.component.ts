@@ -1,9 +1,8 @@
 import {ChangeDetectionStrategy, Component, input} from '@angular/core';
-import {ButtonComponent} from '@libs/shared/ui/ui-kit';
 
 @Component({
   selector: 'app-login-form-wrapper',
-  imports: [ButtonComponent],
+  imports: [],
   templateUrl: './login-form-wrapper.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

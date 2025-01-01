@@ -33,6 +33,6 @@ export class DataTableComponent<T extends {id: number | string}> {
   public perPage = input<number>(10);
   public total = input<number>(0);
 
-  public sortField = input<keyof T | null>(null);
-  public desc = input<boolean | null>(true);
+  public sortField = input<keyof T | null | undefined>();
+  public desc = input<boolean | null | undefined>(true);
 }

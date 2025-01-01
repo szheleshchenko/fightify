@@ -10,7 +10,7 @@ import {
   viewChild,
 } from '@angular/core';
 import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
-import {NavigationStart, Router, RouterLink, RouterLinkActive} from '@angular/router';
+import {NavigationStart, Router, RouterLink} from '@angular/router';
 import {TranslocoDirective} from '@jsverse/transloco';
 import {ButtonDirective, LogoComponent} from '@libs/shared/ui/ui-kit';
 import {filter} from 'rxjs';
@@ -21,7 +21,6 @@ import {HeaderProfileMenuComponent, HeaderThemeTogglerComponent} from './compone
   selector: 'app-header',
   imports: [
     RouterLink,
-    RouterLinkActive,
     TranslocoDirective,
     LogoComponent,
     HeaderProfileMenuComponent,

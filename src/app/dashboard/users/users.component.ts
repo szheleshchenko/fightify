@@ -1,19 +1,22 @@
-import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
+import {ChangeDetectionStrategy, Component, input} from '@angular/core';
+import {PaginationResponse} from '@libs/shared/data-access/api-client';
 import {User} from '@libs/shared/data-access/api/user';
 import {injectAppLinks} from '@libs/shared/features/app-links';
 import {PageComponent} from '@libs/shared/features/page';
 import {Column, DataTableComponent, PaginationComponent} from '@libs/shared/ui/ui-kit';
-import {DashboardUsersPageStore} from './users.store';
+import {injectQueryParam} from '@libs/shared/utils/inject-query-param';
 
 @Component({
-  selector: 'app-dashboard-users',
   imports: [PageComponent, DataTableComponent, PaginationComponent],
-  providers: [DashboardUsersPageStore],
   templateUrl: 'users.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardUsersPageComponent {
-  protected readonly store = inject(DashboardUsersPageStore);
+  public users = input.required<PaginationResponse<User>>();
+
+  public orderBy = injectQueryParam<keyof User | undefined>('order_by');
+  public desc = injectQueryParam<boolean>('desc', {transform: (value) => value === 'true'});
+
   protected readonly appLinks = injectAppLinks();
 
   public columns: Array<Column<User>> = [

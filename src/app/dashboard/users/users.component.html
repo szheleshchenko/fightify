@@ -1,14 +1,16 @@
+@let response = users();
+
 <app-page>
   <app-data-table
     [columns]="columns"
-    [data]="store.entities()"
-    [sortField]="store.sortField()"
-    [desc]="store.desc()"
+    [data]="response.data"
+    [sortField]="orderBy()"
+    [desc]="desc()"
   />
   <app-pagination
     [link]="appLinks.dashboardUsers"
-    [currentPage]="store.currentPage()"
-    [lastPage]="store.lastPage()"
+    [currentPage]="response.pagination.currentPage"
+    [lastPage]="response.pagination.lastPage"
     class="block py-4"
   />
 </app-page>
