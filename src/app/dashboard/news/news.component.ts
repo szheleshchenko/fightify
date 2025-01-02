@@ -13,7 +13,6 @@ import {
 import {injectQueryParam} from '@libs/shared/utils/inject-query-param';
 
 @Component({
-  selector: 'app-dashboard-news',
   imports: [PageComponent, DataTableComponent, PaginationComponent, RouterLink, ButtonDirective],
   templateUrl: './news.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

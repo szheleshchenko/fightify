@@ -13,10 +13,8 @@ import {injectQueryParam} from '@libs/shared/utils/inject-query-param';
 })
 export class DashboardUsersPageComponent {
   public users = input.required<PaginationResponse<User>>();
-
   public orderBy = injectQueryParam<keyof User | undefined>('order_by');
   public desc = injectQueryParam<boolean>('desc', {transform: (value) => value === 'true'});
-
   protected readonly appLinks = injectAppLinks();
 
   public columns: Array<Column<User>> = [
