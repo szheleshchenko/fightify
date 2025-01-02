@@ -1,11 +1,10 @@
 import {ChangeDetectionStrategy, Component, input} from '@angular/core';
-import {RouterLink} from '@angular/router';
 import {RepeatPipe} from '@libs/shared/utils/repeat';
 import {PaginationItemComponent} from './components';
 
 @Component({
   selector: 'app-pagination',
-  imports: [PaginationItemComponent, RouterLink, RepeatPipe],
+  imports: [PaginationItemComponent, RepeatPipe],
   templateUrl: 'pagination.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

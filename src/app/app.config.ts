@@ -15,6 +15,7 @@ import {provideTransloco} from '@jsverse/transloco';
 import {errorInterceptor} from '@libs/shared/data-access/api-client';
 import {jwtInterceptor} from '@libs/shared/data-access/api/auth';
 import {provideAppLinks} from '@libs/shared/features/app-links';
+import {QueryClient, provideTanStackQuery} from '@tanstack/angular-query-experimental';
 import {routes} from './app.routes';
 import {I18nLoader} from './i18n-loader';
 
@@ -29,6 +30,7 @@ export const appConfig: ApplicationConfig = {
     ),
     provideClientHydration(),
     provideHttpClient(withFetch(), withInterceptors([jwtInterceptor, errorInterceptor])),
+    provideTanStackQuery(new QueryClient()),
     provideTransloco({
       config: {
         availableLangs: ['en', 'ru'],

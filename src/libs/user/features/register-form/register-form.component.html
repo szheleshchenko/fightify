@@ -1,9 +1,7 @@
-@let form = registerFormStore.form();
-
 <app-login-form-wrapper
   [formGroup]="form"
   *transloco="let t; prefix: 'USER.REGISTER_FORM'"
-  (ngSubmit)="registerFormStore.submitForm()"
+  (ngSubmit)="submitted()"
   [heading]="t('TEXT_SIGN_UP')"
   [subheading]="t('TEXT_ENTER_YOUR_USERNAME')"
   #ngForm="ngForm"
@@ -36,7 +34,7 @@
     <a [routerLink]="links.login">{{ t('LINK_LOGIN') }}</a>
   </div>
   <app-button
-    [isLoading]="registerFormStore.isFetching()"
+    [isLoading]="action.isPending()"
     [isDisabled]="form.invalid && ngForm.submitted"
     class="w-full"
     actionContent

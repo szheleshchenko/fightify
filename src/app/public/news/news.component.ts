@@ -1,7 +1,6 @@
 import {AsyncPipe} from '@angular/common';
 import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {TranslocoDirective} from '@jsverse/transloco';
 import {NewsOverviewComponent} from '@libs/news/features/news-overview';
 import {PaginationResponse} from '@libs/shared/data-access/api-client';
 import {News} from '@libs/shared/data-access/api/news';
@@ -10,7 +9,7 @@ import {map} from 'rxjs';
 
 @Component({
   selector: 'app-news',
-  imports: [PageComponent, NewsOverviewComponent, TranslocoDirective, AsyncPipe],
+  imports: [PageComponent, NewsOverviewComponent, AsyncPipe],
   templateUrl: './news.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
