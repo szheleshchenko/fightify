@@ -1,1 +1,1 @@
-export * from './table-cell.component';
+export * from './table-cell.directive';

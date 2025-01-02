@@ -1,4 +1,5 @@
 import {computed, inject} from '@angular/core';
+import {CookieStorageService} from '@libs/shared/data-access/cookie-storage';
 import {
   patchState,
   signalStore,
@@ -7,7 +8,6 @@ import {
   withMethods,
   withState,
 } from '@ngrx/signals';
-import {SsrCookieService} from 'ngx-cookie-service-ssr';
 import {User} from '../../user';
 import {AuthResponse} from '../models';
 
@@ -29,7 +29,7 @@ export const AuthStore = signalStore(
   withComputed(({accessToken}) => ({
     isAuthenticated: computed(() => !!accessToken()),
   })),
-  withMethods((store, cookieService = inject(SsrCookieService)) => ({
+  withMethods((store, cookieService = inject(CookieStorageService)) => ({
     authorize: (response: AuthResponse): void => {
       patchState(store, response);
       cookieService.set('access_token', response.accessToken, {
@@ -47,7 +47,7 @@ export const AuthStore = signalStore(
       cookieService.delete('refresh_token');
     },
   })),
-  withHooks((store, cookieService = inject(SsrCookieService)) => ({
+  withHooks((store, cookieService = inject(CookieStorageService)) => ({
     onInit: () => {
       patchState(store, {
         accessToken: cookieService.get('access_token'),

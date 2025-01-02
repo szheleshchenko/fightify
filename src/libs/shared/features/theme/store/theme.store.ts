@@ -1,6 +1,6 @@
-import {DOCUMENT, isPlatformBrowser} from '@angular/common';
-import {computed, inject, PLATFORM_ID} from '@angular/core';
-import {LocalStorageService} from '@libs/shared/data-access/local-storage';
+import {DOCUMENT} from '@angular/common';
+import {computed, inject} from '@angular/core';
+import {CookieStorageService} from '@libs/shared/data-access/cookie-storage';
 import {
   patchState,
   signalStore,
@@ -25,23 +25,16 @@ export const ThemeStore = signalStore(
   {providedIn: 'root'},
   withState(initialState),
   withMethods(
-    (
-      store,
-      platformId = inject(PLATFORM_ID),
-      localStorageService = inject(LocalStorageService),
-      document = inject(DOCUMENT),
-    ) => ({
+    (store, cookieStorageService = inject(CookieStorageService), document = inject(DOCUMENT)) => ({
       setTheme: (theme: Theme) => {
         patchState(store, {theme});
 
-        if (isPlatformBrowser(platformId)) {
-          const themeToRemove = theme === 'light' ? 'dark' : 'light';
-          const classList = document.documentElement.classList;
+        const themeToRemove = theme === 'light' ? 'dark' : 'light';
+        const classList = document.documentElement.classList;
 
-          classList.remove(themeToRemove);
-          classList.add(theme);
-          localStorageService.setItem('theme', theme);
-        }
+        classList.remove(themeToRemove);
+        classList.add(theme);
+        cookieStorageService.set('theme', theme);
       },
       toggleTheme: function () {
         this.setTheme(store.theme() === 'light' ? 'dark' : 'light');
@@ -49,11 +42,11 @@ export const ThemeStore = signalStore(
     }),
   ),
   withComputed(({theme}) => ({
-    isLightThemeOn: computed(() => theme() === 'light'),
+    isLightThemeOn: computed(() => theme() === 'dark'),
   })),
-  withHooks((store, localStorageService = inject(LocalStorageService)) => ({
+  withHooks((store, cookieStorageService = inject(CookieStorageService)) => ({
     onInit: () => {
-      const storedTheme = localStorageService.getItem('theme') as Theme;
+      const storedTheme = cookieStorageService.get('theme') as Theme;
 
       if (supportedThemes.includes(storedTheme)) {
         store.setTheme(storedTheme);

@@ -3,11 +3,11 @@ import {ChangeDetectionStrategy, Component, input} from '@angular/core';
 import {RouterLink} from '@angular/router';
 import {ButtonDirective} from '../button';
 import {
-  TableBodyComponent,
-  TableCellComponent,
+  TableBodyDirective,
+  TableCellDirective,
   TableComponent,
-  TableHeaderComponent,
-  TableRowComponent,
+  TableHeaderDirective,
+  TableRowDirective,
 } from '../table';
 import {Column} from './types';
 
@@ -15,13 +15,13 @@ import {Column} from './types';
   selector: 'app-data-table',
   imports: [
     TableComponent,
-    TableBodyComponent,
-    TableHeaderComponent,
-    TableCellComponent,
-    TableRowComponent,
+    TableHeaderDirective,
+    TableCellDirective,
+    TableRowDirective,
     NgClass,
     ButtonDirective,
     RouterLink,
+    TableBodyDirective,
   ],
   templateUrl: 'data-table.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

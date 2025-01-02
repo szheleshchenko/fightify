@@ -1,4 +1,4 @@
-<form [formGroup]="store.form()" (ngSubmit)="this.store.submitForm()" class="flex flex-col gap-4">
+<form [formGroup]="form" class="flex flex-col gap-4">
   <app-text-field formControlName="title" label="Title" />
   <app-text-field formControlName="description" label="Description" />
   <app-content-editor formControlName="content" label="Content" />
