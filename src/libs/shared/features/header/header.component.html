@@ -1,6 +1,6 @@
 <div class="h-14"></div>
 <header
-  *transloco="let translate; prefix: 'SHARED.HEADER'"
+  *transloco="let t; prefix: 'SHARED.HEADER'"
   [ngClass]="classes()"
   class="fixed top-0 w-full h-14 bg-background border-b shadow-sm z-50"
 >
@@ -14,7 +14,7 @@
     >
       @for (link of navigationLinks; track link.path) {
         <a [routerLink]="link.path" size="sm" variant="ghost" appButton>
-          {{ translate(link.translationKey) }}
+          {{ t(link.translationKey) }}
         </a>
       }
     </nav>

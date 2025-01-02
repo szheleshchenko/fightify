@@ -35,6 +35,7 @@ export const appConfig: ApplicationConfig = {
       config: {
         availableLangs: ['en', 'ru'],
         defaultLang: 'en',
+        reRenderOnLangChange: true,
         prodMode: !isDevMode(),
       },
       loader: I18nLoader,

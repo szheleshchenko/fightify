@@ -1,5 +1,4 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
-import {RouterLink} from '@angular/router';
 import {TranslocoDirective} from '@jsverse/transloco';
 import {TemplateLink, injectAppLinks} from '../app-links';
 import {LogoComponent} from '../logo';
@@ -7,7 +6,7 @@ import {FooterResourcesListComponent} from './components/resources-list';
 
 @Component({
   selector: 'app-footer',
-  imports: [RouterLink, LogoComponent, TranslocoDirective, FooterResourcesListComponent],
+  imports: [LogoComponent, TranslocoDirective, FooterResourcesListComponent],
   templateUrl: 'footer.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

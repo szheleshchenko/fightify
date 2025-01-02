@@ -18,12 +18,13 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/fightify",
+            "outputMode": "server",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
+              "src/assets/favicon.ico",
               "src/assets",
               "src/libs/event/assets",
               "src/libs/fighter/assets",
@@ -38,7 +39,9 @@
             },
             "scripts": [],
             "server": "src/main.server.ts",
-            "ssr": true
+            "ssr": {
+              "entry": "server.ts"
+            }
           },
           "configurations": {
             "production": {

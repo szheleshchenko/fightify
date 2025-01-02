@@ -10,7 +10,6 @@ import {LoginFormWrapperComponent} from '@libs/user/ui/login-form-wrapper';
 import {injectMutation} from '@tanstack/angular-query-experimental';
 import {lastValueFrom} from 'rxjs';
 import {LoginForm, LoginFormFieldValues} from './forms';
-import {LoginFormStore} from './store';
 
 @Component({
   selector: 'app-login-form',
@@ -22,7 +21,6 @@ import {LoginFormStore} from './store';
     ReactiveFormsModule,
     TranslocoDirective,
   ],
-  providers: [LoginFormStore],
   templateUrl: './login-form.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
