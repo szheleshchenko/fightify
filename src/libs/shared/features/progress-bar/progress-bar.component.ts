@@ -1,5 +1,12 @@
 import {isPlatformBrowser} from '@angular/common';
-import {Component, OnInit, PLATFORM_ID, ViewChild, inject} from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  PLATFORM_ID,
+  ViewChild,
+  inject,
+} from '@angular/core';
 import {
   NavigationCancel,
   NavigationEnd,
@@ -17,6 +24,7 @@ const PROGRESS_BAR_DELAY = 30;
   selector: 'app-progress-bar',
   imports: [NgProgressComponent],
   templateUrl: './progress-bar.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProgressBarComponent implements OnInit {
   @ViewChild(NgProgressComponent, {static: true}) progressBar!: NgProgressComponent;

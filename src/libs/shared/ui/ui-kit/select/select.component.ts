@@ -1,4 +1,12 @@
-import {Component, ElementRef, HostListener, Input, ViewChild, forwardRef} from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  HostListener,
+  Input,
+  ViewChild,
+  forwardRef,
+} from '@angular/core';
 import {NG_VALUE_ACCESSOR} from '@angular/forms';
 import {BaseFormControlDirective} from '@libs/shared/utils/form';
 import {SelectOption} from './models';
@@ -15,6 +23,7 @@ import {SelectOption} from './models';
       multi: true,
     },
   ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SelectComponent<T> extends BaseFormControlDirective<SelectOption<T>> {
   @ViewChild('select') select!: ElementRef<HTMLDivElement>;

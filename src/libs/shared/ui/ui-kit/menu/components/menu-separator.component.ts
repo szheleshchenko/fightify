@@ -1,4 +1,4 @@
-import {Component, computed, input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, computed, input} from '@angular/core';
 import {mergeClasses} from '@libs/shared/utils/merge-classes';
 import type {ClassValue} from 'clsx';
 
@@ -9,6 +9,7 @@ import type {ClassValue} from 'clsx';
   host: {
     '[class]': 'classes()',
   },
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MenuSeparatorComponent {
   public readonly userClasses = input<ClassValue>('', {alias: 'class'});

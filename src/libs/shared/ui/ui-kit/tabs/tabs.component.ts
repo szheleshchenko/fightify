@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, contentChildren} from '@angular/core';
+import {AfterViewInit, ChangeDetectionStrategy, Component, contentChildren} from '@angular/core';
 import {TabComponent} from './components';
 
 @Component({
@@ -6,6 +6,7 @@ import {TabComponent} from './components';
   imports: [],
   templateUrl: './tabs.component.html',
   styleUrl: './tabs.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TabsComponent implements AfterViewInit {
   public tabs = contentChildren(TabComponent);

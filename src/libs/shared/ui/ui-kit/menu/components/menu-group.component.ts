@@ -1,5 +1,5 @@
 import {CdkMenuGroup} from '@angular/cdk/menu';
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 
 @Component({
   selector: 'app-menu-group',
@@ -9,5 +9,6 @@ import {Component} from '@angular/core';
   host: {
     class: 'block',
   },
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MenuGroupComponent {}
