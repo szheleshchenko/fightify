@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, computed, input} from '@angular/core';
 import {RouterLink} from '@angular/router';
-import {mergeClasses} from '@libs/shared/utils/merge-classes';
+import {mergeClasses} from '@core/utils/merge-classes';
 import {injectAppLinks} from '../app-links';
 
 @Component({

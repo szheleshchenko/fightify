@@ -7,7 +7,9 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "none",
+          "changeDetection": "OnPush",
+          "prefix": "app"
         }
       },
       "root": "",
@@ -23,16 +25,7 @@
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/assets/favicon.ico",
-              "src/assets",
-              "src/libs/event/assets",
-              "src/libs/fighter/assets",
-              "src/libs/news/assets",
-              "src/libs/shared/assets",
-              "src/libs/user/assets",
-              "src/libs/dashboard/assets"
-            ],
+            "assets": ["src/assets/favicon.ico", "src/assets", "src/app/core/i18n/assets"],
             "styles": ["src/assets/styles/styles.scss"],
             "stylePreprocessorOptions": {
               "includePaths": ["src/assets/styles"]

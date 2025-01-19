@@ -1,0 +1,9 @@
+<button
+  (click)="themeStore.toggleTheme()"
+  size="sm"
+  variant="ghost"
+  class="material-symbols-outlined text-lg"
+  appButton
+>
+  {{ themeStore.isLightThemeOn() ? 'dark_mode' : 'light_mode' }}
+</button>

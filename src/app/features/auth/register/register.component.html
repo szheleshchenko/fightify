@@ -1,0 +1,51 @@
+<form
+  [formGroup]="form"
+  (ngSubmit)="submitted()"
+  *transloco="let t; prefix: 'FEATURES.AUTH.REGISTER'"
+  class="max-w-md mx-auto border rounded-2xl"
+  #ngForm="ngForm"
+>
+  <hgroup class="space-y-2 p-6">
+    <h2 class="text-2xl font-mono font-semibold">{{ t('TEXT_SIGN_UP') }}</h2>
+    <h3 class="text-sm text-muted-foreground">{{ t('TEXT_ENTER_YOUR_USERNAME') }}</h3>
+  </hgroup>
+  <div class="flex flex-col gap-3 p-6 pt-0">
+    <app-text-field
+      formControlName="username"
+      [isRequired]="true"
+      [label]="t('TEXT_USERNAME')"
+      placeholder="your_username"
+    />
+    <app-text-field
+      formControlName="password"
+      [isRequired]="true"
+      [label]="t('TEXT_PASSWORD')"
+      [placeholder]="t('TEXT_6_CHARACTERS')"
+      type="password"
+    />
+    <app-text-field
+      formControlName="confirmPassword"
+      [isRequired]="true"
+      [label]="t('TEXT_CONFIRM_PASSWORD')"
+      [placeholder]="t('TEXT_6_CHARACTERS')"
+      type="password"
+      [errorMessage]="
+        form.errors?.['passwordNotMatch'] ? t('TEXT_PASSWORDS_DO_NOT_MATCH') : undefined
+      "
+    />
+    <div class="text-right text-sm">
+      <span class="text-muted-foreground">{{ t('TEXT_ALREADY_HAVE_AN_ACCOUNT') }} </span>
+      <a [routerLink]="features.LOGIN">{{ t('LINK_LOGIN') }}</a>
+    </div>
+  </div>
+  <div class="px-6 pb-6">
+    <app-button
+      [isLoading]="action.isPending()"
+      [isDisabled]="form.invalid && ngForm.submitted"
+      class="w-full"
+      actionContent
+    >
+      {{ t('BUTTON_CREATE_ACCOUNT') }}
+    </app-button>
+  </div>
+</form>

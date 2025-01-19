@@ -1,0 +1,30 @@
+<header
+  *transloco="let t; prefix: 'LAYOUTS.MAIN.HEADER'"
+  class="sticky top-0 w-full h-14 bg-background border-b shadow-sm z-50"
+>
+  <div class="container h-full flex items-center">
+    <input id="mobile-menu-toggler" type="checkbox" class="peer" hidden #mobileMenuToggler />
+    <a [routerLink]="features.HOME">
+      <app-logo class="hover:opacity-70" />
+    </a>
+    <nav
+      class="absolute flex flex-col w-[calc(100%-2rem)] bg-background invisible scale-95 peer-checked:visible peer-checked:scale-100 leading-5 top-14 transition z-50 lg:relative lg:gap-1 lg:flex-row lg:items-center lg:ml-16 lg:scale-100 lg:visible lg:top-0 lg:w-auto lg:bg-transparent"
+    >
+      <a [routerLink]="features.HOME" size="sm" variant="ghost" appButton>{{ t('TEXT_HOME') }}</a>
+      <a [routerLink]="features.NEWS" size="sm" variant="ghost" appButton>{{ t('TEXT_NEWS') }}</a>
+    </nav>
+    <div class="flex items-center gap-2 ml-auto">
+      <app-profile-menu />
+      <app-theme-toggler />
+      <label
+        for="mobile-menu-toggler"
+        class="material-symbols-outlined text-lg cursor-pointer lg:hidden"
+        size="sm"
+        variant="ghost"
+        appButton
+      >
+        menu
+      </label>
+    </div>
+  </div>
+</header>

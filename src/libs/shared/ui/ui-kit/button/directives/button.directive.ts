@@ -1,5 +1,5 @@
 import {computed, Directive, input} from '@angular/core';
-import {mergeClasses} from '@libs/shared/utils/merge-classes';
+import {mergeClasses} from '@core/utils/merge-classes';
 import {VariantProps} from 'class-variance-authority';
 import {ClassValue} from 'clsx';
 import {tv} from 'tailwind-variants';

@@ -1,20 +1,24 @@
 import {Routes} from '@angular/router';
-import {unauthorizedGuard} from './guards';
+import {Feature} from '@core/enums';
+import {MainLayoutComponent} from './layouts/main-layout';
 
 export const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./public/public.routes').then((module) => module.routes),
-  },
-  {
-    path: '',
-    canActivate: [unauthorizedGuard],
-    loadChildren: () =>
-      import('./account-access/account-access.routes').then((module) => module.routes),
-  },
-  {
-    path: '',
-    canActivate: [unauthorizedGuard],
-    loadChildren: () => import('./dashboard/dashboard.routes').then((module) => module.routes),
+    component: MainLayoutComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./features/public/public.routes'),
+      },
+      {
+        path: '',
+        loadChildren: () => import('./features/auth/auth.routes'),
+      },
+      {
+        path: Feature.DASHBOARD,
+        loadChildren: () => import('./features/dashboard/dashboard.routes'),
+      },
+    ],
   },
 ];

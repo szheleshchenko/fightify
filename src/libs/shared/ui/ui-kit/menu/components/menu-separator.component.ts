@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, computed, input} from '@angular/core';
-import {mergeClasses} from '@libs/shared/utils/merge-classes';
+import {mergeClasses} from '@core/utils/merge-classes';
 import type {ClassValue} from 'clsx';
 
 @Component({

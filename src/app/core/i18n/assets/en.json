@@ -1,0 +1,39 @@
+{
+  "LAYOUTS": {
+    "MAIN": {
+      "HEADER": {
+        "TEXT_HOME": "Home",
+        "TEXT_NEWS": "News"
+      },
+      "PROFILE_MENU": {
+        "TEXT_LOGIN": "Login",
+        "TEXT_SIGN_UP": "Sign up",
+        "TEXT_DASHBOARD": "Dashboard",
+        "TEXT_LOG_OUT": "Log out"
+      }
+    }
+  },
+  "FEATURES": {
+    "AUTH": {
+      "LOGIN": {
+        "TEXT_LOGIN": "Login",
+        "TEXT_ENTER_YOUR_USERNAME": "Enter your username below to login to your account",
+        "TEXT_USERNAME": "Username",
+        "TEXT_PASSWORD": "Password",
+        "TEXT_6_CHARACTERS": "6 characters"
+      },
+      "REGISTER": {
+        "TEXT_SIGN_UP": "Sign up",
+        "TEXT_ENTER_YOUR_USERNAME": "Enter your username and password below to create your account",
+        "TEXT_USERNAME": "Username",
+        "TEXT_PASSWORD": "Password",
+        "TEXT_6_CHARACTERS": "6+ characters",
+        "TEXT_CONFIRM_PASSWORD": "Confirm password",
+        "TEXT_PASSWORDS_DO_NOT_MATCH": "Passwords do not match",
+        "TEXT_ALREADY_HAVE_AN_ACCOUNT": "Already have an account?",
+        "LINK_LOGIN": "Login",
+        "BUTTON_CREATE_ACCOUNT": "Create account"
+      }
+    }
+  }
+}
