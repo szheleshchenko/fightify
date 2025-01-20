@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, input} from '@angular/core';
 import {RouterLink} from '@angular/router';
-import {ButtonDirective} from '@libs/shared/ui/ui-kit/button';
+import {ButtonDirective} from '@ui/button';
 
 @Component({
   selector: 'app-pagination-item',

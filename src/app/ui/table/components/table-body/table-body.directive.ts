@@ -1,6 +1,5 @@
 import {computed, Directive, input} from '@angular/core';
-import {mergeClasses} from '@core/utils/merge-classes';
-import {ClassValue} from 'tailwind-variants';
+import {twMerge} from 'tailwind-merge';
 
 @Directive({
   selector: '[appTableBody]',
@@ -9,6 +8,6 @@ import {ClassValue} from 'tailwind-variants';
   },
 })
 export class TableBodyDirective {
-  public class = input<ClassValue>();
-  protected classes = computed(() => mergeClasses('[&_tr:last-child]:border-0', this.class()));
+  public class = input<string>();
+  protected classes = computed(() => twMerge('[&_tr:last-child]:border-0', this.class()));
 }

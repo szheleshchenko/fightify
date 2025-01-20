@@ -1,2 +1,1 @@
-export * from './base-form-control.directive';
-export * from './types';
+export * from './infer-form-schema';

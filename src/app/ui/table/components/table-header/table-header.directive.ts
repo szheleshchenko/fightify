@@ -1,6 +1,5 @@
 import {computed, Directive, input} from '@angular/core';
-import {mergeClasses} from '@core/utils/merge-classes';
-import {ClassValue} from 'tailwind-variants';
+import {twMerge} from 'tailwind-merge';
 
 @Directive({
   selector: '[appTableHeader]',
@@ -9,8 +8,8 @@ import {ClassValue} from 'tailwind-variants';
   },
 })
 export class TableHeaderDirective {
-  public class = input<ClassValue>();
+  public class = input<string>();
   public classes = computed(() =>
-    mergeClasses('[&_th]:border-b [&_th]:py-2 [&_th]:text-left', this.class()),
+    twMerge('[&_th]:border-b [&_th]:py-2 [&_th]:text-left', this.class()),
   );
 }

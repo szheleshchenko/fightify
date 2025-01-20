@@ -1,5 +1,5 @@
 import {computed, inject} from '@angular/core';
-import {CookieStorageService} from '@libs/shared/data-access/cookie-storage';
+import {CookieStorageService} from '@core/cookie';
 import {
   patchState,
   signalStore,

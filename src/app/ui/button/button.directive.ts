@@ -1,7 +1,6 @@
 import {computed, Directive, input} from '@angular/core';
-import {mergeClasses} from '@core/utils/merge-classes';
 import {VariantProps} from 'class-variance-authority';
-import {ClassValue} from 'clsx';
+import {twMerge} from 'tailwind-merge';
 import {tv} from 'tailwind-variants';
 
 const buttonVariants = tv({
@@ -42,13 +41,13 @@ export type ButtonSize = VariantProps<typeof buttonVariants>['size'];
   },
 })
 export class ButtonDirective {
-  public class = input<ClassValue>('');
+  public class = input<string | undefined>('');
   public variant = input<ButtonVariant>('default');
   public size = input<ButtonSize>('default');
   public isDisabled = input<boolean>(false);
 
   public classes = computed(() =>
-    mergeClasses(
+    twMerge(
       buttonVariants({variant: this.variant(), size: this.size(), isDisabled: this.isDisabled()}),
       this.class(),
     ),

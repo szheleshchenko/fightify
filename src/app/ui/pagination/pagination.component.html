@@ -12,7 +12,7 @@
       </app-pagination-item>
     </li>
 
-    @for (page of lastPage() | repeat: 1; track page) {
+    @for (page of pages(); track page) {
       @let isActive = page === currentPage();
 
       <li>

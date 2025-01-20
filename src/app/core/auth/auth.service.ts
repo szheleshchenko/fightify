@@ -1,5 +1,5 @@
 import {inject, Injectable} from '@angular/core';
-import {ApiService} from '@libs/shared/data-access/api-client';
+import {ApiService} from '@core/api-client';
 import {instanceToPlain, plainToInstance} from 'class-transformer';
 import {map, Observable} from 'rxjs';
 import {AuthRequest, AuthResponse, RefreshTokenRequest, RegisterRequest} from './models';

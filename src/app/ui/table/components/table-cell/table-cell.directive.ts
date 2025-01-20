@@ -1,5 +1,5 @@
 import {computed, Directive, input} from '@angular/core';
-import {mergeClasses} from '@core/utils/merge-classes';
+import {twMerge} from 'tailwind-merge';
 import {ClassValue} from 'tailwind-variants';
 
 @Directive({
@@ -10,5 +10,5 @@ import {ClassValue} from 'tailwind-variants';
 })
 export class TableCellDirective {
   public class = input<ClassValue>();
-  protected classes = computed(() => mergeClasses('p-4 align-middle', this.class()));
+  protected classes = computed(() => twMerge('p-4 align-middle', this.class()));
 }

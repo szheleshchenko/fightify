@@ -1,6 +1,5 @@
 import {ChangeDetectionStrategy, Component, computed, input} from '@angular/core';
-import {mergeClasses} from '@core/utils/merge-classes';
-import type {ClassValue} from 'clsx';
+import {twMerge} from 'tailwind-merge';
 
 @Component({
   selector: 'app-menu-separator',
@@ -12,6 +11,6 @@ import type {ClassValue} from 'clsx';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MenuSeparatorComponent {
-  readonly class = input<ClassValue>('');
-  public classes = computed(() => mergeClasses('block -mx-1 my-1 h-px bg-gray-200', this.class()));
+  readonly class = input<string>('');
+  public classes = computed(() => twMerge('block -mx-1 my-1 h-px bg-gray-200', this.class()));
 }

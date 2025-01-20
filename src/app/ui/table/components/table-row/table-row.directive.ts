@@ -1,6 +1,5 @@
 import {computed, Directive, input} from '@angular/core';
-import {mergeClasses} from '@core/utils/merge-classes';
-import {ClassValue} from 'tailwind-variants';
+import {twMerge} from 'tailwind-merge';
 
 @Directive({
   selector: '[appTableRow]',
@@ -9,9 +8,9 @@ import {ClassValue} from 'tailwind-variants';
   },
 })
 export class TableRowDirective {
-  public class = input<ClassValue>();
+  public class = input<string>();
   protected classes = computed(() =>
-    mergeClasses(
+    twMerge(
       'border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted',
       this.class(),
     ),

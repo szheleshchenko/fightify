@@ -1,7 +1,7 @@
 import {inject} from '@angular/core';
 import {ResolveFn} from '@angular/router';
-import {PaginationResponse} from '@libs/shared/data-access/api-client';
-import {User, UserService} from '@libs/shared/data-access/api/user';
+import {PaginationResponse} from '@core/api-client';
+import {User, UserService} from '@core/user';
 
 export const dashboardUsersResolver: ResolveFn<PaginationResponse<User>> = (route) => {
   const usersService = inject(UserService);

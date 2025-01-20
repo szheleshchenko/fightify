@@ -1,16 +1,17 @@
 import {inject} from '@angular/core';
 import {CanActivateFn, Router} from '@angular/router';
-import {AuthStore} from '@libs/shared/data-access/api/auth';
+import {AuthStore} from '@core/auth';
+import {Feature} from '@core/enums';
 
 export const unauthorizedGuard: CanActivateFn = (): boolean => {
   const router = inject(Router);
-  const authService = inject(AuthStore);
+  const authStore = inject(AuthStore);
 
-  if (authService.isAuthenticated()) {
+  if (authStore.isAuthenticated()) {
     return true;
   }
 
-  router.navigate(['/']);
+  router.navigate([Feature.HOME]);
 
   return false;
 };

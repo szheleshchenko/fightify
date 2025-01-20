@@ -5,7 +5,7 @@ import {
   PaginationRequest,
   PaginationResponse,
   prepareRequestParams,
-} from '@libs/shared/data-access/api-client';
+} from '@core/api-client';
 import {plainToInstance} from 'class-transformer';
 import {map, Observable} from 'rxjs';
 import {News} from './models';

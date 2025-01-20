@@ -1,7 +1,6 @@
 import {CdkMenu} from '@angular/cdk/menu';
 import {ChangeDetectionStrategy, Component, computed, input} from '@angular/core';
-import {mergeClasses} from '@core/utils/merge-classes';
-import {ClassValue} from 'clsx';
+import {twMerge} from 'tailwind-merge';
 
 @Component({
   selector: 'app-menu',
@@ -14,11 +13,8 @@ import {ClassValue} from 'clsx';
   hostDirectives: [CdkMenu],
 })
 export class MenuComponent {
-  public readonly userClasses = input<ClassValue>('', {alias: 'class'});
+  public readonly userClasses = input<string>('', {alias: 'class'});
   public classes = computed(() =>
-    mergeClasses(
-      'p-1 bg-white z-50 overflow-hidden rounded-md border shadow-md',
-      this.userClasses(),
-    ),
+    twMerge('p-1 bg-white z-50 overflow-hidden rounded-md border shadow-md', this.userClasses()),
   );
 }

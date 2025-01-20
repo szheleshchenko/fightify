@@ -1,7 +1,5 @@
-import {AppEnvName} from '@libs/shared/utils/env';
-
 export type Configuration = {
-  environment: AppEnvName;
+  environment: 'development' | 'production';
   api: {
     baseUrl: string;
   };
