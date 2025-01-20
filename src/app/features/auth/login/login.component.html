@@ -1,0 +1,36 @@
+<form
+  [formGroup]="form"
+  (ngSubmit)="submitted()"
+  *transloco="let t; prefix: 'FEATURES.AUTH.LOGIN'"
+  class="max-w-md mx-auto border rounded-2xl"
+  #ngForm="ngForm"
+>
+  <hgroup class="space-y-2 p-6">
+    <h2 class="text-2xl font-mono font-semibold">{{ t('TEXT_LOGIN') }}</h2>
+    <h3 class="text-sm text-muted-foreground">{{ t('TEXT_ENTER_YOUR_USERNAME') }}</h3>
+  </hgroup>
+  <div class="flex flex-col gap-3 p-6 pt-0">
+    <app-text-field
+      formControlName="username"
+      [isRequired]="true"
+      [label]="t('TEXT_USERNAME')"
+      placeholder="your_username"
+    />
+    <app-text-field
+      formControlName="password"
+      [isRequired]="true"
+      [label]="t('TEXT_PASSWORD')"
+      [placeholder]="t('TEXT_6_CHARACTERS')"
+      type="password"
+    />
+  </div>
+  <div class="px-6 pb-6">
+    <app-button
+      [isLoading]="action.isPending()"
+      [isDisabled]="form.invalid && ngForm.submitted"
+      class="w-full"
+    >
+      {{ t('TEXT_LOGIN') }}
+    </app-button>
+  </div>
+</form>

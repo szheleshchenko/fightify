@@ -1,0 +1,39 @@
+@let isInvalid = formControl.invalid && (formControl.dirty || formControl.touched);
+@let labelText = label();
+@let errorId = label() + 'error';
+
+<div class="space-y-2">
+  <label
+    [for]="labelText"
+    [class.text-red-600]="isInvalid"
+    class="text-sm font-medium leading-none"
+  >
+    {{ labelText }}
+  </label>
+  <input
+    [formControl]="formControl"
+    [id]="labelText"
+    [attr.placeholder]="placeholder()"
+    [attr.aria-labelledby]="labelText"
+    [attr.aria-describedby]="isInvalid ? errorId : null"
+    [attr.aria-invalid]="isInvalid"
+    [name]="labelText"
+    [type]="type()"
+    class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-zinc-400 ring-slate-950 focus-visible:outline-none focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50"
+  />
+  @if (description()) {
+    <p class="text-sm text-zinc-400">{{ description() }}</p>
+  }
+  @if (isInvalid) {
+    <p [id]="errorId" class="text-sm font-medium text-red-600">
+      @switch (true) {
+        @case (!!errorMessage()) {
+          {{ errorMessage() }}
+        }
+        @case (formControl.hasError('server')) {
+          {{ formControl.errors?.['server'] }}
+        }
+      }
+    </p>
+  }
+</div>
