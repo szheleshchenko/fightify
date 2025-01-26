@@ -34,6 +34,18 @@
         "LINK_LOGIN": "Login",
         "BUTTON_CREATE_ACCOUNT": "Create account"
       }
+    },
+    "PUBLIC": {
+      "NEWS": {
+        "TEXT_UFC_NEWS": "UFC News & Updates",
+        "TEXT_GET_LATEST_NEWS": "Get the latest UFC news, fight updates, and breaking stories"
+      }
+    }
+  },
+  "PATTERNS": {
+    "BREADCRUMBS": {
+      "TEXT_HOME": "Home",
+      "TEXT_NEWS": "News"
     }
   }
 }

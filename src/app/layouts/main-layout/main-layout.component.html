@@ -1,8 +1,8 @@
-@defer {
+@defer (when isBrowser) {
   <app-progress-bar />
 }
 <app-header />
-<main class="container my-14">
+<main class="container my-6">
   <router-outlet />
 </main>
 <app-footer />

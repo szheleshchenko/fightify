@@ -1,0 +1,93 @@
+<app-page-header
+  *transloco="let t; prefix: 'FEATURES.PUBLIC.NEWS'"
+  [title]="t('TEXT_UFC_NEWS')"
+  [description]="t('TEXT_GET_LATEST_NEWS')"
+/>
+<div class="flex gap-6">
+  <div class="flex flex-col gap-6">
+    <app-news-item variant="horizontal" />
+    <app-news-item variant="horizontal" />
+    <app-news-item variant="horizontal" />
+    <app-news-item variant="horizontal" />
+  </div>
+  <div class="max-w-96 w-full">
+    <section>
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-xl font-extrabold">Latest News</h2>
+      </div>
+      <div class="flex flex-col gap-4">
+        <app-news-item variant="horizontal-small" />
+        <div class="h-[1px] bg-border"></div>
+        <app-news-item variant="horizontal-small" />
+        <div class="h-[1px] bg-border"></div>
+        <app-news-item variant="horizontal-small" />
+      </div>
+    </section>
+    <div class="bg-background p-4 rounded-lg border">
+      <!-- Section Header -->
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-lg font-semibold text-foreground">Upcoming Fights</h2>
+        <a href="#" class="text-sm font-medium text-primary hover:underline">View All →</a>
+      </div>
+
+      <!-- Fight List -->
+      <div class="space-y-4">
+        <!-- Fight Card Example -->
+        <div class="space-y-2">
+          <!-- Event Title, Date, and Weight Class -->
+          <div class="flex items-center justify-between">
+            <h3 class="text-sm font-medium text-foreground">UFC 300: Jones vs. Miocic</h3>
+            <span class="text-xs text-muted-foreground">Oct 21, 2023</span>
+          </div>
+          <p class="text-xs text-muted-foreground">Heavyweight Bout</p>
+
+          <!-- Fighters -->
+          <div class="flex items-center space-x-3 p-3 bg-muted/50 rounded-lg">
+            <!-- Fighter 1 -->
+            <div class="flex-1 text-center">
+              <div class="relative">
+                <img
+                  src="https://placehold.co/60x60"
+                  alt="Fighter 1"
+                  class="w-12 h-12 rounded-full mx-auto mb-2"
+                />
+                <!-- Champ Badge -->
+                <span
+                  class="absolute top-0 right-0 bg-yellow-400 text-white text-[10px] font-bold px-1 py-0.5 rounded-full"
+                  >C</span
+                >
+              </div>
+              <p class="text-sm font-medium text-foreground">Jon Jones</p>
+              <p class="text-xs text-muted-foreground">(27-1-0)</p>
+            </div>
+
+            <!-- VS Badge -->
+            <div class="flex items-center justify-center">
+              <span class="text-xs font-bold bg-destructive text-white px-2 py-1 rounded-full"
+                >VS</span
+              >
+            </div>
+
+            <!-- Fighter 2 -->
+            <div class="flex-1 text-center">
+              <div class="relative">
+                <img
+                  src="https://placehold.co/60x60"
+                  alt="Fighter 2"
+                  class="w-12 h-12 rounded-full mx-auto mb-2"
+                />
+                <!-- Rank Badge -->
+                <span
+                  class="absolute top-0 right-0 bg-muted-foreground text-background text-[10px] font-bold px-1 py-0.5 rounded-full"
+                  >#1</span
+                >
+              </div>
+              <p class="text-sm font-medium text-foreground">Stipe Miocic</p>
+              <p class="text-xs text-muted-foreground">(20-4-0)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

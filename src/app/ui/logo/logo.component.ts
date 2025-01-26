@@ -10,6 +10,7 @@ import {ChangeDetectionStrategy, Component} from '@angular/core';
         height="28px"
         viewBox="0 0 72 72"
         id="emoji"
+        class="dark:invert"
       >
         <g id="color" />
         <g id="line">
