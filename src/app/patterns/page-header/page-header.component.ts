@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, input} from '@angular/core';
-import {BreadcrumbsComponent} from './ui/breadcrumbs/breadcrumbs.component';
+import {BreadcrumbsComponent} from '../breadcrumbs';
 
 @Component({
   selector: 'app-page-header',

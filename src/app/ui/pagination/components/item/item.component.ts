@@ -12,4 +12,5 @@ export class PaginationItemComponent {
   readonly link = input<string>('/');
   readonly page = input<number>(0);
   readonly isActive = input<boolean>(false);
+  readonly isDisabled = input<boolean>(false);
 }

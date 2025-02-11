@@ -1,18 +1,26 @@
 <nav
   *transloco="let t; prefix: 'PATTERNS.BREADCRUMBS'"
   aria-label="breadcrumb"
-  class="flex items-center gap-2 text-sm text-muted-foreground"
+  class="flex flex-wrap items-center gap-2 text-sm text-muted-foreground"
 >
   @for (breadcrumb of breadcrumbs(); track breadcrumb.label) {
     @let label = t(breadcrumb.label);
+    @let title = pageTitle();
 
-    @if ($last) {
+    @if ($last && !title) {
       <span class="text-foreground">{{ label }}</span>
     } @else {
       <a [routerLink]="'/' + breadcrumb.path" class="hover:text-foreground">
         {{ label }}
       </a>
+    }
+
+    @if (!$last || ($last && title)) {
       <span class="material-symbols-outlined text-sm leading-none"> chevron_right </span>
+    }
+
+    @if ($last && title) {
+      <span class="text-foreground">{{ title }}</span>
     }
   }
 </nav>

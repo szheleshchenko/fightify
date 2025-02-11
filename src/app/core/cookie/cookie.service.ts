@@ -25,7 +25,7 @@ export class CookieStorageService {
     }
   }
 
-  public check(name: string): boolean {
+  check(name: string): boolean {
     name = encodeURIComponent(name);
     const regExp: RegExp = CookieStorageService.getCookieRegExp(name);
     return regExp.test(
@@ -33,7 +33,7 @@ export class CookieStorageService {
     );
   }
 
-  public get(name: string): string {
+  get(name: string): string {
     if (this.check(name)) {
       name = encodeURIComponent(name);
 
@@ -48,7 +48,7 @@ export class CookieStorageService {
     }
   }
 
-  public getAll(): {[key: string]: string} {
+  getAll(): {[key: string]: string} {
     const cookies: {[key: string]: string} = {};
     const cookieString = this.#isBrowser
       ? this.#document?.cookie
@@ -65,7 +65,7 @@ export class CookieStorageService {
     return cookies;
   }
 
-  public set(
+  set(
     name: string,
     value: string,
     externalOptions?: {
@@ -125,7 +125,7 @@ export class CookieStorageService {
     this.#document.cookie = cookieString;
   }
 
-  public delete(
+  delete(
     name: string,
     path?: string,
     domain?: string,
@@ -139,7 +139,7 @@ export class CookieStorageService {
     this.set(name, '', {expires: expiresDate, path, domain, secure, sameSite});
   }
 
-  public deleteAll(
+  deleteAll(
     path?: string,
     domain?: string,
     secure?: boolean,

@@ -13,8 +13,8 @@ import {twMerge} from 'tailwind-merge';
   hostDirectives: [CdkMenu],
 })
 export class MenuComponent {
-  public readonly userClasses = input<string>('', {alias: 'class'});
-  public classes = computed(() =>
-    twMerge('p-1 bg-white z-50 overflow-hidden rounded-md border shadow-md', this.userClasses()),
+  readonly class = input<string>('');
+  readonly classes = computed(() =>
+    twMerge('p-1 bg-white z-50 overflow-hidden rounded-md border shadow-md', this.class()),
   );
 }

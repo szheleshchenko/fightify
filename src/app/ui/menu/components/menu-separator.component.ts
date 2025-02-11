@@ -12,5 +12,5 @@ import {twMerge} from 'tailwind-merge';
 })
 export class MenuSeparatorComponent {
   readonly class = input<string>('');
-  public classes = computed(() => twMerge('block -mx-1 my-1 h-px bg-gray-200', this.class()));
+  readonly classes = computed(() => twMerge('block -mx-1 my-1 h-px bg-gray-200', this.class()));
 }

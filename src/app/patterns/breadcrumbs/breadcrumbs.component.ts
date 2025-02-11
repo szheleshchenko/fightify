@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject, input} from '@angular/core';
 import {toSignal} from '@angular/core/rxjs-interop';
 import {ActivatedRoute, RouterLink} from '@angular/router';
 import {MenuItem} from '@core/types/menu-item';
@@ -12,6 +12,7 @@ import {map} from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BreadcrumbsComponent {
+  readonly pageTitle = input<string>();
   readonly #activatedRoute = inject(ActivatedRoute);
   readonly breadcrumbs = toSignal(
     this.#activatedRoute.data.pipe(map(() => this.#createBreadcrumbs(this.#activatedRoute))),
@@ -30,6 +31,8 @@ export class BreadcrumbsComponent {
           label,
         });
 
+        child = child.parent;
+      } else if (label === null) {
         child = child.parent;
       } else {
         child = null;

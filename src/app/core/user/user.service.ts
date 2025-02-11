@@ -14,7 +14,7 @@ import {User} from './models';
 export class UserService {
   private apiService = inject(ApiService);
 
-  public search(request: PaginationRequest<User>): Observable<PaginationResponse<User>> {
+  search(request: PaginationRequest<User>): Observable<PaginationResponse<User>> {
     const params = prepareRequestParams(new PaginationRequest(request));
 
     return this.apiService.get<PaginationResponse<User>>('/users', params).pipe(

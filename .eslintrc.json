@@ -21,6 +21,11 @@
         "boundaries/dependency-nodes": ["import", "dynamic-import"],
         "boundaries/elements": [
           {
+            "type": "server",
+            "mode": "file",
+            "pattern": "server.ts"
+          },
+          {
             "type": "main",
             "mode": "file",
             "pattern": "src/main(-|.)?*.ts"
@@ -91,7 +96,7 @@
               },
               {
                 "from": "patterns",
-                "allow": ["ui", "core", "config"]
+                "allow": ["ui", "core", "patterns", "config"]
               },
               {
                 "from": "ui",

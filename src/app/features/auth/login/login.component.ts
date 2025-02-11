@@ -45,7 +45,7 @@ export default class LoginComponent {
     },
   }));
 
-  public submitted(): void {
+  submitted(): void {
     if (this.form.invalid) {
       return this.form.markAllAsTouched();
     }

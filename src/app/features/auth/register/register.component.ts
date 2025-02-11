@@ -31,7 +31,7 @@ export default class RegisterComponent {
   #router = inject(Router);
   #authStore = inject(AuthStore);
 
-  public action = injectMutation(() => ({
+  readonly action = injectMutation(() => ({
     mutationFn: (data: RegisterFormFieldValues) => lastValueFrom(this.#authService.register(data)),
     onSuccess: (response) => {
       this.#authStore.authorize(response);

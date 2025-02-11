@@ -15,11 +15,25 @@ export default <Routes>[
       },
       {
         path: Feature.NEWS,
-        loadComponent: () => import('./news/news.component'),
         data: {
-          title: 'TEXT_NEWS' satisfies Translation,
           label: 'TEXT_NEWS' satisfies Translation,
         },
+        children: [
+          {
+            path: '',
+            loadComponent: () => import('./news/news.component'),
+            data: {
+              label: null,
+            },
+          },
+          {
+            path: `:slug`,
+            loadComponent: () => import('./news/view/view.component'),
+            data: {
+              label: null,
+            },
+          },
+        ],
       },
     ],
   },

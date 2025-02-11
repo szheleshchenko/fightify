@@ -1,14 +1,15 @@
 @let classes = newsItemClasses();
+@let link = '/news/' + 1;
 
 <article [class]="classes.wrapper()">
-  <a routerLink="/news" [class]="classes.image()">
+  <a [routerLink]="link" [class]="classes.image()">
     <img [src]="image" class="absolute w-full h-full object-cover" alt="Description of image" />
   </a>
   <div [class]="classes.content()">
-    <a routerLink="/news">
-      <h2 [class]="classes.title()">
-        Alex Pereira demolishes Jiri Prochazka with brutal head kick knockout in UFC 303 main event
-      </h2>
+    <a [routerLink]="link">
+      <h3 [class]="classes.title()">
+        {{ title() }}
+      </h3>
     </a>
     <p [class]="classes.description()">
       Alex Pereira is quickly rocketing up the ladder of all-time greats after delivering another

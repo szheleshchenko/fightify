@@ -16,53 +16,52 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TextFieldComponent implements ControlValueAccessor, Validator, OnInit {
-  public type = input<HTMLInputElement['type']>('text');
-  public label = input<string>();
-  public description = input<string>();
-  public isRequired = input<boolean>(false);
-  public errorMessage = input<string>();
+  readonly type = input<HTMLInputElement['type']>('text');
+  readonly label = input<string>();
+  readonly description = input<string>();
+  readonly isRequired = input<boolean>(false);
+  readonly errorMessage = input<string>();
+  readonly placeholder = input<string>();
 
-  public ngControl = inject(NgControl);
-  public formControl!: FormControl;
+  readonly ngControl = inject(NgControl);
+  formControl!: FormControl;
+  errors = signal<Array<string>>([]);
+  value = signal<string | undefined>(undefined);
+  disabled: boolean = false;
 
-  public placeholder = input<string>();
-  public errors = signal<Array<string>>([]);
-  public value = signal<string | undefined>(undefined);
-  public disabled: boolean = false;
-
-  public onChange!: (value?: string) => void;
-  public onTouched!: () => void;
+  onChange!: (value?: string) => void;
+  onTouched!: () => void;
 
   constructor() {
     this.ngControl.valueAccessor = this;
   }
 
-  public ngOnInit(): void {
+  ngOnInit(): void {
     this.formControl = this.ngControl.control as FormControl;
   }
 
-  public valueChanged(value?: string): void {
+  valueChanged(value?: string): void {
     this.onChange(value);
     this.onTouched();
   }
 
-  setDisabledState?(isDisabled: boolean): void {
+  setDisabledState(isDisabled: boolean): void {
     this.disabled = isDisabled;
   }
 
-  public registerOnChange(fn: (value?: string) => void): void {
+  registerOnChange(fn: (value?: string) => void): void {
     this.onChange = fn;
   }
 
-  public registerOnTouched(fn: () => void): void {
+  registerOnTouched(fn: () => void): void {
     this.onTouched = fn;
   }
 
-  public writeValue(value?: string): void {
+  writeValue(value?: string): void {
     this.value.set(value);
   }
 
-  public validate(control: AbstractControl<string>): ValidationErrors | null {
+  validate(control: AbstractControl<string>): ValidationErrors | null {
     if (control.errors) {
       if (control.errors['required']) {
         this.errors.set(['This field is required.']);
