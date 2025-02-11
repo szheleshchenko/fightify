@@ -8,6 +8,6 @@ import {twMerge} from 'tailwind-merge';
   },
 })
 export class TableBodyDirective {
-  public class = input<string>();
-  protected classes = computed(() => twMerge('[&_tr:last-child]:border-0', this.class()));
+  readonly class = input<string>();
+  readonly classes = computed(() => twMerge('[&_tr:last-child]:border-0', this.class()));
 }

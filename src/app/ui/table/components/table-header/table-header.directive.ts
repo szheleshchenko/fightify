@@ -8,8 +8,8 @@ import {twMerge} from 'tailwind-merge';
   },
 })
 export class TableHeaderDirective {
-  public class = input<string>();
-  public classes = computed(() =>
+  readonly class = input<string>();
+  readonly classes = computed(() =>
     twMerge('[&_th]:border-b [&_th]:py-2 [&_th]:text-left', this.class()),
   );
 }

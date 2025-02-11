@@ -32,7 +32,7 @@ export class ProgressBarComponent implements OnInit {
   readonly #router = inject(Router);
   readonly #isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
-  public ngOnInit() {
+  ngOnInit() {
     if (!this.#isBrowser) {
       return;
     }

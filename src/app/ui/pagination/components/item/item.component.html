@@ -3,9 +3,10 @@
   [queryParams]="{page: page()}"
   queryParamsHandling="merge"
   [variant]="isActive() ? 'outline' : 'ghost'"
-  [isDisabled]="isActive()"
+  [isDisabled]="isDisabled()"
   size="icon"
   tabindex="0"
+  [attr.aria.current]="isActive() ? 'page' : null"
   appButton
 >
   <ng-content />

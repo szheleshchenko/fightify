@@ -8,8 +8,8 @@ import {twMerge} from 'tailwind-merge';
   },
 })
 export class TableRowDirective {
-  public class = input<string>();
-  protected classes = computed(() =>
+  readonly class = input<string>();
+  readonly classes = computed(() =>
     twMerge(
       'border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted',
       this.class(),

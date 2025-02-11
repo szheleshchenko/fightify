@@ -1,0 +1,42 @@
+<app-page-header
+  *transloco="let t; prefix: 'FEATURES.PUBLIC.NEWS'"
+  [title]="t('TEXT_UFC_NEWS')"
+  [description]="t('TEXT_GET_LATEST_NEWS')"
+/>
+<div class="flex flex-col gap-10 lg:flex-row">
+  <div class="flex flex-col gap-8">
+    <app-news-item
+      title="Matt Brown argues that Sean Strickland’s ‘constant sparring’ is hurting him: ‘You don’t evolve doing that’"
+      variant="horizontal"
+    />
+    <app-news-item
+      title="Canelo Alvarez vs. Terence Crawford reportedly off amid Canelo vs. Jake Paul rumors"
+      variant="horizontal"
+    />
+    <app-news-item title="UFC 312 press conference video" variant="horizontal" />
+    <app-news-item
+      title="Dricus du Plessis: Israel Adesanya won’t make another title run but ‘his legacy is cemented’"
+      variant="horizontal"
+    />
+  </div>
+  <div class="w-full lg:w-96 lg:min-w-96">
+    <section>
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-xl font-extrabold">Latest News</h2>
+      </div>
+      <div class="flex flex-col gap-4">
+        <app-news-item
+          title="Matt Brown argues that Sean Strickland’s ‘constant sparring’ is hurting him: ‘You don’t evolve doing that’"
+          variant="horizontal-small"
+        />
+        <div class="h-[1px] bg-border"></div>
+        <app-news-item title="UFC 312 press conference video" variant="horizontal-small" />
+        <div class="h-[1px] bg-border"></div>
+        <app-news-item
+          title="Dricus du Plessis: Israel Adesanya won’t make another title run but ‘his legacy is cemented’"
+          variant="horizontal-small"
+        />
+      </div>
+    </section>
+  </div>
+</div>

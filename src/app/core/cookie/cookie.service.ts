@@ -6,10 +6,10 @@ import {inject, Injectable, PLATFORM_ID, REQUEST} from '@angular/core';
   providedIn: 'root',
 })
 export class CookieStorageService {
-  private document = inject(DOCUMENT);
-  private platformId = inject(PLATFORM_ID);
-  private documentIsAccessible = isPlatformBrowser(this.platformId);
-  private request = inject(REQUEST);
+  readonly #document = inject(DOCUMENT);
+  readonly #platformId = inject(PLATFORM_ID);
+  readonly #isBrowser = isPlatformBrowser(this.#platformId);
+  readonly #request = inject(REQUEST);
 
   static getCookieRegExp(name: string): RegExp {
     const escapedName: string = name.replace(/([[\]{}()|=;+?,.*^$])/gi, '\\$1');
@@ -25,25 +25,21 @@ export class CookieStorageService {
     }
   }
 
-  public check(name: string): boolean {
+  check(name: string): boolean {
     name = encodeURIComponent(name);
     const regExp: RegExp = CookieStorageService.getCookieRegExp(name);
     return regExp.test(
-      this.documentIsAccessible
-        ? this.document.cookie
-        : (this.request?.headers.get('cookie') ?? ''),
+      this.#isBrowser ? this.#document.cookie : (this.#request?.headers.get('cookie') ?? ''),
     );
   }
 
-  public get(name: string): string {
+  get(name: string): string {
     if (this.check(name)) {
       name = encodeURIComponent(name);
 
       const regExp: RegExp = CookieStorageService.getCookieRegExp(name);
       const result: RegExpExecArray = regExp.exec(
-        this.documentIsAccessible
-          ? this.document.cookie
-          : (this.request?.headers.get('cookie') ?? ''),
+        this.#isBrowser ? this.#document.cookie : (this.#request?.headers.get('cookie') ?? ''),
       ) as RegExpExecArray;
 
       return result[1] ? CookieStorageService.safeDecodeURIComponent(result[1]) : '';
@@ -52,11 +48,11 @@ export class CookieStorageService {
     }
   }
 
-  public getAll(): {[key: string]: string} {
+  getAll(): {[key: string]: string} {
     const cookies: {[key: string]: string} = {};
-    const cookieString = this.documentIsAccessible
-      ? this.document?.cookie
-      : this.request?.headers.get('cookie');
+    const cookieString = this.#isBrowser
+      ? this.#document?.cookie
+      : this.#request?.headers.get('cookie');
 
     if (cookieString) {
       cookieString.split(';').forEach((currentCookie) => {
@@ -69,7 +65,7 @@ export class CookieStorageService {
     return cookies;
   }
 
-  public set(
+  set(
     name: string,
     value: string,
     externalOptions?: {
@@ -81,7 +77,7 @@ export class CookieStorageService {
       partitioned?: boolean;
     },
   ): void {
-    if (!this.documentIsAccessible) {
+    if (!this.#isBrowser) {
       return;
     }
 
@@ -111,10 +107,6 @@ export class CookieStorageService {
 
     if (options.secure === false && options.sameSite === 'None') {
       options.secure = true;
-      console.warn(
-        `[cookie-service] Cookie ${name} was forced with secure flag because sameSite=None.` +
-          `More details : https://github.com/stevermeister/ngx-cookie-service/issues/86#issuecomment-597720130`,
-      );
     }
     if (options.secure) {
       cookieString += 'secure;';
@@ -130,30 +122,30 @@ export class CookieStorageService {
       cookieString += 'Partitioned;';
     }
 
-    this.document.cookie = cookieString;
+    this.#document.cookie = cookieString;
   }
 
-  public delete(
+  delete(
     name: string,
     path?: string,
     domain?: string,
     secure?: boolean,
     sameSite: 'Lax' | 'None' | 'Strict' = 'Lax',
   ): void {
-    if (!this.documentIsAccessible) {
+    if (!this.#isBrowser) {
       return;
     }
     const expiresDate = new Date('Thu, 01 Jan 1970 00:00:01 GMT');
     this.set(name, '', {expires: expiresDate, path, domain, secure, sameSite});
   }
 
-  public deleteAll(
+  deleteAll(
     path?: string,
     domain?: string,
     secure?: boolean,
     sameSite: 'Lax' | 'None' | 'Strict' = 'Lax',
   ): void {
-    if (!this.documentIsAccessible) {
+    if (!this.#isBrowser) {
       return;
     }
 

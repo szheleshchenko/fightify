@@ -1,7 +1,6 @@
 import {computed, Directive, input} from '@angular/core';
-import {VariantProps} from 'class-variance-authority';
 import {twMerge} from 'tailwind-merge';
-import {tv} from 'tailwind-variants';
+import {tv, VariantProps} from 'tailwind-variants';
 
 const buttonVariants = tv({
   base: 'inline-flex items-center gap-2 justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors cursor-pointer select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
@@ -41,12 +40,12 @@ export type ButtonSize = VariantProps<typeof buttonVariants>['size'];
   },
 })
 export class ButtonDirective {
-  public class = input<string | undefined>('');
-  public variant = input<ButtonVariant>('default');
-  public size = input<ButtonSize>('default');
-  public isDisabled = input<boolean>(false);
+  readonly class = input<string | undefined>('');
+  readonly variant = input<ButtonVariant>('default');
+  readonly size = input<ButtonSize>('default');
+  readonly isDisabled = input<boolean>(false);
 
-  public classes = computed(() =>
+  readonly classes = computed(() =>
     twMerge(
       buttonVariants({variant: this.variant(), size: this.size(), isDisabled: this.isDisabled()}),
       this.class(),

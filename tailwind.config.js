@@ -79,8 +79,9 @@ module.exports = {
         'toast-out': 'toast-out 0.5s ease-in',
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        mono: ['Anton', 'sans-serif'],
+        sans: [
+          '"Geist", "Geist Fallback", Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol',
+        ],
       },
     },
   },

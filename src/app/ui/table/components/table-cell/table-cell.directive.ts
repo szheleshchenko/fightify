@@ -9,6 +9,6 @@ import {ClassValue} from 'tailwind-variants';
   },
 })
 export class TableCellDirective {
-  public class = input<ClassValue>();
-  protected classes = computed(() => twMerge('p-4 align-middle', this.class()));
+  readonly class = input<ClassValue>();
+  readonly classes = computed(() => twMerge('p-4 align-middle', this.class()));
 }

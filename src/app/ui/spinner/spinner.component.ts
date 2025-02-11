@@ -7,5 +7,5 @@ import {ChangeDetectionStrategy, Component, input} from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SpinnerComponent {
-  public size = input<number>(16);
+  readonly size = input<number>(16);
 }

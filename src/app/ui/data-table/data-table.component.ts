@@ -27,12 +27,12 @@ import {Column} from './types';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DataTableComponent<T extends {id: number | string}> {
-  public data = input.required<Array<T>>();
-  public columns = input.required<Array<Column<T>>>();
-  public currentPage = input<number>(1);
-  public perPage = input<number>(10);
-  public total = input<number>(0);
+  readonly data = input.required<Array<T>>();
+  readonly columns = input.required<Array<Column<T>>>();
+  readonly currentPage = input<number>(1);
+  readonly perPage = input<number>(10);
+  readonly total = input<number>(0);
 
-  public sortField = input<keyof T | null | undefined>();
-  public desc = input<boolean | null | undefined>(true);
+  readonly sortField = input<keyof T | null | undefined>();
+  readonly desc = input<boolean | null | undefined>(true);
 }
